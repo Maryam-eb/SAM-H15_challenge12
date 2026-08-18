@@ -1,0 +1,443 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ContextFusion</title><style>
+:root{--bg:#06111f;--p:#0b1b2e;--p2:#0f243b;--line:#1d3a55;--txt:#eef7ff;--mut:#c18eb9;--cyan:#e016ff;--blue:#f134ff;--pur:#a55cff;--green:#28d98b;--yellow:#ffc52b;--red:#ff5b58}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#0b2941 0,transparent 38%),var(--bg);color:var(--txt);font:14px Segoe UI,Arial,sans-serif}button{font:inherit;color:inherit;cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:64px 290px minmax(500px,1fr) 360px;grid-template-rows:68px 1fr}.top{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1px solid var(--line);background:rgba(4,12,23,.86);backdrop-filter:blur(12px);position:sticky;top:0;z-index:10}.logo{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px}.mark{width:36px;height:36px;border:2px solid var(--cyan);border-radius:50%;display:grid;place-items:center;color:var(--cyan)}.tag{color:var(--mut);border-left:1px solid var(--line);padding-left:16px}.topRight{margin-left:auto;display:flex;gap:10px;align-items:center}.btn,.lang{border:1px solid var(--line);background:var(--p);border-radius:11px;padding:9px 13px}.ai{border-color:var(--cyan);font-weight:800}.side{border-right:1px solid var(--line);padding:12px 8px}.nav{width:44px;height:44px;display:block;margin:0 auto 9px;border:1px solid transparent;background:transparent;border-radius:11px;color:var(--mut);font-size:19px}.nav.active,.nav:hover{border-color:var(--line);background:var(--p);color:var(--txt)}.left,.right,.main{overflow:auto}.left{border-right:1px solid var(--line);padding:18px}.title{color:var(--cyan);font-weight:800;font-size:12px;letter-spacing:.5px;margin:0 0 11px}.drop{height:280px;border:1px dashed #247da7;border-radius:13px;display:grid;place-items:center;text-align:center;padding:22px;background:rgba(10,42,62,.12)}.drop .icon{font-size:46px;color:var(--cyan)}.drop h2{font-size:17px;margin:7px 0}.drop p{color:var(--mut);max-width:225px}.upload{color:var(--cyan);font-weight:800}.tools{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:14px 5px 8px}.tool{height:43px;background:var(--p);border:1px solid var(--line);border-radius:10px}.tool.active,.tool:hover{border-color:var(--cyan);color:var(--cyan)}.state{text-align:center;color:var(--mut);min-height:22px}.hr{height:1px;background:var(--line);margin:17px 0}.ex{width:100%;display:flex;justify-content:space-between;background:transparent;border:1px solid var(--line);padding:9px;border-radius:8px;margin:5px 0;text-align:left}.ex:hover{border-color:var(--cyan);background:var(--p)}.pills{display:flex;gap:6px;flex-wrap:wrap}.pill{border:1px solid var(--line);padding:3px 7px;border-radius:6px;color:var(--mut);font-size:10px}.main{padding:18px 14px 115px}.steps{display:grid;grid-template-columns:repeat(4,1fr);margin:0 10px 14px}.step{text-align:center;color:var(--mut);font-size:10px;position:relative}.step:before{content:"";position:absolute;top:16px;left:0;right:0;border-top:1px solid var(--line)}.step span{position:relative;display:grid;place-items:center;width:33px;height:33px;border:1px solid var(--line);background:var(--bg);border-radius:50%;margin:auto auto 6px}.step.active{color:var(--cyan)}.step.active span{border-color:var(--cyan);color:var(--cyan)}.tabs{display:flex;gap:25px;border-bottom:1px solid var(--line);margin-bottom:11px}.tab{background:none;border:0;border-bottom:2px solid transparent;padding:10px 4px;color:var(--mut)}.tab.active{color:var(--cyan);border-color:var(--cyan)}.twin{height:360px;border:1px solid var(--line);border-radius:13px;background:radial-gradient(circle at 50% 55%,rgba(0,170,255,.15),transparent 42%),var(--p);position:relative;display:grid;place-items:center;overflow:hidden}.twin canvas{width:100%;height:100%;display:block;cursor:grab;touch-action:none}.twin canvas:active{cursor:grabbing}.hot{position:absolute;width:74px;height:74px;border:1px solid var(--yellow);border-radius:50%;box-shadow:0 0 0 8px rgba(255,197,43,.08),0 0 25px rgba(255,197,43,.35);animation:pulse 1.8s infinite}.hot:after{content:"";position:absolute;width:12px;height:12px;background:var(--yellow);border-radius:50%;left:30px;top:30px}.call{position:absolute;top:45px;left:54%;background:var(--p);border:1px solid var(--yellow);border-radius:9px;padding:7px 10px}.call b{display:block;color:var(--yellow);font-size:10px}.ctrl{position:absolute;right:11px;bottom:10px;display:flex;gap:7px}.sm{width:39px;height:39px;border:1px solid var(--line);background:var(--p);border-radius:9px}@keyframes pulse{50%{transform:scale(1.08)}}.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;margin-top:8px}.card{background:var(--p);border:1px solid var(--line);border-radius:11px;padding:12px}.ct{font-size:11px;font-weight:800;color:var(--cyan);margin-bottom:9px}.info{display:grid;grid-template-columns:1fr 1fr;gap:7px;color:var(--mut)}.info b{color:var(--txt);font-weight:600;margin-left:5px}.health{display:flex;align-items:center;gap:16px}.gauge{width:88px;height:88px;border-radius:50%;background:conic-gradient(var(--green) 0 48%,var(--yellow) 48% 72%,var(--line) 72%);display:grid;place-items:center}.gauge:after{content:"";position:absolute;width:66px;height:66px;border-radius:50%;background:var(--p)}.gtext{position:relative;z-index:1;font-size:23px;font-weight:800}.gtext small{display:block;font-size:9px;color:var(--mut)}.bottom{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:8px;margin-top:8px}.metric{display:flex;justify-content:space-between}.metric strong{font-size:21px}.right{border-left:1px solid var(--line);padding:18px 13px}.rt{color:var(--cyan);font-weight:850;font-size:14px;margin-bottom:10px}.ins{border:1px solid var(--line);background:var(--p);border-radius:11px;padding:13px;margin-bottom:9px}.ins h4{margin:0 0 6px}.see h4,.why h4{color:var(--cyan)}.think h4{color:#c184ff}.conf h4{color:var(--yellow)}.next h4{color:var(--green)}.confidence{font-size:33px;font-weight:800}.bar{height:5px;background:var(--line);border-radius:8px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;width:72%;background:var(--yellow)}.time{color:var(--mut);border-top:1px solid var(--line);padding-top:12px}.dock{position:fixed;left:64px;right:0;bottom:0;background:rgba(5,14,26,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:9px 14px;z-index:9}.analyze{width:100%;border:0;border-radius:12px;padding:13px;background:linear-gradient(100deg,#0bb4d4,#6951ef);font-weight:850;font-size:16px}.dockrow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:7px}.mini{background:var(--p);border:1px solid var(--line);border-radius:8px;padding:7px;color:var(--mut);font-size:11px}.mini b{color:var(--cyan);display:block;font-size:10px;margin-bottom:2px}.toast{display:none;position:fixed;right:20px;bottom:105px;background:var(--p);border:1px solid var(--cyan);padding:10px 14px;border-radius:9px;z-index:50}.toast.show{display:block}.hidden{display:none}@media(max-width:1200px){.app{grid-template-columns:60px 260px 1fr}.right{display:none}.dock{left:60px}}@media(max-width:800px){.app{display:block}.side{display:none}.left{border:0}.main{padding-bottom:170px}.dock{left:0}.dockrow{grid-template-columns:1fr}.tag{display:none}.topRight .ai{display:none}}
+
+body.light{--bg:#eef4f8;--p:#ffffff;--p2:#f5f8fb;--line:#c8d7e4;--txt:#14263a;--mut:#8a608b;background:radial-gradient(circle at 50% 0,#dbeef7 0,transparent 40%),var(--bg)}
+body.light .top{background:rgba(255,255,255,.9)}
+body.light .dock{background:rgba(255,255,255,.94)}
+body.light .drop{background:#fdf8fd;border-color:#bf6ac7}
+.cameraModal{position:fixed;inset:0;background:rgba(0,0,0,.68);display:none;align-items:center;justify-content:center;z-index:100}.cameraModal.open{display:flex}.cameraBox{width:min(720px,92vw);background:var(--p);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 20px 70px rgba(0,0,0,.35)}.cameraBox video{width:100%;max-height:55vh;background:#000;border-radius:10px;display:block}.cameraActions{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}.cameraActions button{border:1px solid var(--line);background:var(--p2);border-radius:9px;padding:9px 13px}.cameraActions .primary{border-color:var(--cyan);color:var(--cyan)}
+.langMenu{position:fixed;top:58px;right:170px;display:none;min-width:190px;background:var(--p);border:1px solid var(--line);border-radius:11px;padding:6px;box-shadow:0 15px 45px rgba(0,0,0,.25);z-index:60}.langMenu.open{display:block}.langMenu button{display:block;width:100%;text-align:left;background:transparent;border:0;padding:9px;border-radius:7px;color:var(--txt)}.langMenu button:hover{background:var(--p2);color:var(--cyan)}
+</style></head><body><div class="app">
+<header class="top"><div class="logo"><div class="mark"></div>VISIONVERSE AI</div><div class="tag">AI That Understands Machines.</div><div class="topRight"><button class="btn" id="theme">☀️ Light　◐ Dark</button><button class="lang" id="lang">🌐 English　⌄</button><button class="btn ai" id="ask">✦ ASK ENGINEERING AI</button><button class="btn" id="help">?</button></div></header>
+<nav class="side"><button class="nav active">⌂</button><button class="nav">▥</button><button class="nav">▱</button><button class="nav">▤</button><button class="nav">⚙</button><button class="nav">ⓘ</button></nav>
+<aside class="left"><h3 class="title">INPUT SOURCE</h3><div class="drop" id="drop"><div><div class="icon">☁</div><h2>Drop Your Input Here</h2><p>Drop an image, signal visualization or file here, or use one of the compact input options below.</p><div class="upload">Click to Upload</div></div></div><input id="file" type="file" hidden accept="image/*,.csv,.txt,.mat"><div class="tools"><button class="tool active" id="img">▧</button><button class="tool" id="sig">▥</button><button class="tool" id="sel">□</button><button class="tool" id="link">↗</button><button class="tool" id="cam">▣</button></div><div class="state" id="state">No input selected</div><div class="hr"></div><h3 class="title">EXAMPLES</h3><button class="ex" data-x="Vibration - Lobe Pump (Healthy)">◉ Vibration - Lobe Pump (Healthy)　›</button><button class="ex" data-x="Vibration - Lobe Pump (Faulty)">◉ Vibration - Lobe Pump (Faulty)　›</button><button class="ex" data-x="Temperature - Product Jacket">♨ Temperature - Product Jacket　›</button><button class="ex" data-x="Speed - Rotor Shaft">◌ Speed - Rotor Shaft　›</button><button class="ex" id="all">View All Examples　→</button><div class="hr"></div><h3 class="title">SUPPORTED FORMATS</h3><div class="pills"><span class="pill">PNG</span><span class="pill">JPG</span><span class="pill">CSV</span><span class="pill">TXT</span><span class="pill">MAT</span></div></aside>
+<main class="main"><div class="steps"><div class="step active"><span>▧</span>1 INPUT</div><div class="step"><span>◫</span>ANALYZING</div><div class="step"><span>⌘</span>UNDERSTANDING</div><div class="step"><span>4</span>INSIGHT READY</div></div><div class="tabs"><button class="tab active" data-v="twin">DIGITAL TWIN</button><button class="tab" data-v="sigview">SIGNAL OVERVIEW</button></div><section id="twin"><div class="twin" id="twinStage"><canvas id="twin3d"></canvas><div class="hot" id="hot"></div><div class="call" id="call"><b>SUSPECTED AREA</b>Timing Gearbox / Bearings</div><div class="ctrl"><button class="sm" id="rot">⟳</button><button class="sm" id="zin">⌕+</button><button class="sm" id="zout">⌕−</button><button class="sm" id="fit">⛶</button></div></div><div class="grid2"><div class="card"><div class="ct">EQUIPMENT INFO</div><div class="info"><span>Equipment <b>Rotary Lobe Pump (Honey) — LQ3A</b></span><span>Operating Speed <b>420 RPM</b></span><span>Asset ID <b>LP3A-0118</b></span><span>Load <b>68%</b></span><span>Location <b>Honey Filling Line / Unit 1</b></span><span>Operation Time <b>1243 h</b></span></div></div><div class="card"><div class="ct">HEALTH SUMMARY</div><div class="health"><div class="gauge"><div class="gtext">72<small>/100</small></div></div><div>Health　<b style="color:var(--green)">Good</b><br>Risk　<b style="color:var(--yellow)">Medium</b><br>Confidence　<b style="color:var(--yellow)">72%</b><div class="bar"><i></i></div></div></div></div></div></section><section id="sigview" class="hidden"><div class="card"><div class="ct">SIGNAL OVERVIEW</div><canvas id="big" width="900" height="250" style="width:100%;height:250px"></canvas></div></section><div class="bottom"><div class="card"><div class="ct">SIGNAL SNAPSHOT</div><canvas id="wave" width="400" height="90" style="width:100%;height:90px"></canvas><small style="color:var(--mut)">Time Waveform</small></div><div class="card"><div class="ct">KEY INDICATORS</div><div class="metric"><span>RMS (Overall)</span><strong>2.48</strong></div><canvas id="m1" width="300" height="50" style="width:100%;height:50px"></canvas><div class="metric"><span>Peak</span><strong>7.12</strong></div></div><div class="card"><div class="ct">RECENT ANALYSES</div><p>◉ Lobe Pump - Gearbox Wear　<span style="color:var(--yellow)">Medium</span></p><p>◉ Lobe Pump - Healthy　<span style="color:var(--green)">Low</span></p><p>◉ Mechanical Seal - Leakage　<span style="color:var(--red)">High</span></p></div></div></main>
+<aside class="right"><div class="rt">AI DIAGNOSTIC SUMMARY</div><div class="ins see"><h4>◉　I SEE</h4>Impact-like vibration components at the lobe-mesh frequency (2× rotor speed), with sidebands growing over recent cycles.</div><div class="ins think"><h4>♧　I THINK</h4>The pattern may indicate increased lobe-to-lobe clearance or early timing-gear wear inside the gearbox.</div><div class="ins why"><h4>⌕　WHY</h4><ul><li>Meshing-frequency sidebands detected</li><li>Impact energy rising with product load</li><li>Energy concentrated near the gearbox bearing band</li></ul></div><div class="ins conf"><h4>⬡　CONFIDENCE</h4><div class="confidence">72%</div>Moderate Evidence<div class="bar"><i></i></div></div><div class="ins next"><h4>◎　NEXT BEST ACTION</h4>Inspect timing-gear backlash and lobe clearance in the gearbox; confirm honey product temperature is within the pumping range to rule out viscosity-driven loading.</div><div class="time">◷ Analysis Time: <span id="time">—</span></div></aside></div>
+<div class="dock"><button class="analyze" id="analyze">✦ Analyze Industrial Condition</button><div class="dockrow"><div class="mini"><b>AI OUTPUT</b>See → Explain → Justify → Confidence → Next Action</div><div class="mini"><b>HUMAN-READABLE ENGINEERING REPORT</b>Decision-ready engineering explanation.</div><div class="mini"><b>CONDITION</b><span id="cond">Pending — select an input.</span></div></div></div><div class="toast" id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const toast=$('#toast');
+function msg(t){toast.textContent=t;toast.classList.add('show');clearTimeout(window._toastTimer);window._toastTimer=setTimeout(()=>toast.classList.remove('show'),2400)}
+
+/* ---------- Theme ---------- */
+const savedTheme=localStorage.getItem('cf-theme');
+if(savedTheme==='light') document.body.classList.add('light');
+$('#theme').addEventListener('click',()=>{
+  document.body.classList.toggle('light');
+  const mode=document.body.classList.contains('light')?'light':'dark';
+  localStorage.setItem('cf-theme',mode);
+  redrawCharts();
+  msg(mode==='light'?'Light mode enabled':'Dark mode enabled');
+});
+
+/* ---------- Language menu ---------- */
+const langMenu=document.createElement('div');
+langMenu.className='langMenu';
+const languages=['English','فارسی','العربية','中文 (简体)','Español','Français','Deutsch'];
+languages.forEach(name=>{
+  const b=document.createElement('button'); b.type='button'; b.textContent='🌐  '+name;
+  b.addEventListener('click',()=>{
+    $('#lang').dataset.language=name;
+    $('#lang').textContent='🌐 '+name+'　⌄';
+    langMenu.classList.remove('open');
+    msg('Language selected: '+name);
+  }); langMenu.appendChild(b);
+});
+document.body.appendChild(langMenu);
+$('#lang').addEventListener('click',e=>{e.stopPropagation();langMenu.classList.toggle('open')});
+document.addEventListener('click',()=>langMenu.classList.remove('open'));
+
+/* ---------- Header actions ---------- */
+$('#help').addEventListener('click',()=>msg('1) Upload an input  2) Choose an example  3) Analyze  4) Review the engineering insight.'));
+$('#ask').addEventListener('click',()=>{
+  const panel=$('.right');
+  if(panel){panel.scrollTo({top:0,behavior:'smooth'});panel.animate([{boxShadow:'0 0 0 2px var(--cyan)'},{boxShadow:'none'}],{duration:900});}
+  msg('Engineering AI is ready. Review the diagnostic summary.');
+});
+
+/* ---------- Navigation ---------- */
+$$('.nav').forEach((b,i)=>b.addEventListener('click',()=>{
+  $$('.nav').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+  const labels=['Dashboard','Analytics','Files','Reports','Settings','Information'];
+  msg(labels[i]+' selected');
+}));
+
+/* ---------- Input handling ---------- */
+const file=$('#file');
+function setInputMode(mode){
+  $$('.tool').forEach(x=>x.classList.remove('active'));
+  const map={image:'#img',signal:'#sig',file:'#sel'};
+  if(map[mode]) $(map[mode]).classList.add('active');
+  if(mode==='image') file.accept='image/*';
+  else if(mode==='signal') file.accept='.csv,.txt,.mat';
+  else file.accept='image/*,.csv,.txt,.mat';
+}
+function load(f){
+  if(!f)return;
+  $('#state').textContent=f.name;
+  $('#cond').textContent='Ready — '+f.name;
+  $('#drop .upload').textContent='Input Selected ✓';
+  msg('Input loaded: '+f.name);
+}
+file.addEventListener('change',e=>load(e.target.files[0]));
+$('#drop').addEventListener('click',()=>file.click());
+$('#sel').addEventListener('click',()=>{setInputMode('file');file.click()});
+$('#img').addEventListener('click',()=>{setInputMode('image');file.click()});
+$('#sig').addEventListener('click',()=>{setInputMode('signal');file.click()});
+$('#link').addEventListener('click',()=>{
+  const u=prompt('Paste an image or data URL:');
+  if(u){$('#state').textContent=u;$('#cond').textContent='Ready — linked input';msg('Linked input added');}
+});
+
+/* ---------- Drag & Drop ---------- */
+const drop=$('#drop');
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();e.stopPropagation();drop.style.borderColor='var(--cyan)'}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();e.stopPropagation();if(ev==='drop')load(e.dataTransfer.files[0]);drop.style.borderColor=''}));
+
+/* ---------- Camera capture ---------- */
+let cameraStream=null;
+const modal=document.createElement('div'); modal.className='cameraModal';
+modal.innerHTML='<div class="cameraBox"><video autoplay playsinline></video><div class="cameraActions"><button type="button" class="closeCam">Cancel</button><button type="button" class="primary snapCam">Capture</button></div></div>';
+document.body.appendChild(modal);
+const video=modal.querySelector('video');
+function closeCamera(){if(cameraStream){cameraStream.getTracks().forEach(t=>t.stop());cameraStream=null}modal.classList.remove('open');video.srcObject=null}
+modal.querySelector('.closeCam').addEventListener('click',closeCamera);
+modal.querySelector('.snapCam').addEventListener('click',()=>{
+  if(!video.videoWidth){msg('Camera is not ready yet');return}
+  const c=document.createElement('canvas'); c.width=video.videoWidth;c.height=video.videoHeight;c.getContext('2d').drawImage(video,0,0);
+  c.toBlob(blob=>{const f=new File([blob],'camera-capture.png',{type:'image/png'});load(f);closeCamera()},'image/png');
+});
+$('#cam').addEventListener('click',async()=>{
+  try{
+    if(!navigator.mediaDevices?.getUserMedia) throw new Error('unsupported');
+    cameraStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false});
+    video.srcObject=cameraStream;modal.classList.add('open');
+  }catch(err){msg('Camera unavailable — check browser permission or use Upload.');}
+});
+
+/* ---------- Examples ---------- */
+$$('.ex').forEach(b=>b.addEventListener('click',()=>{
+  const name=b.dataset.x; $('#state').textContent=name;$('#cond').textContent='Ready — '+name;$('#drop .upload').textContent='Example Selected ✓';
+  setInputMode(name.includes('Temperature')||name.includes('Speed')?'signal':'image');
+  msg('Example loaded: '+name);
+}));
+$('#all').addEventListener('click',()=>{
+  $('.left').scrollTo({top:$('.left').scrollHeight,behavior:'smooth'});
+  msg('Example library is available in the Input Source panel.');
+});
+
+/* ---------- Tabs ---------- */
+$$('.tab').forEach(t=>t.addEventListener('click',()=>{
+  $$('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');
+  $('#twin').classList.toggle('hidden',t.dataset.v!=='twin');
+  $('#sigview').classList.toggle('hidden',t.dataset.v!=='sigview');
+  if(t.dataset.v==='sigview') setTimeout(()=>drawChart($('#big')),30);
+}));
+
+/* ---------- Digital Twin: real 3D model ---------- */
+(function(){
+  const stage=$('#twinStage'), canvas=$('#twin3d'), hot=$('#hot'), call=$('#call');
+  if(!window.THREE||!canvas||!stage) return;
+
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(42,1,0.1,100);
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+
+  scene.add(new THREE.HemisphereLight(0xbfe9ff,0x040c14,0.65));
+  const key=new THREE.DirectionalLight(0xdff6ff,1.1); key.position.set(4,5,6); scene.add(key);
+  const rim=new THREE.DirectionalLight(0x16d7ff,0.55); rim.position.set(-5,2,-4); scene.add(rim);
+  const fill=new THREE.PointLight(0x348cff,0.4); fill.position.set(0,-2,4); scene.add(fill);
+
+  const steel=new THREE.MeshStandardMaterial({color:0x4a9fc2,metalness:0.8,roughness:0.28});
+  const steelDark=new THREE.MeshStandardMaterial({color:0x1c4a63,metalness:0.75,roughness:0.38});
+  const steelDark2=new THREE.MeshStandardMaterial({color:0x14324a,metalness:0.7,roughness:0.42});
+  const cavity=new THREE.MeshStandardMaterial({color:0x040d17,metalness:0.35,roughness:0.7});
+  const base=new THREE.MeshStandardMaterial({color:0x0a1e2e,metalness:0.55,roughness:0.5});
+  const rubber=new THREE.MeshStandardMaterial({color:0x0a0d10,metalness:0.1,roughness:0.9});
+  const gearMat=new THREE.MeshStandardMaterial({color:0xdfeaf2,metalness:0.92,roughness:0.22});
+  const rotorMat=new THREE.MeshStandardMaterial({color:0xe9f4fa,metalness:0.9,roughness:0.16});
+  const glassMat=new THREE.MeshStandardMaterial({color:0x0d3244,metalness:0.05,roughness:0.08,transparent:true,opacity:0.32,emissive:0x0e5570,emissiveIntensity:0.35});
+
+  // ---- shape helpers: build real gear + rotary-lobe profiles from a polar function ----
+  function polarMesh(rFunc,segments,depth,material,bevel){
+    const shape=new THREE.Shape();
+    for(let i=0;i<=segments;i++){
+      const a=(i/segments)*Math.PI*2, r=rFunc(a);
+      const x=Math.cos(a)*r, y=Math.sin(a)*r;
+      if(i===0) shape.moveTo(x,y); else shape.lineTo(x,y);
+    }
+    const geo=new THREE.ExtrudeGeometry(shape,{depth,bevelEnabled:!!bevel,bevelThickness:0.012,bevelSize:0.012,bevelSegments:2,curveSegments:segments});
+    geo.translate(0,0,-depth/2);
+    return new THREE.Mesh(geo,material);
+  }
+  // spur gear silhouette: root circle with square-ish teeth
+  function gearMesh(teeth,rootR,tipR,depth,material,boreR){
+    const mesh=polarMesh(a=>{
+      const step=(Math.floor(((a/(Math.PI*2))*teeth*2))%2===0)?tipR:rootR;
+      return step;
+    },teeth*6,depth,material,true);
+    const bore=new THREE.Mesh(new THREE.CylinderGeometry(boreR,boreR,depth+0.05,20),cavity);
+    bore.rotation.x=Math.PI/2; mesh.add(bore);
+    return mesh;
+  }
+  // two-lobe rotary-pump rotor silhouette (the classic "peanut" cross-section)
+  function lobeRotorMesh(rootR,tipR,depth,material,boreR){
+    const mesh=polarMesh(a=>rootR+(tipR-rootR)*Math.pow(Math.abs(Math.cos(a)),0.62),96,depth,material,true);
+    const bore=new THREE.Mesh(new THREE.CylinderGeometry(boreR,boreR,depth+0.05,20),cavity);
+    bore.rotation.x=Math.PI/2; mesh.add(bore);
+    return mesh;
+  }
+  function boltRing(radius,count,r,depth,mat){
+    const g=new THREE.Group();
+    for(let i=0;i<count;i++){
+      const a=(i/count)*Math.PI*2;
+      const b=new THREE.Mesh(new THREE.CylinderGeometry(r,r,depth,6),mat||steelDark2);
+      b.rotation.x=Math.PI/2;
+      b.position.set(Math.cos(a)*radius,Math.sin(a)*radius,0);
+      g.add(b);
+    }
+    return g;
+  }
+
+  const machine=new THREE.Group();
+
+  // baseplate + corner bolts
+  const plate=new THREE.Mesh(new THREE.BoxGeometry(6.6,0.16,1.3),base);
+  plate.position.set(0.2,-1.28,0); machine.add(plate);
+  [[-2.75,-0.55],[-2.75,0.55],[2.9,-0.55],[2.9,0.55]].forEach(([bx,bz])=>{
+    const bolt=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,0.1,8),steelDark2);
+    bolt.position.set(bx,-1.19,bz); machine.add(bolt);
+  });
+
+  // ---- motor: ribbed frame + endbells + terminal box + feet ----
+  const motorGroup=new THREE.Group(); motorGroup.position.set(1.65,-0.55,0); machine.add(motorGroup);
+  const motorBody=new THREE.Mesh(new THREE.CylinderGeometry(0.62,0.62,1.9,28),steel);
+  motorBody.rotation.z=Math.PI/2; motorGroup.add(motorBody);
+  for(let i=-0.82;i<=0.82;i+=0.135){ // cooling fins
+    const fin=new THREE.Mesh(new THREE.TorusGeometry(0.635,0.028,8,28),steelDark);
+    fin.rotation.y=Math.PI/2; fin.position.set(i,0,0); motorGroup.add(fin);
+  }
+  const driveEnd=new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.58,0.22,28),steelDark);
+  driveEnd.rotation.z=Math.PI/2; driveEnd.position.set(-0.95,0,0); motorGroup.add(driveEnd);
+  const fanEnd=new THREE.Mesh(new THREE.CylinderGeometry(0.66,0.66,0.16,28),steelDark);
+  fanEnd.rotation.z=Math.PI/2; fanEnd.position.set(1.0,0,0); motorGroup.add(fanEnd);
+  const fanCover=new THREE.Mesh(new THREE.CylinderGeometry(0.6,0.44,0.34,20,1,true),new THREE.MeshStandardMaterial({color:0x1c4a63,metalness:0.6,roughness:0.5,wireframe:true}));
+  fanCover.rotation.z=Math.PI/2; fanCover.position.set(1.22,0,0); motorGroup.add(fanCover);
+  const termBox=new THREE.Mesh(new THREE.BoxGeometry(0.36,0.4,0.46),steelDark2);
+  termBox.position.set(0,0.86,0); motorGroup.add(termBox);
+  const termLid=new THREE.Mesh(new THREE.BoxGeometry(0.4,0.06,0.5),steelDark);
+  termLid.position.set(0,1.07,0); motorGroup.add(termLid);
+  [[-0.6,-0.6],[-0.6,0.6],[0.6,-0.6],[0.6,0.6]].forEach(([fx,fz])=>{
+    const foot=new THREE.Mesh(new THREE.BoxGeometry(0.24,0.2,0.26),steelDark2);
+    foot.position.set(fx,-0.68,fz); motorGroup.add(foot);
+    const pad=new THREE.Mesh(new THREE.BoxGeometry(0.26,0.04,0.28),rubber);
+    pad.position.set(fx,-0.79,fz); motorGroup.add(pad);
+  });
+  const shaftStub=new THREE.Mesh(new THREE.CylinderGeometry(0.11,0.11,0.4,16),gearMat);
+  shaftStub.rotation.z=Math.PI/2; shaftStub.position.set(0.6,-0.55,0); machine.add(shaftStub);
+
+  // coupling: real shaft coupling hidden inside a yellow safety guard cage
+  const couplingShaft=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.16,0.5,16),steelDark2);
+  couplingShaft.rotation.z=Math.PI/2; couplingShaft.position.set(0.12,-0.55,0); machine.add(couplingShaft);
+  const guard=new THREE.Mesh(new THREE.CylinderGeometry(0.42,0.42,0.68,16,4,true),new THREE.MeshStandardMaterial({color:0xffc52b,metalness:0.3,roughness:0.6,wireframe:true,transparent:true,opacity:0.95}));
+  guard.rotation.z=Math.PI/2; guard.position.set(0.12,-0.55,0); machine.add(guard);
+  const guardRingA=new THREE.Mesh(new THREE.TorusGeometry(0.42,0.025,8,24),steelDark2);
+  guardRingA.rotation.y=Math.PI/2; guardRingA.position.set(-0.22,-0.55,0); machine.add(guardRingA);
+  const guardRingB=guardRingA.clone(); guardRingB.position.set(0.46,-0.55,0); machine.add(guardRingB);
+
+  // ---- gearbox: housing with two real meshing timing gears (the flagged fault area) ----
+  const gearboxGroup=new THREE.Group(); gearboxGroup.position.set(-0.66,-0.55,0); machine.add(gearboxGroup);
+  const gbHousing=new THREE.Mesh(new THREE.BoxGeometry(1.02,1.02,1.15),steel);
+  gbHousing.position.set(0,0,0); gearboxGroup.add(gbHousing);
+  for(let i=0;i<4;i++){ // housing corner bolts
+    const cx=(i%2?0.42:-0.42), cy=(i<2?0.42:-0.42);
+    const b=new THREE.Mesh(new THREE.CylinderGeometry(0.035,0.035,0.06,6),steelDark2);
+    b.position.set(cx,cy,0.585); gearboxGroup.add(b);
+  }
+  const gearFront=new THREE.Mesh(new THREE.CylinderGeometry(0.58,0.58,0.06,28),glassMat);
+  gearFront.position.set(0,0,0.61); gearboxGroup.add(gearFront);
+  const gearGroupA=gearMesh(16,0.24,0.29,0.14,gearMat,0.09);
+  const gearGroupB=gearMesh(16,0.24,0.29,0.14,gearMat,0.09);
+  gearGroupA.position.set(0.17,0,0.42); gearGroupB.position.set(-0.17,0,0.42);
+  gearGroupA.rotation.z=Math.PI/16; // half-tooth phase offset so the teeth actually interleave
+  gearboxGroup.add(gearGroupA,gearGroupB);
+  const gearboxPos=new THREE.Vector3(-0.66,-0.55+0.55,0.61);
+
+  // ---- pump head: casing + sight-glass + two real intermeshing lobe rotors ----
+  const pumpGroup=new THREE.Group(); pumpGroup.position.set(-1.95,-0.42,0); machine.add(pumpGroup);
+  const casing=new THREE.Mesh(new THREE.CylinderGeometry(0.98,0.98,0.72,36),steel);
+  casing.rotation.x=Math.PI/2; pumpGroup.add(casing);
+  const casingRim=new THREE.Mesh(new THREE.TorusGeometry(0.98,0.045,10,36),steelDark);
+  casingRim.position.z=0.36; pumpGroup.add(casingRim);
+  const rotorBack=new THREE.Mesh(new THREE.CylinderGeometry(0.9,0.9,0.06,36),cavity);
+  rotorBack.position.z=0.18; pumpGroup.add(rotorBack);
+  const rotorA=lobeRotorMesh(0.17,0.44,0.3,rotorMat,0.09); rotorA.position.set(0.31,0,0.36);
+  const rotorB=lobeRotorMesh(0.17,0.44,0.3,rotorMat,0.09); rotorB.position.set(-0.31,0,0.36); rotorB.rotation.z=Math.PI/2;
+  pumpGroup.add(rotorA,rotorB);
+  const sightGlass=new THREE.Mesh(new THREE.CylinderGeometry(0.9,0.9,0.03,36),glassMat);
+  sightGlass.position.z=0.53; pumpGroup.add(sightGlass);
+  const sightRim=new THREE.Mesh(new THREE.TorusGeometry(0.9,0.03,8,36),steelDark2);
+  sightRim.position.z=0.53; pumpGroup.add(sightRim);
+  const pumpFoot=new THREE.Mesh(new THREE.BoxGeometry(0.56,0.22,1.0),steelDark2);
+  pumpFoot.position.set(0,-0.98,0); pumpGroup.add(pumpFoot);
+  const pumpPad=new THREE.Mesh(new THREE.BoxGeometry(0.6,0.05,1.05),rubber);
+  pumpPad.position.set(0,-1.11,0); pumpGroup.add(pumpPad);
+
+  // inlet nozzle (top) + outlet nozzle (bottom), each with a bolted flange
+  function nozzleWithFlange(y,dir){
+    const g=new THREE.Group(); g.position.set(0,y,0);
+    const pipe=new THREE.Mesh(new THREE.CylinderGeometry(0.19,0.19,0.5,18),steelDark2);
+    pipe.position.y=dir*0.25; g.add(pipe);
+    const flange=new THREE.Mesh(new THREE.CylinderGeometry(0.3,0.3,0.06,18),steelDark);
+    flange.position.y=dir*0.53; g.add(flange);
+    const boltset=boltRing(0.26,6,0.028,0.09,steelDark2);
+    boltset.rotation.x=Math.PI/2; boltset.position.y=dir*0.53; g.add(boltset);
+    return g;
+  }
+  pumpGroup.add(nozzleWithFlange(0.62,1));
+  pumpGroup.add(nozzleWithFlange(-0.62,-1));
+
+  machine.position.y=0.15;
+  scene.add(machine);
+
+  // glowing fault marker at the gearbox (real object, rotates with the model)
+  const markerGroup=new THREE.Group(); markerGroup.position.copy(gearboxPos); machine.add(markerGroup);
+  const core=new THREE.Mesh(new THREE.SphereGeometry(0.06,16,16),new THREE.MeshBasicMaterial({color:0xffc52b}));
+  markerGroup.add(core);
+  function glowTexture(){
+    const c=document.createElement('canvas'); c.width=c.height=128;
+    const g=c.getContext('2d'), grd=g.createRadialGradient(64,64,0,64,64,64);
+    grd.addColorStop(0,'rgba(255,197,43,0.85)'); grd.addColorStop(0.5,'rgba(255,197,43,0.28)'); grd.addColorStop(1,'rgba(255,197,43,0)');
+    g.fillStyle=grd; g.fillRect(0,0,128,128);
+    return new THREE.CanvasTexture(c);
+  }
+  const glowMat=new THREE.SpriteMaterial({map:glowTexture(),transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});
+  const glow=new THREE.Sprite(glowMat); glow.scale.set(0.9,0.9,1); markerGroup.add(glow);
+
+  // ---- camera orbit state ----
+  const target=new THREE.Vector3(-0.35,-0.25,0);
+  let theta=0.62, phi=1.18, radius=6.2;
+  let tTheta=theta, tPhi=phi, tRadius=radius;
+  const minRadius=3.6, maxRadius=9.5, minPhi=0.55, maxPhi=1.55;
+
+  function applyCamera(){
+    theta+=(tTheta-theta)*0.14; phi+=(tPhi-phi)*0.14; radius+=(tRadius-radius)*0.14;
+    const sp=Math.sin(phi), cp=Math.cos(phi);
+    camera.position.set(
+      target.x+radius*sp*Math.sin(theta),
+      target.y+radius*cp,
+      target.z+radius*sp*Math.cos(theta)
+    );
+    camera.lookAt(target);
+  }
+
+  function resize(){
+    const w=stage.clientWidth||600, h=stage.clientHeight||360;
+    renderer.setSize(w,h,false);
+    camera.aspect=w/Math.max(h,1); camera.updateProjectionMatrix();
+  }
+  resize();
+  new ResizeObserver(resize).observe(stage);
+  window.addEventListener('resize',resize);
+
+  // ---- drag to orbit ----
+  let dragging=false,lastX=0,lastY=0,autoSpin=true;
+  canvas.addEventListener('pointerdown',e=>{dragging=true;autoSpin=false;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
+  canvas.addEventListener('pointermove',e=>{
+    if(!dragging)return;
+    const dx=e.clientX-lastX, dy=e.clientY-lastY; lastX=e.clientX; lastY=e.clientY;
+    tTheta-=dx*0.006; tPhi=Math.max(minPhi,Math.min(maxPhi,tPhi-dy*0.006));
+  });
+  window.addEventListener('pointerup',()=>{dragging=false});
+  canvas.addEventListener('wheel',e=>{
+    e.preventDefault();
+    tRadius=Math.max(minRadius,Math.min(maxRadius,tRadius+e.deltaY*0.003));
+  },{passive:false});
+
+  // ---- wire the existing toolbar buttons to real 3D camera moves ----
+  $('#zin').addEventListener('click',()=>{tRadius=Math.max(minRadius,tRadius-0.7);msg('Digital Twin zoom +')});
+  $('#zout').addEventListener('click',()=>{tRadius=Math.min(maxRadius,tRadius+0.7);msg('Digital Twin zoom −')});
+  $('#rot').addEventListener('click',()=>{tTheta+=Math.PI/4;msg('Digital Twin rotated')});
+  $('#fit').addEventListener('click',()=>{tTheta=0.62;tPhi=1.18;tRadius=6.2;msg('Digital Twin reset to fit')});
+
+  const projected=new THREE.Vector3();
+  function positionOverlays(){
+    projected.copy(gearboxPos).applyMatrix4(machine.matrixWorld).project(camera);
+    const w=stage.clientWidth, h=stage.clientHeight;
+    const x=(projected.x*0.5+0.5)*w, y=(-projected.y*0.5+0.5)*h;
+    hot.style.left=(x-37)+'px'; hot.style.top=(y-37)+'px';
+    call.style.left=Math.min(w-190,Math.max(8,x+34))+'px';
+    call.style.top=Math.max(6,y-64)+'px';
+  }
+
+  const clock=new THREE.Clock();
+  function tick(){
+    requestAnimationFrame(tick);
+    if(autoSpin) tTheta+=0.0018;
+    applyCamera();
+    machine.updateMatrixWorld();
+    const t=clock.getElapsedTime();
+    glow.scale.setScalar(0.9+Math.sin(t*3)*0.12);
+    // real synchronized rotation: motor -> coupling -> timing gears -> lobe rotors (1:1, opposite spin)
+    const speed=1.4;
+    couplingShaft.rotation.x=t*speed;
+    gearGroupA.rotation.z=Math.PI/16+t*speed;
+    gearGroupB.rotation.z=-t*speed;
+    rotorA.rotation.z=t*speed;
+    rotorB.rotation.z=Math.PI/2-t*speed;
+    positionOverlays();
+    renderer.render(scene,camera);
+  }
+  tick();
+
+  // resize correctly once the Digital Twin tab becomes visible again
+  $$('.tab').forEach(tb=>tb.addEventListener('click',()=>setTimeout(resize,20)));
+})();
+
+/* ---------- Charts ---------- */
+function drawChart(c){
+  if(!c)return; const x=c.getContext('2d'),w=c.width,h=c.height;
+  x.clearRect(0,0,w,h);
+  const cs=getComputedStyle(document.documentElement), grid=cs.getPropertyValue('--line').trim(), cyan=cs.getPropertyValue('--cyan').trim();
+  x.strokeStyle=grid;x.lineWidth=1;
+  for(let gy=0;gy<=4;gy++){let y=gy*h/4;x.beginPath();x.moveTo(0,y);x.lineTo(w,y);x.stroke()}
+  x.strokeStyle=cyan;x.lineWidth=2;x.beginPath();
+  for(let i=0;i<w;i++){let y=h/2+Math.sin(i*.08)*h*.16+Math.sin(i*.31)*h*.1+(Math.random()-.5)*h*.12;if(i>w*.7)y+=Math.sin(i*.8)*h*.08;x.lineTo(i,y)}x.stroke();
+}
+function redrawCharts(){drawChart($('#wave'));drawChart($('#m1'));drawChart($('#big'))}
+redrawCharts(); window.addEventListener('resize',redrawCharts);
+
+/* ---------- Analyze ---------- */
+/* Wired to POST /api/digital-twin/analyze. See
+   backend/digital_twin_model.py: no real model was provided for this
+   tab yet, so the backend currently returns a placeholder response. */
+let lastLoadedFile=null;
+file.addEventListener('change',e=>{lastLoadedFile=e.target.files[0]||lastLoadedFile;});
+drop.addEventListener('drop',e=>{if(e.dataTransfer.files[0])lastLoadedFile=e.dataTransfer.files[0];});
+
+$('#analyze').addEventListener('click',async()=>{
+  const steps=$$('.step');steps.forEach((e,i)=>setTimeout(()=>e.classList.add('active'),i*350));
+  $('#cond').textContent='Analyzing...';
+
+  try{
+    const formData=new FormData();
+    if(lastLoadedFile) formData.append('file',lastLoadedFile);
+
+    const apiBase=(location.protocol==='file:'||/^(5500|5501|3000|5173|8080)$/.test(location.port))?'http://localhost:8000':'';
+    const response=await fetch(apiBase+'/api/digital-twin/analyze',{method:'POST',body:formData});
+    if(!response.ok) throw new Error('Digital Twin request failed: '+response.status);
+    const data=await response.json();
+
+    $('#cond').textContent=data.condition||'Analysis complete';
+    $('#time').textContent=new Date().toLocaleString();
+    msg(data.message||'Analysis complete — Insight Ready');
+  }catch(err){
+    $('#cond').textContent='Analysis failed';
+    msg('Could not reach the Digital Twin backend. '+err.message);
+  }
+
+  redrawCharts();
+});
+</script></body></html>

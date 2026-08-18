@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VISIONVERSE AI — Universal Visual Intelligence</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Sora:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#fbfaff;--surface:#fff;--text:#17152a;--muted:#74718a;--line:#e9e6f3;
+  --primary:#7357ff;--primary2:#a04cff;--soft:#f2efff;--shadow:0 20px 60px rgba(78,52,160,.09);
+  --radius:22px;
+  --font-display:'Sora',Inter,system-ui,sans-serif;
+  --aurora-1:#7357ff;--aurora-2:#ff5fb8;--aurora-3:#3fd8ff;--aurora-4:#a04cff;
+  --glass-bg:rgba(255,255,255,.6);--glass-border:rgba(255,255,255,.55);
+  --glass-shadow:0 20px 60px rgba(78,52,160,.12),inset 0 1px 0 rgba(255,255,255,.6);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg)}
+.brand strong,.hero h1,.section-heading h2,.cta h2,.workspace-title-row h1,.vv-perspectives-header h2,.vv-persp-content h3,.project-brand-copy strong{font-family:var(--font-display);letter-spacing:-.02em}
+button,input,select{font:inherit}button{cursor:pointer;border:0;background:none;color:inherit}a{text-decoration:none;color:inherit}
+.hidden{display:none!important}.page{min-height:100vh}.brand{display:flex;align-items:center;gap:10px}.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,#6d5cff,#c34dff);color:#fff;font-size:20px}.brand strong{display:block;font-size:17px}.brand small{display:block;color:var(--muted);font-size:9px;margin-top:2px}
+.landing-page{background:linear-gradient(180deg,#fbfaff 0,#fff 55%,#faf8ff 100)}
+.landing-nav{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 36px 0 5vw;border-bottom:1px solid rgba(230,225,242,.65);position:sticky;top:0;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);z-index:20}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.nav-actions select{height:42px;border:1px solid #dedbea;background:#fff;border-radius:13px;padding:0 12px;color:#17152a;font-size:13px;min-width:138px;outline:none}
+.nav-actions select:nth-child(2){min-width:150px}
+.nav-actions select:nth-child(3){min-width:180px}
+.nav-actions select:focus{border-color:#b9a9ff;box-shadow:0 0 0 3px rgba(115,87,255,.08)}
+.nav-actions .theme-button{width:42px;height:42px}
+
+.btn{border-radius:13px;padding:11px 17px;font-weight:600;transition:.2s}.btn-primary{color:#fff;background:linear-gradient(100deg,#536bff,#a94cf4 60%,#ff5fb8);background-size:180% auto;background-position:0% 50%;box-shadow:0 10px 25px rgba(116,80,255,.2)}.btn-primary:hover{transform:translateY(-2px);background-position:100% 50%;box-shadow:0 14px 34px rgba(160,76,255,.32),0 0 30px rgba(255,95,184,.18)}.btn-ghost{border:1px solid var(--line);background:#fff}.btn-light{background:#fff;color:#6448db}.btn-large{padding:14px 22px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;max-width:1220px;margin:auto;padding:90px 5vw 100px}.eyebrow{display:inline-block;color:#7655e8;font-size:10px;font-weight:800;letter-spacing:.13em;margin-bottom:14px}.hero h1{font-size:58px;line-height:1.04;letter-spacing:-2.5px;margin:0 0 22px}.hero h1 span,.section-heading h2 span,.workspace-title-row h1 span{background:linear-gradient(100deg,#5266ff,#c14eea 55%,#ff5fb8);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:vvGradientSweep 7s ease-in-out infinite}
+@keyframes vvGradientSweep{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media(prefers-reduced-motion:reduce){.hero h1 span,.section-heading h2 span,.workspace-title-row h1 span{animation:none}}.hero-copy>p{max-width:560px;font-size:17px;line-height:1.8;color:#68647a}.hero-buttons{display:flex;gap:12px;margin:28px 0}.hero-note{display:flex;gap:18px;color:#77738a;font-size:11px}.hero-visual{position:relative;min-height:500px}.visual-image{height:470px;width:72%;margin-left:auto;border-radius:30px;overflow:hidden;box-shadow:var(--shadow);border:10px solid #fff}.visual-image img{width:100%;height:100%;object-fit:cover}.understanding-card{position:absolute;left:0;bottom:22px;width:58%;padding:25px;border-radius:22px;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 25px 70px rgba(67,48,140,.18),inset 0 1px 0 rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.7)}.mini-title{font-size:9px;font-weight:800;letter-spacing:.12em;color:#8b7ca8}.understanding-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;color:#625c74;font-size:11px}.arrow-down{text-align:center;color:#a36af2;font-size:22px}.understanding-card strong{display:block;text-align:center;font-size:10px}.chips{display:flex;justify-content:center;gap:6px;margin-top:10px}.chips span{font-size:9px;background:#f2efff;padding:6px 8px;border-radius:20px;color:#654ee0}
+.chips span:nth-child(1){background:rgba(115,87,255,.12);color:#6c4de6}.chips span:nth-child(2){background:rgba(255,95,184,.12);color:#d43e97}.chips span:nth-child(3){background:rgba(63,216,255,.14);color:#0e9dc4}
+body.dark .chips span:nth-child(1){background:rgba(115,87,255,.2);color:#c1afff}body.dark .chips span:nth-child(2){background:rgba(255,95,184,.18);color:#ff9dd4}body.dark .chips span:nth-child(3){background:rgba(63,216,255,.18);color:#8fe6ff}
+.section{max-width:1100px;margin:auto;padding:80px 5vw}.section-heading{text-align:center;max-width:700px;margin:0 auto 45px}.section-heading h2{font-size:38px;letter-spacing:-1.3px;margin:0 0 12px}.section-heading p{color:var(--muted);font-size:14px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.steps article{padding:30px;border:1px solid var(--line);background:#fff;border-radius:22px;text-align:center;position:relative}.steps article>b{position:absolute;top:20px;left:22px;color:#b5acc9;font-size:11px}.step-icon{width:50px;height:50px;border-radius:16px;background:#f1eeff;color:#7654ef;display:grid;place-items:center;margin:5px auto 18px;font-size:21px}.steps h3{font-size:15px}.steps p{color:var(--muted);font-size:12px;line-height:1.7}
+.perspective-demo{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;background:#fff;padding:18px;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}.perspective-demo>img{width:100%;height:360px;object-fit:cover;border-radius:20px}.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}.tabs button{padding:8px 11px;border-radius:20px;color:#777286;font-size:10px}.tabs button.active{background:#7257ff;color:#fff}.perspective-result{padding:25px;background:#faf8ff;border:1px solid #ebe5ff;border-radius:18px}.result-label{font-size:9px;font-weight:800;color:#7758e9;letter-spacing:.12em}.perspective-result p{font-size:16px;line-height:1.7;color:#39364a}.use-cases{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.use-cases div{padding:20px 10px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;font-size:20px}.use-cases strong,.use-cases small{display:block}.use-cases strong{font-size:11px;margin-top:10px}.use-cases small{font-size:9px;color:var(--muted);margin-top:5px}
+.cta{max-width:1100px;margin:40px auto 70px;padding:45px 55px;border-radius:28px;color:#fff;background:linear-gradient(110deg,#516cff,#a04cef 45%,#ff5fb8 80%,#3fd8ff);background-size:280% 280%;animation:vvCtaAurora 12s ease-in-out infinite;display:flex;align-items:center;justify-content:space-between;box-shadow:0 30px 70px rgba(90,55,180,.28)}.cta h2{font-size:32px;margin:0 0 8px}.cta p{margin:0;opacity:.85;font-size:13px}.cta .eyebrow{color:#e9e5ff}
+@keyframes vvCtaAurora{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media(prefers-reduced-motion:reduce){.cta{animation:none}}
+footer{padding:35px 5vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px}footer div{display:flex;gap:18px}
+.steps article,.use-cases div{background:rgba(255,255,255,.68);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.6);box-shadow:0 14px 40px rgba(70,45,140,.06)}
+body.dark .steps article,body.dark .use-cases div{background:rgba(21,18,34,.6);border-color:rgba(140,110,255,.2)}
+
+.workspace-page{display:flex;background:#fbfaff}.sidebar{width:225px;min-height:100vh;border-right:1px solid var(--line);background:#fff;padding:26px 18px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}.side-nav{display:grid;gap:6px;margin-top:48px}.side-nav a{padding:12px 14px;border-radius:12px;font-size:12px;color:#676277;display:flex;gap:12px}.side-nav a.active{background:#f0edff;color:#674de4}.side-bottom{margin-top:auto;display:grid;gap:12px}.side-demo{padding:15px;text-align:left;border:1px solid var(--line);border-radius:16px;font-size:11px;color:#655f73}.dark-toggle{display:flex;justify-content:space-between;padding:14px;font-size:11px;color:#686275}.dark-toggle i{width:30px;height:16px;border-radius:20px;background:#e8e5ef;display:block}
+.workspace-main{flex:1;min-width:0}
+.workspace-header{height:70px;border-bottom:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px}
+.project-brand{display:flex;align-items:center;gap:12px}
+.visionverse-logo{width:50px;height:50px;object-fit:contain;display:block;flex:0 0 50px}
+.project-brand-copy strong{display:block;font-size:22px;line-height:1.05;letter-spacing:-.5px}
+.project-brand-copy small{display:block;margin-top:5px;color:#6d6780;font-size:9px;letter-spacing:.01em}
+.workspace-actions{display:flex;gap:10px;align-items:center}
+.workspace-actions select{height:42px;border:1px solid #dedbea;background:#fff;border-radius:13px;padding:0 12px;color:#17152a;font-size:13px;min-width:138px;outline:none}
+.workspace-actions select:nth-child(2){min-width:150px}
+.workspace-actions select:nth-child(3){min-width:180px}
+.workspace-actions select:focus{border-color:#b9a9ff;box-shadow:0 0 0 3px rgba(115,87,255,.08)}
+.theme-button{width:42px!important;height:42px!important;border:1px solid #dedbea!important;border-radius:15px!important;background:#fff!important;font-size:20px}
+.workspace-content{max-width:1400px;margin:auto;padding:34px 28px}.workspace-title-row{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px}.workspace-title-row h1{font-size:31px;letter-spacing:-1px;margin:0 0 7px}.workspace-title-row p{font-size:12px;color:var(--muted);margin:0}.workspace-grid{display:grid;grid-template-columns:.82fr .98fr 1.22fr;gap:14px;align-items:start}.left-column,.preview-column,.results-column{display:grid;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px}.panel-title{display:flex;align-items:center;gap:10px;margin-bottom:20px}.panel-title span,.results-head>div>span{width:24px;height:24px;display:grid;place-items:center;background:#f0edff;color:#7657ee;border-radius:50%;font-size:10px;font-weight:800}.panel-title h3,.results-head h3{font-size:13px;margin:0}.panel label{display:block;font-size:10px;color:#777287;margin:0 0 7px}.dropdown{position:relative}.dropdown>button{width:100%;display:flex;justify-content:space-between;border:1px solid var(--line);padding:12px;border-radius:12px;background:#fff;font-size:11px}.dropdown-menu{display:none;position:absolute;top:calc(100% + 7px);left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 20px 45px rgba(50,35,100,.13);z-index:10}.dropdown.open .dropdown-menu{display:block}.dropdown-menu button{width:100%;text-align:left;padding:9px;border-radius:9px;font-size:10px}.dropdown-menu button:hover{background:#f4f1ff}.upload-zone{min-height:210px;border:1.5px dashed #c8baf8;border-radius:16px;background:#fcfaff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center}.upload-icon{font-size:28px;color:#7959ee}.upload-zone strong{font-size:12px}.upload-zone small{font-size:9px;color:#918b9f}.upload-zone .btn{font-size:10px;padding:9px 15px}.image-panel{padding-bottom:12px}.image-preview{height:300px;border-radius:15px;overflow:hidden;position:relative;background:#f4f1fb}.image-preview img{width:100%;height:100%;object-fit:cover}.image-preview button{position:absolute;right:10px;top:10px;background:rgba(20,18,35,.75);color:#fff;padding:8px 10px;border-radius:9px;font-size:9px}.understood{font-size:10px;color:#5b52a1;padding:12px 5px 4px;display:flex;justify-content:space-between}.understood button{color:#7657ee;font-size:10px}.image-ready-row{align-items:center;gap:10px}.image-ready-status{white-space:nowrap}.image-ready-actions{display:flex;align-items:center;gap:8px;margin-left:auto}.analysis-link{color:#7657ee;font-size:10px;padding:5px}.generate-captions-btn{padding:9px 13px!important;border-radius:10px!important;background:linear-gradient(100deg,#536bff,#a94cf4 60%,#ff5fb8)!important;background-size:180% auto!important;color:#fff!important;font-size:9px!important;font-weight:700;box-shadow:0 8px 20px rgba(116,80,255,.18);transition:.2s}.generate-captions-btn:hover:not(:disabled){transform:translateY(-1px)}.generate-captions-btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}.generate-captions-btn.loading{pointer-events:none}.generate-captions-btn.loading::after{content:' …';animation:vvDots 1s infinite}@keyframes vvDots{0%,100%{opacity:.25}50%{opacity:1}}.dark .generate-captions-btn{box-shadow:0 8px 22px rgba(116,80,255,.25)}.analysis{background:#faf8ff;border:1px solid #ebe6fb;border-radius:14px;margin-top:10px;padding:12px;display:grid;gap:9px}.analysis div{display:flex;justify-content:space-between;gap:15px;font-size:9px}.analysis strong{color:#5d586d}.analysis span{color:#8a8497;text-align:right}
+.results-panel{min-height:100%}.results-head{display:flex;justify-content:space-between;align-items:center}.results-head>div{display:flex;align-items:center;gap:10px}.results-head button{font-size:10px;color:#6c6580;border:1px solid var(--line);padding:8px 10px;border-radius:10px}.caption-tabs{display:flex;gap:3px;border-bottom:1px solid var(--line);margin:18px 0 12px;overflow:auto}.caption-tabs button{white-space:nowrap;padding:9px 8px;font-size:9px;color:#827b90;border-bottom:2px solid transparent}.caption-tabs button.active{color:#6e50ed;border-bottom-color:#7656ef}.caption-card{border:1px solid var(--line);border-radius:15px;padding:15px;margin:10px 0}.caption-card.selected{border-color:#bcaaff;box-shadow:0 7px 25px rgba(108,75,220,.08)}.caption-type{font-size:9px;font-weight:800}.caption-type.purple{color:#7654e8}.caption-type.green{color:#4d9c72}.caption-type.blue{color:#477fe7}.caption-card p{font-size:11px;line-height:1.7;color:#4d4959;margin:10px 0}.caption-actions{display:flex;gap:5px;align-items:center}.caption-actions button{font-size:11px;color:#8a8494;padding:5px}.caption-actions .use{margin-left:auto;background:#7255ef;color:#fff;padding:8px 12px;border-radius:9px;font-size:9px}.customize{width:100%;border:1px solid #d8d0fa;color:#7053e5;border-radius:11px;padding:10px;font-size:10px;margin-top:4px}
+.advanced-options-panel{margin-top:0;padding:16px 20px;min-height:72px;align-content:center}
+.advanced-options-panel>div:first-child{align-items:center}
+.advanced-options-panel .accordion-body{padding-top:12px}
+@media(max-width:900px){.advanced-options-panel{min-height:68px}}
+
+.collapsed{display:grid;grid-template-columns:1fr auto;gap:8px;cursor:pointer}.collapsed>div:first-child{display:flex;justify-content:space-between;gap:10px}.collapsed strong{font-size:10px}.collapsed span{font-size:9px;color:#918b9c}.accordion-body{grid-column:1/-1;display:none;padding-top:10px}.collapsed.open .accordion-body{display:grid;grid-template-columns:1fr 1fr;gap:8px}.accordion-body input,.accordion-body select{border:1px solid var(--line);border-radius:9px;padding:9px;font-size:9px;outline:none}.toast{position:fixed;bottom:25px;right:25px;background:#17142a;color:#fff;padding:11px 15px;border-radius:11px;font-size:10px;opacity:0;transform:translateY(10px);transition:.2s;z-index:99}.toast.show{opacity:1;transform:none}
+body.dark{--bg:#0d0b18;--surface:#151222;--text:#f7f5ff;--muted:#a39db4;--line:#2b263b}.dark .landing-page,.dark .workspace-page{background:#0d0b18}.dark .panel,.dark .workspace-header,.dark .sidebar,.dark .landing-nav,.dark .dropdown>button,.dark .dropdown-menu,.dark .nav-actions select{background:#151222;color:#fff}.dark .search{background:#151222}.dark .caption-card,.dark .perspective-demo,.dark .steps article,.dark .use-cases div{background:#151222}.dark .upload-zone,.dark .analysis,.dark .perspective-result{background:#100d1c}.dark .workspace-actions select,.dark .nav-actions select,.dark .theme-button{background:#151222;color:#fff;border-color:#2b263b}
+.dark .project-brand-copy small{color:#a39db4}
+
+/* ===== DARK MODE — LANDING PAGE CONTRAST FIX ===== */
+body.dark .perspective-demo{background:#151222;color:#f7f5ff;border-color:#2f2940}
+body.dark .perspective-demo .tabs button{color:#b9b2c9;background:transparent}
+body.dark .perspective-demo .tabs button:hover{color:#f7f5ff}
+body.dark .perspective-demo .tabs button.active{background:#7257ff;color:#fff}
+body.dark .perspective-result{background:#100d1c;border-color:#4a3f62}
+body.dark .perspective-result .result-label{color:#8f73ff}
+body.dark .perspective-result p{color:#e3deef}
+body.dark .hero-copy>p{
+  color:#c3bfd2;
+}
+
+body.dark .hero-note{
+  color:#bdb7cf;
+}
+
+body.dark .hero-note span{
+  color:#c9c4d7;
+}
+
+body.dark .understanding-card{
+  background:#171326;
+  border-color:#312b49;
+  color:#f7f5ff;
+  box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+body.dark .understanding-card .mini-title{
+  color:#b9a9ff;
+}
+
+body.dark .understanding-grid{
+  color:#d8d3e5;
+}
+
+body.dark .arrow-down{
+  color:#a88cff;
+}
+
+body.dark .understanding-card strong{
+  color:#f7f5ff;
+}
+
+body.dark .chips span{
+  background:#292144;
+  color:#cdbfff;
+}
+
+body.dark .hero h1{
+  color:#f7f5ff;
+}
+
+body.dark .hero h1 span{
+  background:linear-gradient(100deg,#8fa0ff,#c58aff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+body.dark .eyebrow{
+  color:#a995ff;
+}
+
+body.dark .btn-ghost{
+  background:#171326;
+  border-color:#3a3452;
+  color:#f4f1ff;
+}
+
+body.dark .btn-ghost:hover{
+  background:#211b37;
+}
+
+body.dark .btn-light{
+  background:#fff;
+  color:#6046d7;
+}
+
+/* Keep the dark-mode controls readable on the landing page. */
+body.dark .landing-nav{
+  background:rgba(13,11,24,.9);
+  border-bottom-color:#29243a;
+}
+
+body.dark .landing-nav .project-brand-copy small{
+  color:#a9a3b8;
+}
+
+body.dark footer{
+  background:#0d0b18;
+  color:#aaa4b8;
+  border-top-color:#29243a;
+}
+
+@media(max-width:1050px){.workspace-grid{grid-template-columns:1fr 1fr}.results-column{grid-column:1/-1}.use-cases{grid-template-columns:repeat(3,1fr)}.landing-nav nav{display:none}.hero{grid-template-columns:1fr}.hero-visual{max-width:650px;width:100%;margin:auto}.hero h1{font-size:48px}}
+@media(max-width:760px){
+.workspace-header{height:auto;min-height:76px;padding:14px 15px;gap:12px;align-items:center}
+.project-brand{gap:9px}
+.visionverse-logo{width:40px;height:40px;flex-basis:40px}
+.project-brand-copy strong{font-size:16px}
+.project-brand-copy small{font-size:8px}
+.workspace-actions{gap:6px}
+.workspace-actions select{min-width:0!important;width:48px;height:40px;padding:0;font-size:0;text-align:center}
+.workspace-actions select option{font-size:14px}
+.theme-button{width:40px!important;height:40px!important}
+.workspace-content{padding:25px 16px}.workspace-grid{grid-template-columns:1fr}.results-column{grid-column:auto}.workspace-header{padding:0 15px}.search{width:55%}.workspace-title-row{align-items:start;gap:10px}.workspace-title-row .btn{display:none}.steps,.perspective-demo{grid-template-columns:1fr}.use-cases{grid-template-columns:repeat(2,1fr)}.cta{margin:20px 16px 40px;padding:30px;display:block}.cta .btn{margin-top:20px}.landing-nav{height:auto;min-height:76px;padding:14px 18px;gap:12px;align-items:center}
+.project-brand{gap:9px}
+.visionverse-logo{width:40px;height:40px;flex-basis:40px}
+.project-brand-copy strong{font-size:16px}
+.project-brand-copy small{font-size:8px}
+.nav-actions{gap:6px}
+.nav-actions select{min-width:0!important;width:42px;height:40px;padding:0;font-size:0;text-align:center}
+.nav-actions select option{font-size:14px}
+.nav-actions .theme-button{width:40px!important;height:40px!important}
+.hero{padding:55px 22px}.hero h1{font-size:40px}.visual-image{width:78%;height:380px}.understanding-card{width:62%}.section{padding:60px 22px}.section-heading h2{font-size:30px}footer{display:grid;gap:15px}}
+
+/* Final step refinements */
+.upload-panel{padding:20px}
+.upload-helper{font-size:13px;color:#5f5b73;margin-bottom:17px}
+.upload-label{font-size:11px;font-weight:800;letter-spacing:.1em;color:#686277;margin-bottom:9px}
+.category-select{
+  height:58px!important;
+  border-radius:15px!important;
+  background:#f1f1f7!important;
+  padding:0 22px!important;
+  font-size:17px!important;
+  color:#17152a!important;
+  text-align:center;
+  line-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.category-select b{font-size:18px}
+.visual-input-zone{margin-top:25px;min-height:318px;border:1.5px dashed #7657ff;border-radius:18px;background:linear-gradient(145deg,#faf8ff,#f7f4ff);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 20px;transition:.2s}
+.visual-input-zone.dragging{background:#eee8ff;transform:scale(1.01)}
+.visual-input-icon{width:74px;height:74px;border-radius:24px;background:#fff;border:1px solid #e1ddec;box-shadow:0 8px 25px rgba(80,55,150,.08);display:grid;place-items:center;font-size:32px;font-weight:500;margin-bottom:20px}
+.visual-input-zone strong{font-size:24px;letter-spacing:-.5px}
+.visual-input-zone p{margin:9px 0 20px;color:#716c80;font-size:14px;line-height:1.7}
+.upload-actions{display:flex;gap:10px}
+.upload-actions .btn{font-size:14px;padding:14px 22px}
+.clear-btn{border:1px solid var(--line);color:#17152a}
+.input-options{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+.input-options button{height:50px;border:1px solid #ddd9e7;background:#f0f1f6;border-radius:11px;color:#777186;font-size:13px}
+.input-options button span{margin-left:4px}
+.selected-files{text-align:center;color:#7d7889;font-size:12px;margin-top:16px}
+.selected-files.has-files{color:#624de0;font-weight:600}
+.dark .upload-helper,.dark .upload-label{color:#bcb5ca}
+.dark .category-select{background:#171421!important;color:#f7f5ff!important;border-color:#332c46!important}
+.dark .visual-input-zone{background:linear-gradient(145deg,#151121,#100d1c);border-color:#8b72ff}
+.dark .visual-input-icon{background:#191526;border-color:#3a324f}
+.dark .visual-input-zone p,.dark .selected-files{color:#aaa3b8}
+.dark .input-options button{background:#191625;border-color:#39324b;color:#bdb6c9}
+.dark .clear-btn{background:#191625;color:#fff;border-color:#39324b}
+.dark .dropdown-menu{color:#fff}
+.dark .dropdown-menu button{color:#eee}
+.dark .dropdown-menu button:hover{background:#28213d}
+.dark .workspace-header{border-color:#2b263b}
+.dark .workspace-title-row p{color:#aaa3b8}
+.dark .panel label{color:#bcb5ca}
+
+
+
+/* Specialized workspaces (not categories) */
+.vv-special-workspaces{margin:0 0 22px}
+.vv-special-head{margin-bottom:12px}
+.vv-special-head h2{margin:0 0 4px;font-size:15px;letter-spacing:-.02em;font-family:var(--font-display)}
+.vv-special-head p{margin:0;color:var(--muted);font-size:12px}
+.vv-special-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vv-special-card{
+  display:flex;align-items:center;gap:14px;padding:16px 18px;
+  border:1px solid var(--line);border-radius:16px;background:var(--glass-bg);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:transform .22s var(--vv-ease),box-shadow .22s,border-color .22s;
+  text-decoration:none;color:inherit;
+}
+.vv-special-card:hover{transform:translateY(-2px);border-color:#cbbdf7;box-shadow:0 14px 36px rgba(78,52,160,.1)}
+.vv-special-icon{font-size:22px;flex:0 0 auto}
+.vv-special-copy{min-width:0;flex:1}
+.vv-special-card strong{display:block;font-size:13px}
+.vv-special-card p{margin:4px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
+.vv-special-cta{margin-left:auto;font-size:11px;font-weight:700;color:#7052e8;white-space:nowrap}
+body.dark .vv-special-card{background:rgba(21,18,34,.62);border-color:rgba(140,110,255,.22)}
+body.dark .vv-special-cta{color:#c1afff}
+@media(max-width:760px){.vv-special-grid{grid-template-columns:1fr}.vv-special-cta{display:none}}
+html[dir="rtl"] .vv-special-cta{margin-left:0;margin-right:auto}
+html[dir="rtl"] body{text-align:right}
+
+/* =========================
+   CAMERA MODAL
+========================= */
+.camera-modal{
+  position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  background:rgba(8,6,20,.72);backdrop-filter:blur(8px);padding:20px;
+}
+.camera-modal.show{display:flex}
+.camera-box{
+  width:min(560px,94vw);background:#fff;border:1px solid #e5def7;border-radius:24px;
+  box-shadow:0 24px 80px rgba(25,15,60,.28);padding:20px;
+}
+.camera-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.camera-head h3{margin:0;font-size:18px}
+.camera-close{border:0;background:transparent;font-size:25px;cursor:pointer;color:#514b62}
+.camera-stage{position:relative;overflow:hidden;border-radius:18px;background:#100d1c;aspect-ratio:4/3}
+.camera-stage video{width:100%;height:100%;display:block;object-fit:cover}
+.camera-status{padding:10px 2px 2px;color:#6f6880;font-size:13px;min-height:22px}
+.camera-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}
+.camera-actions button{border:1px solid #ded7ee;border-radius:12px;padding:11px 16px;background:#fff;cursor:pointer;font-weight:600}
+.camera-actions .capture-btn{border:0;color:#fff;background:linear-gradient(135deg,#5c63ff,#9a45f5 65%,#ff5fb8);box-shadow:0 8px 20px rgba(123,73,245,.22)}
+body.dark .camera-box{background:#171322;border-color:#39304e}
+body.dark .camera-head h3,body.dark .camera-close{color:#fff}
+body.dark .camera-status{color:#aaa1bd}
+body.dark .camera-actions button{background:#211b30;color:#fff;border-color:#413653}
+@media(max-width:600px){.camera-box{padding:14px;border-radius:18px}.camera-actions{flex-wrap:wrap}.camera-actions button{flex:1}}
+
+/* =========================
+   DEMO VIDEO MODAL
+========================= */
+.demo-modal{
+  position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+  background:rgba(8,6,20,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px;
+}
+.demo-modal.show{display:flex}
+.demo-box{
+  width:min(920px,96vw);background:#fff;border:1px solid #e5def7;border-radius:24px;
+  box-shadow:0 28px 90px rgba(25,15,60,.35);padding:18px 18px 16px;
+  animation:vvModal .35s cubic-bezier(.22,1,.36,1);
+}
+.demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.demo-head h3{margin:0;font-size:18px;font-family:var(--font-display),Inter,system-ui,sans-serif;letter-spacing:-.02em}
+.demo-close{border:0;background:transparent;font-size:26px;cursor:pointer;color:#514b62;line-height:1;padding:4px 8px;border-radius:10px}
+.demo-close:hover{background:#f2efff;color:#7357ff}
+.demo-stage{
+  position:relative;overflow:hidden;border-radius:16px;background:#0d0b18;
+  aspect-ratio:16/9;max-height:min(70vh,560px);
+}
+.demo-stage video{
+  width:100%;height:100%;display:block;object-fit:contain;background:#0d0b18;
+}
+.demo-fallback{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  flex-direction:column;gap:12px;padding:24px;text-align:center;color:#c9c4d7;font-size:14px;
+}
+.demo-fallback.show{display:flex}
+.demo-fallback code{font-size:12px;background:rgba(255,255,255,.08);padding:6px 10px;border-radius:8px;color:#c1afff}
+.demo-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}
+.demo-actions button{border:1px solid #ded7ee;border-radius:12px;padding:10px 16px;background:#fff;cursor:pointer;font-weight:600;font-size:13px}
+.demo-actions .demo-replay{border:0;color:#fff;background:linear-gradient(135deg,#5c63ff,#9a45f5 65%,#ff5fb8);box-shadow:0 8px 20px rgba(123,73,245,.22)}
+body.dark .demo-box{background:#171322;border-color:#39304e}
+body.dark .demo-head h3,body.dark .demo-close{color:#fff}
+body.dark .demo-close:hover{background:#29213f;color:#c1afff}
+body.dark .demo-actions button{background:#211b30;color:#fff;border-color:#413653}
+@media(max-width:600px){.demo-box{padding:12px;border-radius:18px}.demo-stage{max-height:50vh}}
+
+/* =====================================================
+   VISIONVERSE AI — 21st-INSPIRED HERO MOTION
+   Applied locally: no external animation library required.
+===================================================== */
+.vv-hero{position:relative;isolation:isolate;overflow:hidden}
+.vv-hero::before{content:"";position:absolute;z-index:-1;width:720px;height:720px;right:-260px;top:-240px;border-radius:50%;background:radial-gradient(circle,rgba(115,87,255,.18),rgba(160,76,255,.06) 38%,transparent 70%);filter:blur(4px);animation:vvSpotlight 8s ease-in-out infinite}
+.vv-hero::after{content:"";position:absolute;z-index:-1;width:420px;height:420px;left:-260px;bottom:-180px;border-radius:50%;background:radial-gradient(circle,rgba(255,95,184,.13),rgba(63,216,255,.06) 55%,transparent 72%);animation:vvSpotlight2 10s ease-in-out infinite}
+@keyframes vvSpotlight{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-35px,35px) scale(1.08)}}
+@keyframes vvSpotlight2{0%,100%{transform:translate(0,0)}50%{transform:translate(45px,-25px)}}
+.vv-eyebrow{display:inline-flex;align-items:center;gap:8px}
+.vv-eyebrow i{width:7px;height:7px;border-radius:50%;background:#7357ff;box-shadow:0 0 0 5px rgba(115,87,255,.12),0 0 18px rgba(115,87,255,.65);animation:vvPulse 1.8s ease-in-out infinite}
+.vv-eyebrow b{font-size:12px;animation:vvSpark 2.2s ease-in-out infinite}
+@keyframes vvPulse{0%,100%{transform:scale(1);opacity:.65}50%{transform:scale(1.35);opacity:1}}
+@keyframes vvSpark{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(12deg) scale(1.15)}}
+.vv-hero-copy{animation:vvCopyIn .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes vvCopyIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.vv-hero-copy h1{animation:vvTitleIn .9s .08s cubic-bezier(.2,.8,.2,1) both}
+@keyframes vvTitleIn{from{opacity:0;transform:translateY(18px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+.vv-hero-visual{perspective:1200px}
+.vv-visual-image{position:relative;transform:perspective(1200px) rotateY(-3deg);transition:transform .55s ease,box-shadow .55s ease;animation:vvVisualIn 1s .15s cubic-bezier(.2,.8,.2,1) both;box-shadow:0 25px 70px rgba(67,48,140,.15),0 0 0 1px rgba(115,87,255,.08)}
+.vv-visual-image:hover{transform:perspective(1200px) rotateY(0deg) translateY(-5px) scale(1.01);box-shadow:0 35px 90px rgba(67,48,140,.22),0 0 45px rgba(115,87,255,.14)}
+@keyframes vvVisualIn{from{opacity:0;transform:perspective(1200px) rotateY(-10deg) translateX(24px) scale(.97)}to{opacity:1;transform:perspective(1200px) rotateY(-3deg) translateX(0) scale(1)}}
+.vv-visual-image::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.10) 48%,transparent 60%);transform:translateX(-120%);animation:vvSheen 6s ease-in-out infinite}
+@keyframes vvSheen{0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+.vv-scan{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.vv-scan-line{position:absolute;left:0;right:0;top:-3%;height:2px;background:linear-gradient(90deg,transparent,#9b7cff 25%,#fff 50%,#9b7cff 75%,transparent);box-shadow:0 0 20px rgba(130,100,255,.95);animation:vvScan 4.5s ease-in-out infinite}
+@keyframes vvScan{0%{top:-3%;opacity:0}10%{opacity:1}48%{opacity:1}55%{opacity:.85}100%{top:103%;opacity:0}}
+.vv-detection{position:absolute;z-index:7;display:flex;align-items:center;gap:7px;color:#fff;font-size:8px;font-weight:700;opacity:0;pointer-events:none;animation:vvDetect 4.5s ease-in-out infinite}
+.vv-detection span{width:10px;height:10px;border-radius:50%;background:#9a7cff;box-shadow:0 0 0 5px rgba(154,124,255,.18),0 0 22px rgba(154,124,255,.95)}
+.vv-detection label{padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(18,15,30,.68);backdrop-filter:blur(10px)}
+.vv-detection-1{left:20%;top:28%;animation-delay:.3s}.vv-detection-2{left:61%;top:48%;animation-delay:1.4s}.vv-detection-3{left:34%;top:72%;animation-delay:2.5s}
+@keyframes vvDetect{0%,12%{opacity:0;transform:scale(.7)}23%,68%{opacity:1;transform:scale(1)}82%,100%{opacity:0;transform:scale(.92)}}
+.vv-image-glow{position:absolute;inset:-35%;z-index:3;pointer-events:none;background:radial-gradient(circle,rgba(118,90,255,.20),transparent 58%);animation:vvGlow 6s ease-in-out infinite}
+@keyframes vvGlow{0%,100%{transform:translate(-3%,-2%);opacity:.35}50%{transform:translate(4%,4%);opacity:.75}}
+.vv-understanding-card{animation:vvFloat 5s ease-in-out infinite;backdrop-filter:blur(15px)}
+@keyframes vvFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.vv-ai-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.vv-ai-subtitle{display:block!important;text-align:left!important;margin-top:4px;font-size:11px!important}.vv-ai-status{display:flex;align-items:center;gap:5px;padding:5px 8px;border-radius:20px;background:#f0edff;color:#7052e8;font-size:7px;font-weight:800;white-space:nowrap}.vv-ai-status i{width:5px;height:5px;border-radius:50%;background:#7657ff;animation:vvStatus 1.2s infinite}.vv-understanding-card .understanding-grid div{display:flex;align-items:center;gap:6px;padding:8px;border:1px solid #eeeaf7;border-radius:9px;background:#fcfbff}.vv-understanding-card .understanding-grid div b{margin-left:auto;color:#6d56df}.vv-understanding-card .understanding-grid div span{color:#7657ee}.vv-demo-btn{display:inline-flex;align-items:center;gap:8px}.vv-play{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#f0edff;color:#7052e8;font-size:8px}.vv-hero-note{animation:vvCopyIn .8s .25s both}.vv-hero-note span{transition:.2s}.vv-hero-note span:hover{color:#7357ff;transform:translateY(-1px)}
+@keyframes vvStatus{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+body.dark .vv-hero::before{background:radial-gradient(circle,rgba(112,89,255,.20),rgba(157,76,255,.07) 38%,transparent 70%)}
+body.dark .vv-visual-image{border-color:#191526;box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 35px rgba(115,87,255,.10)}
+body.dark .vv-demo-btn{background:#171326;color:#f4f1ff;border-color:#3a3452}.dark .vv-play{background:#29213f;color:#c1afff}
+body.dark .vv-ai-status{background:#2b2344;color:#c1afff}.dark .vv-understanding-card .understanding-grid div{background:#191526;border-color:#302a43;color:#d8d3e5}
+body.dark .vv-understanding-card .understanding-grid div:hover{border-color:#514471}.dark .vv-hero-note{color:#c9c4d7}
+@media(max-width:760px){.vv-detection label{display:none}.vv-visual-image:hover{transform:perspective(1200px) rotateY(-3deg)}.vv-ai-status{font-size:6px}.vv-understanding-card{backdrop-filter:blur(12px)}}
+@media(prefers-reduced-motion:reduce){.vv-hero::before,.vv-hero::after,.vv-eyebrow i,.vv-eyebrow b,.vv-hero-copy,.vv-hero-copy h1,.vv-visual-image,.vv-visual-image::after,.vv-scan-line,.vv-detection,.vv-image-glow,.vv-understanding-card,.vv-ai-status i,.vv-hero-note{animation:none!important}.vv-visual-image{transform:none}}
+
+
+/* =========================================================
+   VISIONVERSE AI — FULL PROJECT MOTION / UI PASS
+   Keeps the existing structure and behavior, upgrades the
+   whole interface consistently with the Hero treatment.
+========================================================= */
+:root{
+  --vv-ease:cubic-bezier(.22,1,.36,1);
+  --vv-glow:rgba(115,87,255,.18);
+}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+button,select,input{transition:box-shadow .22s var(--vv-ease),border-color .22s var(--vv-ease),background .22s var(--vv-ease),color .22s var(--vv-ease),transform .22s var(--vv-ease),opacity .22s var(--vv-ease)}
+.page{animation:vvPageIn .55s var(--vv-ease)}
+@keyframes vvPageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* global ambient light */
+.landing-page,.workspace-page{position:relative;isolation:isolate}
+.landing-page:before,.workspace-page:before{content:"";position:fixed;inset:-20%;z-index:-2;pointer-events:none;will-change:transform;
+  background:
+    radial-gradient(circle at 80% 10%,rgba(115,87,255,.20),transparent 32%),
+    radial-gradient(circle at 6% 20%,rgba(255,95,184,.13),transparent 30%),
+    radial-gradient(circle at 28% 92%,rgba(63,216,255,.12),transparent 30%),
+    radial-gradient(circle at 94% 82%,rgba(160,76,255,.14),transparent 30%);
+  filter:blur(5px);
+  animation:vvAurora 26s ease-in-out infinite alternate;
+}
+@keyframes vvAurora{
+  0%{transform:translate3d(-1%,0,0) scale(1)}
+  50%{transform:translate3d(1.6%,1.1%,0) scale(1.06)}
+  100%{transform:translate3d(-1.4%,1.6%,0) scale(1.03)}
+}
+body.dark .landing-page:before,body.dark .workspace-page:before{
+  background:
+    radial-gradient(circle at 80% 10%,rgba(129,102,255,.28),transparent 34%),
+    radial-gradient(circle at 6% 20%,rgba(255,95,184,.16),transparent 30%),
+    radial-gradient(circle at 28% 92%,rgba(63,216,255,.16),transparent 30%),
+    radial-gradient(circle at 94% 82%,rgba(174,88,255,.20),transparent 30%);
+}
+@media(prefers-reduced-motion:reduce){.landing-page:before,.workspace-page:before{animation:none}}
+
+/* nav / header */
+.landing-nav,.workspace-header{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:background .3s,border-color .3s,box-shadow .3s}
+.landing-nav:hover,.workspace-header:hover{box-shadow:0 10px 40px rgba(70,45,140,.05)}
+.nav-actions select,.workspace-actions select,.theme-button{transition:transform .22s var(--vv-ease),box-shadow .22s var(--vv-ease),border-color .22s}
+.nav-actions select:hover,.workspace-actions select:hover,.theme-button:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(80,55,150,.09)}
+
+/* sidebar */
+.sidebar{transition:background .3s,border-color .3s,box-shadow .3s}
+.side-nav a{position:relative;overflow:hidden;transition:transform .22s var(--vv-ease),background .22s,color .22s}
+.side-nav a:before{content:"";position:absolute;left:0;top:18%;bottom:18%;width:3px;border-radius:5px;background:linear-gradient(#6d5cff,#b14cff);transform:scaleY(0);transition:transform .25s var(--vv-ease)}
+.side-nav a:hover{transform:translateX(3px);background:#f6f3ff;color:#674de4}
+.side-nav a.active:before{transform:scaleY(1)}
+.side-demo{transition:transform .25s var(--vv-ease),box-shadow .25s,border-color .25s}
+.side-demo:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(70,45,140,.08);border-color:#cfc3fa}
+.dark-toggle i{position:relative;transition:background .25s}
+.dark-toggle i:after{content:"";position:absolute;width:12px;height:12px;left:2px;top:2px;border-radius:50%;background:#fff;box-shadow:0 1px 5px rgba(0,0,0,.12);transition:transform .25s var(--vv-ease)}
+body.dark .dark-toggle i{background:#7057ff}
+body.dark .dark-toggle i:after{transform:translateX(14px)}
+
+/* buttons */
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.2),transparent 65%);transform:translateX(-120%);transition:transform .65s var(--vv-ease);z-index:-1}
+.btn:hover:after{transform:translateX(120%)}
+.btn:active{transform:translateY(1px) scale(.98)}
+
+/* workspace title */
+.workspace-title-row h1{animation:vvTextIn .7s var(--vv-ease) both}
+.workspace-title-row p{animation:vvTextIn .7s .08s var(--vv-ease) both}
+.workspace-title-row>.btn{animation:vvTextIn .7s .15s var(--vv-ease) both}
+@keyframes vvTextIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* panels — glass */
+.panel{position:relative;overflow:hidden;background:var(--glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow);transition:transform .28s var(--vv-ease),box-shadow .28s,border-color .28s,background .28s}
+.panel:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.35),transparent 32%);opacity:0;transition:opacity .3s}
+.panel:hover{transform:translateY(-3px);box-shadow:0 22px 55px rgba(72,49,145,.14),inset 0 1px 0 rgba(255,255,255,.7);border-color:#ddd5f3}
+.panel:hover:before{opacity:1}
+body.dark .panel{background:rgba(21,18,34,.62);border-color:rgba(140,110,255,.22);box-shadow:0 20px 55px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.05)}
+body.dark .panel:hover{border-color:#5a4d7a;box-shadow:0 22px 55px rgba(0,0,0,.5)}
+
+/* step number */
+.panel-title span,.results-head>div>span{box-shadow:0 0 0 0 rgba(115,87,255,.2);animation:vvNumber 3s ease-in-out infinite}
+@keyframes vvNumber{0%,100%{box-shadow:0 0 0 0 rgba(115,87,255,0)}50%{box-shadow:0 0 0 7px rgba(115,87,255,.08)}}
+
+/* category dropdown */
+.dropdown>button{transition:transform .2s var(--vv-ease),border-color .2s,box-shadow .2s}
+.dropdown>button:hover{transform:translateY(-1px);border-color:#cbbdf7;box-shadow:0 8px 22px rgba(95,67,180,.07)}
+.dropdown-menu{animation:vvMenu .22s var(--vv-ease)}
+@keyframes vvMenu{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+.dropdown-menu button{transition:transform .18s,background .18s}
+.dropdown-menu button:hover{transform:translateX(3px)}
+
+/* upload zone */
+.visual-input-zone{position:relative;overflow:hidden;transition:transform .25s var(--vv-ease),border-color .25s,background .25s,box-shadow .25s}
+.visual-input-zone:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(115,87,255,.14),transparent 70%);right:-80px;top:-90px;animation:vvUploadGlow 7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes vvUploadGlow{to{transform:translate(-80px,70px);opacity:.5}}
+.visual-input-zone:hover,.visual-input-zone.dragging{transform:translateY(-3px);border-color:#9c7fff;box-shadow:0 20px 45px rgba(107,78,210,.1)}
+.visual-input-icon{animation:vvUploadFloat 3s ease-in-out infinite}
+@keyframes vvUploadFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.input-options button{transition:transform .2s var(--vv-ease),border-color .2s,box-shadow .2s,background .2s}
+.input-options button:hover{transform:translateY(-3px);border-color:#c6b7f5;box-shadow:0 10px 24px rgba(80,55,150,.08)}
+.selected-files.has-files{animation:vvFileAdded .4s var(--vv-ease)}
+@keyframes vvFileAdded{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* image preview */
+.image-preview{position:relative;overflow:hidden}
+.image-preview img{transition:transform .65s var(--vv-ease),filter .45s}
+.image-preview:hover img{transform:scale(1.035)}
+.image-preview:after{content:"";position:absolute;left:0;right:0;height:2px;top:-4px;background:linear-gradient(90deg,transparent,#8c6fff,transparent);box-shadow:0 0 18px rgba(120,88,255,.8);animation:vvPreviewScan 5s ease-in-out infinite;pointer-events:none}
+@keyframes vvPreviewScan{0%{top:-3%;opacity:0}12%{opacity:1}55%{opacity:1}100%{top:103%;opacity:0}}
+.image-preview button{transition:transform .22s var(--vv-ease),box-shadow .22s}
+.image-preview button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.analysis{animation:vvAnalysis .35s var(--vv-ease)}
+@keyframes vvAnalysis{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* captions */
+.caption-tabs{position:relative}
+.caption-tabs button{position:relative;transition:color .2s,transform .2s}
+.caption-tabs button:hover{transform:translateY(-2px)}
+.caption-tabs button.active:after{content:"";position:absolute;left:15%;right:15%;bottom:-9px;height:2px;border-radius:3px;background:linear-gradient(90deg,#6758ff,#a24cff);box-shadow:0 0 10px rgba(115,87,255,.45)}
+.caption-card{position:relative;overflow:hidden;transition:transform .28s var(--vv-ease),box-shadow .28s,border-color .28s,background .28s}
+.caption-card:before{content:"";position:absolute;left:-100%;top:0;width:80%;height:1px;background:linear-gradient(90deg,transparent,#9b7cff,transparent);transition:left .8s var(--vv-ease)}
+.caption-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(74,48,150,.09)}
+.caption-card:hover:before{left:120%}
+.caption-card.selected{box-shadow:0 0 0 2px rgba(115,87,255,.15),0 18px 45px rgba(74,48,150,.1)}
+.caption-card .use-caption{transition:transform .22s var(--vv-ease),box-shadow .22s}
+.caption-card .use-caption:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 20px rgba(115,87,255,.22)}
+
+/* accordions */
+.panel.collapsed>div:first-child{cursor:pointer}
+.panel.collapsed .accordion-body{animation:vvAccordion .3s var(--vv-ease)}
+@keyframes vvAccordion{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+
+/* perspective */
+.perspective-demo>img{transition:transform .7s var(--vv-ease),filter .4s}
+.perspective-demo:hover>img{transform:scale(1.025)}
+.perspective-result{transition:transform .3s var(--vv-ease),border-color .3s,box-shadow .3s}
+.perspective-result:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(70,45,140,.08)}
+
+/* camera */
+.camera-overlay{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.camera-box{animation:vvModal .35s var(--vv-ease)}
+@keyframes vvModal{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:none}}
+.camera-video-wrap{position:relative;overflow:hidden}
+.camera-video-wrap:after{content:"";position:absolute;left:0;right:0;top:-5%;height:2px;background:linear-gradient(90deg,transparent,#a58aff,transparent);box-shadow:0 0 18px #8d6cff;animation:vvCameraScan 4s ease-in-out infinite;pointer-events:none}
+@keyframes vvCameraScan{0%{top:-5%;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:105%;opacity:0}}
+
+/* toast */
+#toast{box-shadow:0 15px 45px rgba(45,25,100,.2);backdrop-filter:blur(12px)}
+
+/* dark mode: all text/readability surfaces */
+body.dark .workspace-content,
+body.dark .workspace-title-row,
+body.dark .left-column,
+body.dark .preview-column,
+body.dark .results-column{color:#f7f5ff}
+body.dark .panel-title h3,
+body.dark .results-head h3,
+body.dark .panel strong,
+body.dark .upload-label,
+body.dark .upload-helper,
+body.dark .visual-input-zone strong,
+body.dark .understood,
+body.dark .selected-files,
+body.dark .input-options button,
+body.dark .caption-card p,
+body.dark .caption-card strong,
+body.dark .caption-card .card-actions,
+body.dark .panel.collapsed>div:first-child strong{color:#f3efff}
+body.dark .panel label,
+body.dark .upload-helper,
+body.dark .understood button,
+body.dark .selected-files,
+body.dark .caption-card .card-actions,
+body.dark .panel.collapsed>div:first-child span{color:#bdb6cf}
+body.dark .visual-input-zone{background:#110e1d;border-color:#4b4260}
+body.dark .visual-input-zone p{color:#b8b1c7}
+body.dark .input-options button{background:#1a1627;border-color:#342d48;color:#eee9fa}
+body.dark .input-options button:hover{background:#241e36;border-color:#554870}
+body.dark .image-preview{background:#110e1d}
+body.dark .caption-tabs{border-color:#302a40}
+body.dark .caption-tabs button{color:#aaa2ba}
+body.dark .caption-tabs button.active{color:#c9b9ff}
+body.dark .caption-card{background:#141120;border-color:#302a40}
+body.dark .caption-card:hover{border-color:#4b4062}
+body.dark .caption-card p{color:#c8c0d5}
+body.dark .caption-card .caption-type{color:#b9a6ff}
+body.dark .caption-card .use-caption{color:#fff}
+body.dark .analysis{background:#141120;border-color:#302a40;color:#e9e4f4}
+body.dark .analysis span{color:#bdb5ca}
+body.dark .panel.collapsed{background:#141120}
+body.dark .panel.collapsed input{background:#100d1a;border-color:#342d47;color:#eee9fa}
+body.dark .panel.collapsed input::placeholder{color:#847c95}
+body.dark .workspace-actions select{background:#141120;border-color:#39324c;color:#f2eefc}
+body.dark .dropdown>button{background:#141120;border-color:#39324c;color:#f2eefc}
+body.dark .dropdown-menu{background:#171326;border-color:#3b334e}
+body.dark .dropdown-menu button{color:#e9e4f4}
+body.dark .dropdown-menu button:hover{background:#28203d}
+body.dark .workspace-header{background:rgba(13,11,24,.9);border-color:#2b263b}
+body.dark .project-brand-copy small{color:#a9a3b8}
+body.dark .workspace-title-row p{color:#bdb6cc}
+body.dark .theme-button{background:#171326!important;border-color:#3a3452!important;color:#f4f1ff!important}
+body.dark .btn-ghost{color:#f4f1ff}
+body.dark .btn-light{background:#241e34;color:#f2edff;border-color:#3d3550}
+body.dark .btn-light:hover{background:#2b2340}
+body.dark .side-nav a{color:#b8b1c5}
+body.dark .side-nav a:hover{background:#1c172a;color:#d4c7ff}
+body.dark .side-nav a.active{background:#29213f;color:#c2b2ff}
+body.dark .side-demo{color:#c6bed2;background:#141120;border-color:#352e46}
+body.dark .dark-toggle{color:#c3bbcf}
+
+/* page transition / responsive */
+@media(max-width:1050px){.workspace-content{padding:28px 20px}.panel:hover{transform:none}}
+@media(max-width:760px){.workspace-content{padding:22px 14px}.workspace-title-row{align-items:flex-start;gap:15px}.workspace-title-row h1{font-size:28px}.caption-card:hover,.panel:hover{transform:none}.visual-input-zone{min-height:280px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+</style>
+<style>
+.vv-ripple{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.35);transform:scale(0);animation:vvRipple .55s ease-out;z-index:5}
+@keyframes vvRipple{to{transform:scale(1);opacity:0}}
+.vv-reveal{opacity:0;transform:translateY(18px);transition:opacity .65s var(--vv-ease),transform .65s var(--vv-ease)}
+.vv-reveal.vv-revealed{opacity:1;transform:none}
+.vv-image-confirm{animation:vvConfirm .55s var(--vv-ease)}
+@keyframes vvConfirm{0%{box-shadow:0 0 0 0 rgba(115,87,255,0)}45%{box-shadow:0 0 0 7px rgba(115,87,255,.16)}100%{box-shadow:var(--shadow)}}
+.vv-page-switch .page:not(.hidden){animation:vvPageIn .5s var(--vv-ease)}
+body.dark .vv-ripple{background:rgba(255,255,255,.22)}
+/* Category nested dropdown */
+.category-group{
+  width:100%;
+}
+
+.category-parent{
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+}
+
+.category-submenu{
+  display:none;
+  padding-left:18px;
+  margin-top:5px;
+}
+
+.category-submenu.open{
+  display:block;
+}
+
+.category-submenu button{
+  width:100%;
+  text-align:left;
+}
+</style>
+<style id="vv-perspectives-enhancement">
+.vv-perspectives{position:relative;max-width:1180px;margin:0 auto;padding:72px 24px;overflow:hidden}
+.vv-perspectives-header{max-width:720px;margin:0 auto 36px;text-align:center}
+.vv-perspectives-header h2{font-size:clamp(38px,5vw,64px);line-height:1.04;letter-spacing:-.045em;margin:0 0 14px}
+.vv-perspectives-header h2 span{color:#7654ff}
+.vv-perspectives-header p{color:var(--muted);font-size:15px;line-height:1.7;margin:0}
+.vv-perspectives-card{display:grid;grid-template-columns:1fr 1fr;min-height:520px;gap:0;background:rgba(255,255,255,.74);border:1px solid rgba(255,255,255,.65);border-radius:28px;padding:16px;box-shadow:0 30px 80px rgba(78,52,160,.14),inset 0 1px 0 rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);overflow:hidden;transition:box-shadow .35s var(--vv-ease),border-color .35s}
+.vv-perspectives-card:hover{box-shadow:0 34px 90px rgba(78,52,160,.2),0 0 60px rgba(255,95,184,.08),inset 0 1px 0 rgba(255,255,255,.7)}
+.vv-persp-visual{min-width:0;padding:0}
+.vv-persp-image-wrap{position:relative;height:100%;min-height:488px;overflow:hidden;border-radius:22px;background:#eeeaf8}
+.vv-persp-image-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.14),transparent 40%,rgba(118,84,255,.08));pointer-events:none}
+.vv-persp-image-wrap img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .4s ease}
+.vv-persp-image-wrap:hover img{transform:scale(1.055)}
+.vv-persp-scan-line{position:absolute;left:0;right:0;top:-4px;height:2px;background:linear-gradient(90deg,transparent,#8b63ff,#d0a2ff,transparent);box-shadow:0 0 16px rgba(128,89,255,.9);animation:vvPerspScan 4s ease-in-out infinite;z-index:5}
+@keyframes vvPerspScan{0%{top:0;opacity:0}12%{opacity:1}50%{opacity:1}88%{opacity:1}100%{top:100%;opacity:0}}
+.vv-persp-ai-status{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:rgba(20,16,35,.8);color:#fff;font-size:11px;font-weight:700;backdrop-filter:blur(12px);z-index:8}
+.vv-persp-ai-status i{width:7px;height:7px;border-radius:50%;background:#8b63ff;box-shadow:0 0 0 5px rgba(139,99,255,.15);animation:vvPerspPulse 1.5s infinite}
+@keyframes vvPerspPulse{50%{transform:scale(1.45);box-shadow:0 0 0 9px rgba(139,99,255,0)}}
+.vv-persp-detection{position:absolute;display:flex;align-items:center;gap:8px;z-index:7;opacity:0;transform:translateY(8px) scale(.96);transition:opacity .45s ease,transform .45s ease;pointer-events:none}
+.vv-persp-detection.visible{opacity:1;transform:translateY(0) scale(1)}
+.vv-persp-detection span{width:9px;height:9px;border-radius:50%;background:#8b63ff;box-shadow:0 0 0 5px rgba(139,99,255,.18),0 0 18px rgba(139,99,255,.8)}
+.vv-persp-detection label{padding:7px 10px;border-radius:8px;background:rgba(20,16,35,.82);color:#fff;font-size:10px;font-weight:700;backdrop-filter:blur(10px)}
+.vv-persp-artwork{top:31%;left:28%}.vv-persp-lamp{top:45%;right:21%}.vv-persp-seating{bottom:23%;left:23%}.vv-persp-space{bottom:35%;right:17%}
+.vv-persp-analysis{display:flex;flex-direction:column;padding:34px 34px 24px;min-width:0}
+.vv-persp-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:30px}
+.vv-persp-tabs button{border:0;padding:11px 16px;border-radius:999px;background:transparent;color:#777286;font:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:.25s ease}
+.vv-persp-tabs button:hover{color:#7654ff;transform:translateY(-2px)}
+.vv-persp-tabs button.active{background:#7654ff;color:#fff;box-shadow:0 10px 25px rgba(118,84,255,.24)}
+.vv-persp-content{flex:1;padding:28px;border:1px solid #ebe5ff;border-radius:22px;background:linear-gradient(145deg,#faf8ff,#fff);transition:opacity .22s ease,transform .22s ease}
+.vv-persp-content.switching{opacity:0;transform:translateY(8px)}
+.vv-persp-content-top{display:flex;justify-content:space-between;gap:12px;margin-bottom:26px;font-size:10px;font-weight:800;letter-spacing:.12em}
+.vv-persp-content-top span:first-child{color:#7654ff}.vv-persp-content-top span:last-child{color:#91899f;letter-spacing:0}
+.vv-persp-content h3{margin:0;color:#39364a;font-size:clamp(22px,2.2vw,32px);font-weight:500;line-height:1.5;letter-spacing:-.02em}
+.vv-persp-insights{margin-top:34px}.vv-persp-insights-title,.vv-persp-suggested>span{display:block;margin-bottom:11px;color:#8b8598;font-size:10px;font-weight:900;letter-spacing:.13em}
+.vv-persp-insight-list{display:flex;flex-wrap:wrap;gap:8px}.vv-persp-insight-list span{padding:8px 11px;border-radius:999px;background:rgba(118,84,255,.08);color:#625a75;font-size:11px;font-weight:600}
+.vv-persp-suggested{margin-top:25px}.vv-persp-suggested>div{display:flex;flex-wrap:wrap;gap:7px}.vv-persp-suggested>div span{padding:7px 10px;border:1px solid rgba(118,84,255,.14);border-radius:8px;color:#6f687e;font-size:10px}
+.vv-persp-ai-footer{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:21px;border-top:1px solid var(--line)}
+.vv-persp-ai-footer>div:first-child{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#7654ff,#c14eea 65%,#ff5fb8);color:#fff;flex:0 0 auto}.vv-persp-ai-footer strong{font-size:12px}.vv-persp-ai-footer p{margin:4px 0 0;color:var(--muted);font-size:10px}
+body.dark .vv-perspectives-card{background:rgba(18,15,30,.82);border-color:rgba(145,119,255,.2)}
+body.dark .vv-persp-content{background:linear-gradient(145deg,rgba(28,24,43,.96),rgba(18,15,30,.96));border-color:rgba(145,119,255,.25)}
+body.dark .vv-persp-content h3{color:#eeeaff}body.dark .vv-persp-content-top span:last-child,body.dark .vv-persp-insights-title,body.dark .vv-persp-suggested>span{color:#aaa2bd}
+body.dark .vv-persp-tabs button{color:#aaa3bd}body.dark .vv-persp-tabs button:hover{color:#c7b9ff}body.dark .vv-persp-insight-list span{background:rgba(132,98,255,.13);color:#d1cae4}body.dark .vv-persp-suggested>div span{color:#c5bdd8;border-color:rgba(145,119,255,.2)}
+@media(max-width:900px){.vv-perspectives{padding:60px 20px}.vv-perspectives-card{grid-template-columns:1fr}.vv-persp-image-wrap{min-height:430px}.vv-persp-analysis{padding:28px 18px 20px}}
+@media(max-width:600px){.vv-perspectives{padding:52px 16px}.vv-perspectives-header{text-align:left}.vv-perspectives-header h2{font-size:40px}.vv-perspectives-card{padding:10px;border-radius:24px}.vv-persp-image-wrap{min-height:330px;border-radius:18px}.vv-persp-analysis{padding:22px 12px 16px}.vv-persp-content{padding:21px}.vv-persp-content h3{font-size:23px}.vv-persp-detection label{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.vv-persp-scan-line,.vv-persp-ai-status i{animation:none}.vv-persp-image-wrap img,.vv-persp-tabs button,.vv-persp-detection,.vv-persp-content{transition:none}}
+</style>
+</head>
+<body>
+<!-- =========================
+       PAGE 01 — LANDING
+  ========================== -->
+<section class="page landing-page" id="landing">
+<header class="landing-nav">
+<a class="project-brand" href="#landing" onclick="showPage('landing')">
+<img alt="VisionVerse AI logo" class="visionverse-logo" src="static/logo.png"/>
+<span class="project-brand-copy">
+<strong>VISIONVERSE AI</strong>
+<small data-i18n="nav.tagline">UNIVERSAL VISUAL INTELLIGENCE</small>
+</span>
+</a>
+<div class="nav-actions">
+<select aria-label="Language" id="langSelectLanding" onchange="vvUpdateOption('language', this.value)">
+<option value="en">🌐  English</option>
+<option value="fa">🇮🇷  فارسی</option>
+<option value="tr">🇹🇷  Türkçe</option>
+<option value="ar">🇸🇦  العربية</option>
+</select>
+<select aria-label="Audience" id="audienceSelectLanding" onchange="vvUpdateOption('audience', this.value)">
+<option>👤  General</option>
+<option>💼  Professionals</option>
+<option>🛍️  Customers</option>
+</select>
+<select aria-label="Tone" id="toneSelectLanding" onchange="vvUpdateOption('tone', this.value)">
+<option>✨  Professional</option>
+<option>😊  Friendly</option>
+<option>🎨  Creative</option>
+<option>📣  Persuasive</option>
+</select>
+<button aria-label="Toggle dark mode" class="theme-button" onclick="toggleDark()">☾</button>
+</div>
+</header>
+<main>
+<section class="hero vv-hero">
+<div class="hero-copy">
+<span class="eyebrow vv-eyebrow"><i></i> <span data-i18n="hero.eyebrow">AI IMAGE UNDERSTANDING</span> <b>✦</b></span>
+<h1>Turn What You See<br/>Into <span>What You Mean.</span></h1>
+<p data-i18n="hero.body">
+            VISIONVERSE AI understands objects, actions, relationships and visual context
+            to generate natural captions built for your purpose.
+          </p>
+<div class="hero-buttons">
+<button class="btn btn-primary btn-large" onclick="showPage('workspace')" data-i18n="hero.cta">Try VISIONVERSE AI →</button>
+<button class="btn btn-ghost btn-large vv-demo-btn" onclick="openDemo()"><span class="vv-play">▶</span> <span data-i18n="hero.demo">Watch Demo</span></button>
+</div>
+<div class="hero-note vv-hero-note"><span data-i18n="hero.note1">✓ Context-aware</span><span data-i18n="hero.note2">✓ Multi-language</span><span data-i18n="hero.note3">✓ AI-powered</span></div>
+</div>
+<div class="hero-visual vv-hero-visual">
+<div class="visual-image vv-visual-image">
+<img alt="Modern workspace" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3btLYzKw8QKsTJYrGuuic_7MZFWGdz5R2-bjqsuAHVQ&amp;s=10"/>
+<div class="vv-scan"><div class="vv-scan-line"></div></div>
+<div class="vv-detection vv-detection-1"><span></span><label>Workspace</label></div>
+<div class="vv-detection vv-detection-2"><span></span><label>Objects</label></div>
+<div class="vv-detection vv-detection-3"><span></span><label>Context</label></div>
+<div class="vv-image-glow"></div>
+</div>
+<div class="understanding-card vv-understanding-card">
+<div class="vv-ai-header"><div><div class="mini-title">AI UNDERSTANDS</div><strong class="vv-ai-subtitle">Visual Intelligence</strong></div><span class="vv-ai-status"><i></i> ANALYZING</span></div>
+<div class="understanding-grid">
+<div><span>◉</span> Objects <b>✓</b></div>
+<div><span>◌</span> Actions <b>✓</b></div>
+<div><span>◇</span> Context <b>✓</b></div>
+<div><span>⌘</span> Relations <b>✓</b></div>
+</div>
+<div class="arrow-down">↓</div>
+<strong>3 SMART CAPTIONS</strong>
+<div class="chips">
+<span>Marketing</span><span>Professional</span><span>Creative</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="how">
+<div class="section-heading">
+<span class="eyebrow" data-i18n="how.eyebrow">HOW IT WORKS</span>
+<h2>From image to meaning in <span>3 simple steps.</span></h2>
+</div>
+<div class="steps">
+<article><b>01</b><div class="step-icon">◈</div><h3 data-i18n="how.s1">Choose Context</h3><p data-i18n="how.s1p">Select the category and purpose that matter to you.</p></article>
+<article><b>02</b><div class="step-icon">↥</div><h3 data-i18n="how.s2">Upload Image</h3><p data-i18n="how.s2p">Drop any supported image and let the AI see it.</p></article>
+<article><b>03</b><div class="step-icon">✦</div><h3 data-i18n="how.s3">Get Smart Captions</h3><p data-i18n="how.s3p">Receive multiple context-aware captions to choose from.</p></article>
+</div>
+</section>
+<section class="section vv-perspectives" id="perspectives">
+<div class="vv-perspectives-header">
+<span class="eyebrow" data-i18n="persp.eyebrow">CONTEXT AWARENESS</span>
+<h2>One image. <span>Different perspectives.</span></h2>
+<p data-i18n="persp.body">The same visual can communicate differently depending on its purpose.</p>
+</div>
+<div class="vv-perspectives-card">
+<div class="vv-persp-visual">
+<div class="vv-persp-image-wrap">
+<img alt="Modern living space" id="vvPerspectiveImage" src="https://cdn.mos.cms.futurecdn.net/v2/t:167,l:0,cw:3200,ch:1800,q:80,w:2560/kgB2sqLbeHXySUqQJw7i9B.jpg"/>
+<div class="vv-persp-scan-line"></div>
+<div class="vv-persp-detection vv-persp-artwork" data-detection="artwork"><span></span><label>Artwork</label></div>
+<div class="vv-persp-detection vv-persp-lamp" data-detection="lamp"><span></span><label>Lighting</label></div>
+<div class="vv-persp-detection vv-persp-seating" data-detection="seating"><span></span><label>Seating Area</label></div>
+<div class="vv-persp-detection vv-persp-space" data-detection="space"><span></span><label>Open Space</label></div>
+<div class="vv-persp-ai-status"><i></i><span>AI interpretation</span></div>
+</div>
+</div>
+<div class="vv-persp-analysis">
+<div aria-label="AI perspectives" class="vv-persp-tabs" role="tablist">
+<button aria-selected="true" class="active" data-perspective="marketing" role="tab">Marketing</button>
+<button aria-selected="false" data-perspective="medical" role="tab">Medical</button>
+<button aria-selected="false" data-perspective="industrial" role="tab">Industrial</button>
+<button aria-selected="false" data-perspective="educational" role="tab">Educational</button>
+</div>
+<div class="vv-persp-content">
+<div class="vv-persp-content-top">
+<span id="vvPerspectiveCategory">MARKETING</span>
+<span>✦ AI perspective</span>
+</div>
+<h3 id="vvPerspectiveTitle">A modern living space designed for comfort and style — perfect for creating a warm, aspirational brand story.</h3>
+<div class="vv-persp-insights">
+<div class="vv-persp-insights-title">AI DETECTED</div>
+<div class="vv-persp-insight-list" id="vvInsightList">
+<span>✓ Warm atmosphere</span><span>✓ Premium interior</span><span>✓ Lifestyle setting</span>
+</div>
+</div>
+<div class="vv-persp-suggested">
+<span>Suggested use</span>
+<div id="vvSuggestedUse"><span>Instagram</span><span>Campaign</span><span>Brand Story</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="use-cases">
+<div class="section-heading">
+<span class="eyebrow" data-i18n="use.eyebrow">BUILT FOR EVERY VISUAL STORY</span>
+<h2>One AI. <span>Many worlds.</span></h2>
+</div>
+<div class="use-cases">
+<div>📣<strong>Marketing</strong><small>Engage your audience</small></div>
+<div>🛍️<strong>E-Commerce</strong><small>Describe products</small></div>
+<div>🏭<strong>Industry</strong><small>Document equipment</small></div>
+<div>🏥<strong>Medical</strong><small>Clinical context</small></div>
+<div>📚<strong>Education</strong><small>Explain visuals</small></div>
+<div>🎨<strong>Design</strong><small>Inspire &amp; create</small></div>
+</div>
+</section>
+<section class="cta">
+<div>
+<span class="eyebrow" data-i18n="cta.eyebrow">READY?</span>
+<h2 data-i18n="cta.title">Turn images into meaning.</h2>
+<p data-i18n="cta.body">Let VISIONVERSE AI see beyond the pixels.</p>
+</div>
+<button class="btn btn-light btn-large" onclick="showPage('workspace')" data-i18n="cta.btn">Start Creating →</button>
+</section>
+</main>
+</section>
+<!-- =========================
+       PAGE 02 — WORKSPACE
+  ========================== -->
+<section class="page workspace-page hidden" id="workspace">
+<main class="workspace-main">
+<header class="workspace-header">
+<div class="project-brand">
+<img alt="VisionVerse AI logo" class="visionverse-logo" src="static/logo.png"/>
+<span class="project-brand-copy">
+<strong>VISIONVERSE AI</strong>
+<small data-i18n="nav.tagline">UNIVERSAL VISUAL INTELLIGENCE</small>
+</div>
+</div>
+<button class="btn btn-ghost" type="button" onclick="showPage('landing')" aria-label="Back to home" data-i18n="ws.home">← Home</button><div class="workspace-actions">
+<select aria-label="Language" id="langSelectWorkspace" onchange="vvUpdateOption('language', this.value)">
+<option value="en">🌐  English</option>
+<option value="fa">🇮🇷  فارسی</option>
+<option value="tr">🇹🇷  Türkçe</option>
+<option value="ar">🇸🇦  العربية</option>
+</select>
+<select aria-label="Audience" id="audienceSelectWorkspace" onchange="vvUpdateOption('audience', this.value)">
+<option>👤  General</option>
+<option>💼  Professionals</option>
+<option>🛍️  Customers</option>
+</select>
+<button aria-label="Toggle dark mode" class="theme-button" onclick="toggleDark()">☾</button>
+</div>
+</header>
+<section class="workspace-content">
+<div class="workspace-title-row">
+<div>
+<span class="eyebrow" data-i18n="ws.eyebrow">AI WORKSPACE</span>
+<h1>What would you like to <span>describe today?</span></h1>
+<p data-i18n="ws.subtitle">Choose your context, upload an image, and let AI create the words.</p>
+</div>
+</div>
+<section class="vv-special-workspaces" aria-label="Specialized workspaces">
+  <div class="vv-special-head">
+    <h2 data-i18n="ws.special.title">Specialized workspaces</h2>
+    <p data-i18n="ws.special.sub">Dedicated flows outside the main category list.</p>
+  </div>
+  <div class="vv-special-grid">
+    <a class="vv-special-card" href="pages/psychology/index.html">
+      <span class="vv-special-icon" aria-hidden="true">🧠</span>
+      <div class="vv-special-copy">
+        <strong data-i18n="ws.psych.title">Psychology</strong>
+        <p data-i18n="ws.psych.desc">Interpret visuals through clinical and behavioral context.</p>
+      </div>
+      <span class="vv-special-cta" data-i18n="ws.psych.cta">Open Psychology →</span>
+    </a>
+    <a class="vv-special-card" href="pages/custom-industry/index.html">
+      <span class="vv-special-icon" aria-hidden="true">⚙️</span>
+      <div class="vv-special-copy">
+        <strong data-i18n="ws.custom.title">Custom Industry</strong>
+        <p data-i18n="ws.custom.desc">Define your own industry and caption rules.</p>
+      </div>
+      <span class="vv-special-cta" data-i18n="ws.custom.cta">Open Custom Industry →</span>
+    </a>
+  </div>
+</section>
+<div class="workspace-grid">
+<div class="left-column">
+<article class="panel upload-panel">
+<div class="upload-helper" data-i18n="ws.upload.helper">Define the context and provide your images.</div>
+<label class="upload-label" data-i18n="ws.category">CATEGORY</label>
+<div class="dropdown" id="categoryDropdown">
+<button class="category-select" onclick="toggleDropdown('categoryDropdown')"><span id="selectedCategory" data-i18n="ws.category.placeholder">Select a category</span><b>⌄</b></button>
+<div class="dropdown-menu">
+
+  <button onclick="selectCategory('Digital Marketing')">
+    📣 Digital Marketing
+  </button>
+
+  <button onclick="selectCategory('E-Commerce')">
+    🛍️ E-Commerce
+  </button>
+
+
+  <button onclick="selectCategory('Industry')">
+    🏭 Industry
+  </button>
+
+  <button onclick="selectCategory('Medical')">
+    🏥 Medical
+  </button>
+
+
+
+  <button onclick="selectCategory('Education')">
+    📚 Education
+  </button>
+
+  <button onclick="selectCategory('Design')">
+    🎨 Design
+  </button>
+
+  <button onclick="selectCategory('Media')">
+    📰 Media
+  </button>
+
+  <button onclick="selectCategory('Research')">
+    🔬 Research
+  </button>
+
+  <button onclick="selectCategory('Custom')">
+    ⚙️ Custom
+  </button>
+
+
+</div>
+</div>
+<div aria-label="Drop an image here or choose files" class="visual-input-zone" id="uploadZone" role="button" tabindex="0">
+<div class="visual-input-icon">↥</div>
+<strong data-i18n="ws.addVisual">Add your visual input</strong>
+<div class="upload-actions">
+<button class="btn btn-primary" onclick="document.getElementById('fileInput').click()" data-i18n="ws.chooseFiles">Choose Files</button>
+<button class="btn btn-light clear-btn" onclick="clearImages()" data-i18n="ws.clear">Clear</button>
+</div>
+<input accept="image/*" hidden="" id="fileInput" multiple="" onchange="previewImages(event)" type="file"/>
+</div>
+<div class="input-options">
+<button onclick="document.getElementById('fileInput').click()">▧ <span>Image</span></button>
+<button data-input-action="file" type="button">▤ <span>File</span></button>
+<!-- <button onclick="promptForImageURL()">🔗 <span>URL</span></button> -->
+<button onclick="openCamera()">▣ <span>Camera</span></button>
+<input accept="image/*" capture="environment" hidden="" id="cameraFileInput" onchange="handleCameraFile(event)" type="file"/>
+</div>
+<div class="selected-files" id="selectedFiles" data-i18n="ws.noImages">No images selected</div>
+</article>
+</div>
+<div class="preview-column">
+<article class="panel image-panel">
+<div class="panel-title"><span>03</span><h3 data-i18n="ws.yourImage">Your image</h3></div>
+<div class="image-preview" id="imagePreview">
+<img id="imagePreview" alt="Preview" src="" style="display:none;">
+<button onclick="resetImage()" data-i18n="ws.changeImage">↻ Change image</button>
+</div>
+<div class="understood image-ready-row">
+<span class="image-ready-status" id="imageReadyStatus" data-i18n="ws.noImageStatus">○ No image selected</span>
+<div class="image-ready-actions">
+<button class="analysis-link" onclick="toggleAnalysis()" data-i18n="ws.viewAnalysis">View AI analysis ⌄</button>
+<button class="generate-captions-btn" disabled="" id="generateCaptionsBtn" onclick="generateCaptions()" data-i18n="ws.generate">✦ Generate captions</button>
+</div>
+</div>
+<div class="analysis hidden" id="analysis">
+<div><strong>Objects</strong><span>Laptop · Desk · Lamp · Plant</span></div>
+<div><strong>Actions</strong><span>Working · Typing</span></div>
+<div><strong>Environment</strong><span>Indoor · Modern office</span></div>
+<div><strong>Context</strong><span>Professional workspace</span></div>
+</div>
+</article>
+<article class="panel collapsed advanced-options-panel" id="advancedOptionsPanel">
+<div><strong data-i18n="ws.advanced">✦ Advanced Options</strong><span data-i18n="ws.advanced.hint">Keywords · Hashtags · Brand Voice</span></div><b>⌄</b>
+<div class="accordion-body"><input placeholder="Additional keywords..."/><input placeholder="Brand voice (optional)..."/></div>
+</article>
+</div>
+<div class="results-column">
+<article class="panel results-panel">
+<div class="results-head">
+<div><span>04</span><h3 data-i18n="ws.captions">AI generated captions</h3></div>
+<button onclick="regenerate()" data-i18n="ws.regenerate">↻ Regenerate</button>
+</div>
+<div class="caption-tabs">
+<button class="active" onclick="filterCaptions('all',this)">All (3)</button><button onclick="filterCaptions('professional',this)">Professional</button><button onclick="filterCaptions('marketing',this)">Marketing</button><button onclick="filterCaptions('social',this)">Social</button><button onclick="filterCaptions('creative',this)">Creative</button>
+</div>
+<div id="captions">
+<article class="caption-card selected" data-type="professional">
+<div class="caption-type purple">✦ Professional</div>
+<p>A modern workspace designed for focused work, productivity, and creative thinking.</p>
+<div class="caption-actions"><button>♡</button><button onclick="copyText(this)">⧉</button><button>⋯</button><button class="use" onclick="useCaption(this)">Use this</button></div>
+</article>
+<article class="caption-card" data-type="marketing">
+<div class="caption-type green">✦ Marketing</div>
+<p>Where focus meets inspiration — built for people who turn ideas into meaningful results.</p>
+<div class="caption-actions"><button>♡</button><button onclick="copyText(this)">⧉</button><button>⋯</button><button class="use" onclick="useCaption(this)">Use this</button></div>
+</article>
+<article class="caption-card" data-type="social">
+<div class="caption-type blue">✦ Social Media</div>
+<p>Good coffee. Clear goals. A little inspiration. ✨ What's your productive moment today?</p>
+<div class="caption-actions"><button>♡</button><button onclick="copyText(this)">⧉</button><button>⋯</button><button class="use" onclick="useCaption(this)">Use this</button></div>
+</article>
+</div>
+<button class="customize" data-i18n="ws.customize">☷ Customize captions</button>
+</article>
+</div>
+</div>
+</section>
+</main>
+</section>
+<div class="toast" id="toast">Copied!</div>
+<div aria-hidden="true" class="camera-modal" id="cameraModal">
+<div aria-labelledby="cameraTitle" aria-modal="true" class="camera-box" role="dialog">
+<div class="camera-head">
+<h3 id="cameraTitle" data-i18n="cam.title">Take a photo</h3>
+<button aria-label="Close camera" class="camera-close" onclick="closeCamera()">×</button>
+</div>
+<div class="camera-stage">
+<video autoplay="" id="cameraVideo" muted="" playsinline=""></video>
+</div>
+<div class="camera-status" id="cameraStatus">Click Start camera to request camera access.</div>
+<div class="camera-actions">
+<button onclick="closeCamera()">Cancel</button>
+<button class="capture-btn" disabled="disabled" id="captureCameraBtn" onclick="window.captureCamera()">Start camera</button>
+</div>
+</div>
+</div>
+<canvas hidden="" id="cameraCanvas"></canvas>
+<!-- DEMO VIDEO MODAL -->
+<div aria-hidden="true" class="demo-modal" id="demoModal">
+  <div aria-labelledby="demoTitle" aria-modal="true" class="demo-box" role="dialog">
+    <div class="demo-head">
+      <h3 id="demoTitle">VISIONVERSE AI — Product Demo</h3>
+      <button aria-label="Close demo" class="demo-close" onclick="closeDemo()">×</button>
+    </div>
+    <div class="demo-stage">
+      <video id="demoVideo" controls playsinline preload="metadata">
+        <source src="static/demo.mkv" type="video/mkv"/>
+        <source src="static/demo.webm" type="video/webm"/>
+      </video>
+      <div class="demo-fallback" id="demoFallback">
+        <strong>Demo video not found</strong>
+        <span>Add your walkthrough video as:</span>
+        <code>static/demo.mkv</code>
+        <span>or change the video source path.</span>
+      </div>
+    </div>
+    <div class="demo-actions">
+      <button type="button" onclick="closeDemo()">Close</button>
+      <button type="button" class="demo-replay" onclick="replayDemo()">↻ Replay</button>
+    </div>
+  </div>
+</div>
+<script>
+/* =========================
+   SPA NAVIGATION / BROWSER HISTORY
+   Back, Forward and Refresh stay in sync with the current page.
+========================= */
+function showPage(page, pushHistory = true){
+  const target = document.getElementById(page);
+  if(!target) return;
+
+  document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+  target.classList.remove('hidden');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  const hash = '#' + page;
+  if(pushHistory && window.location.hash !== hash){
+    history.pushState({page}, '', hash);
+  }
+}
+
+function getPageFromHash(){
+  return window.location.hash === '#workspace' ? 'workspace' : 'landing';
+}
+
+function syncPageFromHistory(){
+  showPage(getPageFromHash(), false);
+}
+
+// Keep the first entry addressable so browser Back/Forward have a real page state.
+function initPageHistory(){
+  const page = getPageFromHash();
+  const hash = '#' + page;
+
+  if(window.location.hash !== hash){
+    history.replaceState({page}, '', hash);
+  } else {
+    history.replaceState({page}, '', window.location.href);
+  }
+
+  showPage(page, false);
+}
+
+// Browser toolbar: Back / Forward
+window.addEventListener('popstate', syncPageFromHistory);
+window.addEventListener('hashchange', syncPageFromHistory);
+
+// Browser toolbar: Refresh keeps the current hash, then restores that page.
+document.addEventListener('DOMContentLoaded', initPageHistory);
+
+// Restore language across the whole app
+document.addEventListener('DOMContentLoaded', function(){
+  try {
+    const saved = localStorage.getItem('vv-language');
+    if (saved) window.vvApplyLanguage(saved);
+    else window.vvApplyLanguage((window.vvOptions && window.vvOptions.languageCode) || 'en');
+  } catch(e) {
+    if (typeof window.vvApplyLanguage === 'function') window.vvApplyLanguage('en');
+  }
+});
+
+function toggleDropdown(id){
+  document.getElementById(id).classList.toggle('open');
+}
+function selectCategory(name){
+  const el=document.getElementById('selectedCategory');
+  if(el){ el.textContent=name; el.removeAttribute('data-i18n'); }
+  document.getElementById('categoryDropdown').classList.remove('open');
+  toast('Context set to '+name);
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.dropdown')) document.querySelectorAll('.dropdown').forEach(d=>d.classList.remove('open'));
+});
+window.currentImageFile = null;
+
+/* ---------- backend coupling ----------
+   When this page is served by the FastAPI app (http://localhost:8000) the
+   relative path is used, so there is no CORS setup and no hard-coded host.
+   When the file is opened directly (file://) or from a separate dev server,
+   it falls back to VV_FALLBACK_API_ORIGIN below.                          */
+window.VV_FALLBACK_API_ORIGIN = 'http://localhost:8000';
+
+window.vvApiBase = (function(){
+  if(location.protocol === 'file:') return window.VV_FALLBACK_API_ORIGIN;
+  // A static dev server (Live Server 5500, Vite 5173...) is not the API.
+  if(/^(5500|5501|3000|5173|8080)$/.test(location.port)) return window.VV_FALLBACK_API_ORIGIN;
+  return '';
+})();
+
+window.vvApiUrl = function(path){ return window.vvApiBase + path; };
+
+// If your FastAPI backend uses a different route, change this one value.
+window.CAPTIONS_API_URL = window.vvApiUrl('/api/generate-captions');
+
+/* ============================================================
+   USER OPTION STATE + SYNCHRONIZED SELECTS
+   Language / Audience / Tone live in the nav <select> elements.
+   Selecting one updates the shared state and mirrors it across
+   both the landing nav and the workspace header.
+============================================================ */
+
+/* ============================================================
+   APP-WIDE i18n — language switch updates entire app
+============================================================ */
+window.VV_I18N = {
+  en: {
+    'nav.tagline': 'UNIVERSAL VISUAL INTELLIGENCE',
+    'hero.eyebrow': 'AI IMAGE UNDERSTANDING',
+    'hero.title.before': 'Turn What You See',
+    'hero.title.into': 'Into',
+    'hero.title.span': 'What You Mean.',
+    'hero.body': 'VISIONVERSE AI understands objects, actions, relationships and visual context to generate natural captions built for your purpose.',
+    'hero.cta': 'Try VISIONVERSE AI →',
+    'hero.demo': 'Watch Demo',
+    'hero.note1': '✓ Context-aware',
+    'hero.note2': '✓ Multi-language',
+    'hero.note3': '✓ AI-powered',
+    'how.eyebrow': 'HOW IT WORKS',
+    'how.title.before': 'From image to meaning in',
+    'how.title.span': '3 simple steps.',
+    'how.s1': 'Choose Context',
+    'how.s1p': 'Select the category and purpose that matter to you.',
+    'how.s2': 'Upload Image',
+    'how.s2p': 'Drop any supported image and let the AI see it.',
+    'how.s3': 'Get Smart Captions',
+    'how.s3p': 'Receive multiple context-aware captions to choose from.',
+    'persp.eyebrow': 'CONTEXT AWARENESS',
+    'persp.title.before': 'One image.',
+    'persp.title.span': 'Different perspectives.',
+    'persp.body': 'The same visual can communicate differently depending on its purpose.',
+    'use.eyebrow': 'BUILT FOR EVERY VISUAL STORY',
+    'use.title.before': 'One AI.',
+    'use.title.span': 'Many worlds.',
+    'cta.eyebrow': 'READY?',
+    'cta.title': 'Turn images into meaning.',
+    'cta.body': 'Let VISIONVERSE AI see beyond the pixels.',
+    'cta.btn': 'Start Creating →',
+    'ws.home': '← Home',
+    'ws.eyebrow': 'AI WORKSPACE',
+    'ws.title.before': 'What would you like to',
+    'ws.title.span': 'describe today?',
+    'ws.subtitle': 'Choose your context, upload an image, and let AI create the words.',
+    'ws.upload.helper': 'Define the context and provide your images.',
+    'ws.category': 'CATEGORY',
+    'ws.category.placeholder': 'Select a category',
+    'ws.addVisual': 'Add your visual input',
+    'ws.chooseFiles': 'Choose Files',
+    'ws.clear': 'Clear',
+    'ws.noImages': 'No images selected',
+    'ws.yourImage': 'Your image',
+    'ws.changeImage': '↻ Change image',
+    'ws.noImageStatus': '○ No image selected',
+    'ws.imageReady': '✓ Image ready',
+    'ws.generating': '⟳ AI is analyzing the image…',
+    'ws.viewAnalysis': 'View AI analysis ⌄',
+    'ws.generate': '✦ Generate captions',
+    'ws.generatingBtn': '✦ Generating',
+    'ws.advanced': '✦ Advanced Options',
+    'ws.advanced.hint': 'Keywords · Hashtags · Brand Voice',
+    'ws.captions': 'AI generated captions',
+    'ws.regenerate': '↻ Regenerate',
+    'ws.customize': '☷ Customize captions',
+    'ws.tab.all': 'All',
+    'ws.tab.professional': 'Professional',
+    'ws.tab.marketing': 'Marketing',
+    'ws.tab.social': 'Social',
+    'ws.tab.creative': 'Creative',
+    'ws.special.title': 'Specialized workspaces',
+    'ws.special.sub': 'Dedicated flows outside the main category list.',
+    'ws.psych.title': 'Psychology',
+    'ws.psych.desc': 'Interpret visuals through clinical and behavioral context.',
+    'ws.psych.cta': 'Open Psychology →',
+    'ws.custom.title': 'Custom Industry',
+    'ws.custom.desc': 'Define your own industry and caption rules.',
+    'ws.custom.cta': 'Open Custom Industry →',
+    'toast.lang': 'Language updated',
+    'toast.copied': 'Caption copied',
+    'cam.title': 'Take a photo',
+    'cam.cancel': 'Cancel',
+    'cam.start': 'Start camera'
+  },
+  fa: {
+    'nav.tagline': 'هوش بصری جهانی',
+    'hero.eyebrow': 'درک تصویر با هوش مصنوعی',
+    'hero.title.before': 'آنچه می‌بینید را',
+    'hero.title.into': 'به',
+    'hero.title.span': 'آنچه منظورتان است تبدیل کنید.',
+    'hero.body': 'VISIONVERSE AI اشیا، کنش‌ها، روابط و بافت بصری را درک می‌کند تا توضیحات طبیعی متناسب با هدف شما بسازد.',
+    'hero.cta': 'آزمایش VISIONVERSE AI →',
+    'hero.demo': 'تماشای دمو',
+    'hero.note1': '✓ آگاه از بافت',
+    'hero.note2': '✓ چندزبانه',
+    'hero.note3': '✓ مبتنی بر هوش مصنوعی',
+    'how.eyebrow': 'نحوه کار',
+    'how.title.before': 'از تصویر تا معنا در',
+    'how.title.span': '۳ گام ساده.',
+    'how.s1': 'انتخاب بافت',
+    'how.s1p': 'دسته و هدف مورد نظرتان را انتخاب کنید.',
+    'how.s2': 'بارگذاری تصویر',
+    'how.s2p': 'هر تصویر پشتیبانی‌شده را رها کنید تا هوش مصنوعی آن را ببیند.',
+    'how.s3': 'دریافت توضیحات هوشمند',
+    'how.s3p': 'چندین توضیح آگاه از بافت دریافت کنید.',
+    'persp.eyebrow': 'آگاهی از بافت',
+    'persp.title.before': 'یک تصویر.',
+    'persp.title.span': 'دیدگاه‌های متفاوت.',
+    'persp.body': 'همان تصویر بسته به هدف می‌تواند پیام متفاوتی منتقل کند.',
+    'use.eyebrow': 'برای هر داستان بصری',
+    'use.title.before': 'یک هوش مصنوعی.',
+    'use.title.span': 'جهان‌های بسیار.',
+    'cta.eyebrow': 'آماده؟',
+    'cta.title': 'تصاویر را به معنا تبدیل کنید.',
+    'cta.body': 'بگذارید VISIONVERSE AI فراتر از پیکسل‌ها ببیند.',
+    'cta.btn': 'شروع کنید →',
+    'ws.home': '← خانه',
+    'ws.eyebrow': 'فضای کاری هوش مصنوعی',
+    'ws.title.before': 'امروز می‌خواهید چه چیزی را',
+    'ws.title.span': 'توصیف کنید؟',
+    'ws.subtitle': 'بافت را انتخاب کنید، تصویر بارگذاری کنید و بگذارید هوش مصنوعی کلمات را بسازد.',
+    'ws.upload.helper': 'بافت را تعریف کنید و تصاویر خود را اضافه کنید.',
+    'ws.category': 'دسته',
+    'ws.category.placeholder': 'یک دسته انتخاب کنید',
+    'ws.addVisual': 'ورودی بصری را اضافه کنید',
+    'ws.chooseFiles': 'انتخاب فایل',
+    'ws.clear': 'پاک کردن',
+    'ws.noImages': 'هیچ تصویری انتخاب نشده',
+    'ws.yourImage': 'تصویر شما',
+    'ws.changeImage': '↻ تغییر تصویر',
+    'ws.noImageStatus': '○ تصویری انتخاب نشده',
+    'ws.imageReady': '✓ تصویر آماده است',
+    'ws.generating': '⟳ در حال تحلیل تصویر…',
+    'ws.viewAnalysis': 'مشاهده تحلیل هوش مصنوعی ⌄',
+    'ws.generate': '✦ تولید توضیحات',
+    'ws.generatingBtn': '✦ در حال تولید',
+    'ws.advanced': '✦ گزینه‌های پیشرفته',
+    'ws.advanced.hint': 'کلیدواژه · هشتگ · صدای برند',
+    'ws.captions': 'توضیحات تولیدشده',
+    'ws.regenerate': '↻ تولید مجدد',
+    'ws.customize': '☷ سفارشی‌سازی توضیحات',
+    'ws.tab.all': 'همه',
+    'ws.tab.professional': 'حرفه‌ای',
+    'ws.tab.marketing': 'بازاریابی',
+    'ws.tab.social': 'شبکه اجتماعی',
+    'ws.tab.creative': 'خلاقانه',
+    'ws.special.title': 'فضاهای کاری تخصصی',
+    'ws.special.sub': 'جریان‌های جدا از فهرست دسته‌ها.',
+    'ws.psych.title': 'روان‌شناسی',
+    'ws.psych.desc': 'تفسیر تصاویر در بافت بالینی و رفتاری.',
+    'ws.psych.cta': 'باز کردن روان‌شناسی →',
+    'ws.custom.title': 'صنعت سفارشی',
+    'ws.custom.desc': 'صنعت و قوانین توضیح خود را تعریف کنید.',
+    'ws.custom.cta': 'باز کردن صنعت سفارشی →',
+    'toast.lang': 'زبان به‌روز شد',
+    'toast.copied': 'توضیح کپی شد',
+    'cam.title': 'گرفتن عکس',
+    'cam.cancel': 'لغو',
+    'cam.start': 'شروع دوربین'
+  },
+  tr: {
+    'nav.tagline': 'EVRENSEL GÖRSEL ZEKA',
+    'hero.eyebrow': 'YAPAY ZEKA GÖRÜNTÜ ANLAMA',
+    'hero.title.before': 'Gördüğünüzü',
+    'hero.title.into': '',
+    'hero.title.span': 'Anlama Dönüştürün.',
+    'hero.body': 'VISIONVERSE AI; nesneleri, eylemleri, ilişkileri ve görsel bağlamı anlayarak amacınıza uygun doğal açıklamalar üretir.',
+    'hero.cta': 'VISIONVERSE AI’yi Dene →',
+    'hero.demo': 'Demoyu İzle',
+    'hero.note1': '✓ Bağlama duyarlı',
+    'hero.note2': '✓ Çok dilli',
+    'hero.note3': '✓ Yapay zeka destekli',
+    'how.eyebrow': 'NASIL ÇALIŞIR',
+    'how.title.before': 'Görüntüden anlama',
+    'how.title.span': '3 basit adım.',
+    'how.s1': 'Bağlam Seçin',
+    'how.s1p': 'Sizin için önemli olan kategori ve amacı seçin.',
+    'how.s2': 'Görüntü Yükleyin',
+    'how.s2p': 'Desteklenen herhangi bir görüntüyü bırakın, yapay zeka görsün.',
+    'how.s3': 'Akıllı Açıklamalar Alın',
+    'how.s3p': 'Birden fazla bağlama duyarlı açıklama alın.',
+    'persp.eyebrow': 'BAĞLAM FARKINDALIĞI',
+    'persp.title.before': 'Bir görüntü.',
+    'persp.title.span': 'Farklı bakış açıları.',
+    'persp.body': 'Aynı görsel amacına göre farklı şekilde iletişim kurabilir.',
+    'use.eyebrow': 'HER GÖRSEL HİKAYE İÇİN',
+    'use.title.before': 'Tek yapay zeka.',
+    'use.title.span': 'Birçok dünya.',
+    'cta.eyebrow': 'HAZIR MISINIZ?',
+    'cta.title': 'Görüntüleri anlama dönüştürün.',
+    'cta.body': 'VISIONVERSE AI piksellerin ötesini görsün.',
+    'cta.btn': 'Oluşturmaya Başla →',
+    'ws.home': '← Ana sayfa',
+    'ws.eyebrow': 'YZ ÇALIŞMA ALANI',
+    'ws.title.before': 'Bugün neyi',
+    'ws.title.span': 'açıklamak istersiniz?',
+    'ws.subtitle': 'Bağlamı seçin, görüntü yükleyin ve yapay zekanın kelimeleri oluşturmasına izin verin.',
+    'ws.upload.helper': 'Bağlamı tanımlayın ve görüntülerinizi ekleyin.',
+    'ws.category': 'KATEGORİ',
+    'ws.category.placeholder': 'Bir kategori seçin',
+    'ws.addVisual': 'Görsel girdinizi ekleyin',
+    'ws.chooseFiles': 'Dosya Seç',
+    'ws.clear': 'Temizle',
+    'ws.noImages': 'Görüntü seçilmedi',
+    'ws.yourImage': 'Görüntünüz',
+    'ws.changeImage': '↻ Görüntüyü değiştir',
+    'ws.noImageStatus': '○ Görüntü seçilmedi',
+    'ws.imageReady': '✓ Görüntü hazır',
+    'ws.generating': '⟳ Görüntü analiz ediliyor…',
+    'ws.viewAnalysis': 'YZ analizini gör ⌄',
+    'ws.generate': '✦ Açıklama üret',
+    'ws.generatingBtn': '✦ Üretiliyor',
+    'ws.advanced': '✦ Gelişmiş Seçenekler',
+    'ws.advanced.hint': 'Anahtar kelimeler · Hashtag · Marka sesi',
+    'ws.captions': 'YZ ile üretilen açıklamalar',
+    'ws.regenerate': '↻ Yeniden üret',
+    'ws.customize': '☷ Açıklamaları özelleştir',
+    'ws.tab.all': 'Tümü',
+    'ws.tab.professional': 'Profesyonel',
+    'ws.tab.marketing': 'Pazarlama',
+    'ws.tab.social': 'Sosyal',
+    'ws.tab.creative': 'Yaratıcı',
+    'ws.special.title': 'Uzman çalışma alanları',
+    'ws.special.sub': 'Ana kategori listesinin dışındaki özel akışlar.',
+    'ws.psych.title': 'Psikoloji',
+    'ws.psych.desc': 'Görselleri klinik ve davranışsal bağlamda yorumlayın.',
+    'ws.psych.cta': 'Psikolojiyi aç →',
+    'ws.custom.title': 'Özel Sektör',
+    'ws.custom.desc': 'Kendi sektörünüzü ve açıklama kurallarınızı tanımlayın.',
+    'ws.custom.cta': 'Özel Sektörü aç →',
+    'toast.lang': 'Dil güncellendi',
+    'toast.copied': 'Açıklama kopyalandı',
+    'cam.title': 'Fotoğraf çek',
+    'cam.cancel': 'İptal',
+    'cam.start': 'Kamerayı başlat'
+  },
+  ar: {
+    'nav.tagline': 'ذكاء بصري عالمي',
+    'hero.eyebrow': 'فهم الصور بالذكاء الاصطناعي',
+    'hero.title.before': 'حوّل ما تراه',
+    'hero.title.into': 'إلى',
+    'hero.title.span': 'ما تقصده.',
+    'hero.body': 'يفهم VISIONVERSE AI الكائنات والأفعال والعلاقات والسياق البصري لإنشاء وصف طبيعي يناسب غرضك.',
+    'hero.cta': 'جرّب VISIONVERSE AI →',
+    'hero.demo': 'شاهد العرض',
+    'hero.note1': '✓ واعٍ بالسياق',
+    'hero.note2': '✓ متعدد اللغات',
+    'hero.note3': '✓ مدعوم بالذكاء الاصطناعي',
+    'how.eyebrow': 'كيف يعمل',
+    'how.title.before': 'من الصورة إلى المعنى في',
+    'how.title.span': '٣ خطوات بسيطة.',
+    'how.s1': 'اختر السياق',
+    'how.s1p': 'حدد الفئة والغرض المناسبين لك.',
+    'how.s2': 'ارفع صورة',
+    'how.s2p': 'أسقط أي صورة مدعومة ودع الذكاء الاصطناعي يراها.',
+    'how.s3': 'احصل على وصف ذكي',
+    'how.s3p': 'استلم عدة أوصاف واعية بالسياق.',
+    'persp.eyebrow': 'الوعي بالسياق',
+    'persp.title.before': 'صورة واحدة.',
+    'persp.title.span': 'وجهات نظر مختلفة.',
+    'persp.body': 'يمكن لنفس المشهد أن يوصل رسالة مختلفة حسب الغرض.',
+    'use.eyebrow': 'لكل قصة بصرية',
+    'use.title.before': 'ذكاء اصطناعي واحد.',
+    'use.title.span': 'عوالم كثيرة.',
+    'cta.eyebrow': 'هل أنت مستعد؟',
+    'cta.title': 'حوّل الصور إلى معنى.',
+    'cta.body': 'دع VISIONVERSE AI يرى ما وراء البكسلات.',
+    'cta.btn': 'ابدأ الإنشاء →',
+    'ws.home': '← الرئيسية',
+    'ws.eyebrow': 'مساحة عمل الذكاء الاصطناعي',
+    'ws.title.before': 'ماذا تريد أن',
+    'ws.title.span': 'تصف اليوم؟',
+    'ws.subtitle': 'اختر السياق، ارفع صورة، ودع الذكاء الاصطناعي يصنع الكلمات.',
+    'ws.upload.helper': 'حدد السياق وأضف صورك.',
+    'ws.category': 'الفئة',
+    'ws.category.placeholder': 'اختر فئة',
+    'ws.addVisual': 'أضف مدخلك البصري',
+    'ws.chooseFiles': 'اختر ملفات',
+    'ws.clear': 'مسح',
+    'ws.noImages': 'لم يتم اختيار صور',
+    'ws.yourImage': 'صورتك',
+    'ws.changeImage': '↻ تغيير الصورة',
+    'ws.noImageStatus': '○ لم يتم اختيار صورة',
+    'ws.imageReady': '✓ الصورة جاهزة',
+    'ws.generating': '⟳ جارٍ تحليل الصورة…',
+    'ws.viewAnalysis': 'عرض تحليل الذكاء الاصطناعي ⌄',
+    'ws.generate': '✦ إنشاء الأوصاف',
+    'ws.generatingBtn': '✦ جارٍ الإنشاء',
+    'ws.advanced': '✦ خيارات متقدمة',
+    'ws.advanced.hint': 'كلمات مفتاحية · هاشتاغ · صوت العلامة',
+    'ws.captions': 'أوصاف مُنشأة بالذكاء الاصطناعي',
+    'ws.regenerate': '↻ إعادة الإنشاء',
+    'ws.customize': '☷ تخصيص الأوصاف',
+    'ws.tab.all': 'الكل',
+    'ws.tab.professional': 'احترافي',
+    'ws.tab.marketing': 'تسويق',
+    'ws.tab.social': 'اجتماعي',
+    'ws.tab.creative': 'إبداعي',
+    'ws.special.title': 'مساحات عمل متخصصة',
+    'ws.special.sub': 'مسارات مخصصة خارج قائمة الفئات.',
+    'ws.psych.title': 'علم النفس',
+    'ws.psych.desc': 'تفسير الصور في سياق سريري وسلوكي.',
+    'ws.psych.cta': 'فتح علم النفس →',
+    'ws.custom.title': 'صناعة مخصصة',
+    'ws.custom.desc': 'عرّف صناعتك وقواعد الوصف الخاصة بك.',
+    'ws.custom.cta': 'فتح الصناعة المخصصة →',
+    'toast.lang': 'تم تحديث اللغة',
+    'toast.copied': 'تم نسخ الوصف',
+    'cam.title': 'التقاط صورة',
+    'cam.cancel': 'إلغاء',
+    'cam.start': 'تشغيل الكاميرا'
+  }
+};
+
+window.vvLangCode = function(value){
+  const v = String(value || '').trim().toLowerCase();
+  if (v === 'en' || v.includes('english')) return 'en';
+  if (v === 'fa' || v.includes('فارسی') || v.includes('farsi') || v.includes('persian')) return 'fa';
+  if (v === 'tr' || v.includes('türk') || v.includes('turk')) return 'tr';
+  if (v === 'ar' || v.includes('عرب') || v.includes('arab')) return 'ar';
+  // option values may already be codes
+  if (['en','fa','tr','ar'].includes(v)) return v;
+  return 'en';
+};
+
+window.vvLangDisplay = function(code){
+  return ({en:'English', fa:'فارسی', tr:'Türkçe', ar:'العربية'})[code] || 'English';
+};
+
+window.vvT = function(key){
+  const code = window.vvLangCode(window.vvOptions && window.vvOptions.language);
+  const pack = (window.VV_I18N && window.VV_I18N[code]) || {};
+  const fallback = (window.VV_I18N && window.VV_I18N.en) || {};
+  return pack[key] || fallback[key] || key;
+};
+
+window.vvApplyLanguage = function(lang){
+  const code = window.vvLangCode(lang || (window.vvOptions && window.vvOptions.language) || 'en');
+  if (!window.vvOptions) window.vvOptions = { language:'English', audience:'General', tone:'Professional' };
+  window.vvOptions.language = window.vvLangDisplay(code);
+  window.vvOptions.languageCode = code;
+
+  document.documentElement.lang = code;
+  document.documentElement.dir = (code === 'fa' || code === 'ar') ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    const key = el.getAttribute('data-i18n');
+    if (!key) return;
+    const attr = el.getAttribute('data-i18n-attr');
+    const text = window.vvT(key);
+    if (attr) el.setAttribute(attr, text);
+    else el.textContent = text;
+  });
+
+  // Compound titles with span highlights
+  const heroH1 = document.querySelector('.hero-copy h1');
+  if (heroH1) {
+    heroH1.innerHTML = window.vvT('hero.title.before') + '<br/>' +
+      (window.vvT('hero.title.into') ? window.vvT('hero.title.into') + ' ' : '') +
+      '<span>' + window.vvT('hero.title.span') + '</span>';
+  }
+  const howH2 = document.querySelector('#how .section-heading h2');
+  if (howH2) {
+    howH2.innerHTML = window.vvT('how.title.before') + ' <span>' + window.vvT('how.title.span') + '</span>';
+  }
+  const perspH2 = document.querySelector('.vv-perspectives-header h2');
+  if (perspH2) {
+    perspH2.innerHTML = window.vvT('persp.title.before') + ' <span>' + window.vvT('persp.title.span') + '</span>';
+  }
+  const useH2 = document.querySelector('#use-cases .section-heading h2');
+  if (useH2) {
+    useH2.innerHTML = window.vvT('use.title.before') + ' <span>' + window.vvT('use.title.span') + '</span>';
+  }
+  const wsH1 = document.querySelector('.workspace-title-row h1');
+  if (wsH1) {
+    wsH1.innerHTML = window.vvT('ws.title.before') + ' <span>' + window.vvT('ws.title.span') + '</span>';
+  }
+
+  // Dynamic status / buttons that may have been set in JS
+  const genBtn = document.getElementById('generateCaptionsBtn');
+  if (genBtn && !genBtn.classList.contains('loading')) {
+    genBtn.textContent = window.vvT('ws.generate');
+  }
+  const status = document.getElementById('imageReadyStatus');
+  if (status && !window.currentImageFile) {
+    status.textContent = window.vvT('ws.noImageStatus');
+  } else if (status && window.currentImageFile && genBtn && !genBtn.classList.contains('loading')) {
+    status.textContent = window.vvT('ws.imageReady');
+  }
+  const selFiles = document.getElementById('selectedFiles');
+  if (selFiles && !selFiles.classList.contains('has-files')) {
+    selFiles.textContent = window.vvT('ws.noImages');
+  }
+  const cat = document.getElementById('selectedCategory');
+  if (cat && (!cat.textContent || cat.textContent === 'Select a category' || cat.getAttribute('data-i18n') === 'ws.category.placeholder')) {
+    // only overwrite if still placeholder
+    const saved = (function(){ try { return localStorage.getItem('vv-category'); } catch(e){ return null; } })();
+    if (!saved) cat.textContent = window.vvT('ws.category.placeholder');
+  }
+
+  // Sync language selects by value code
+  ['langSelectLanding','langSelectWorkspace'].forEach(function(id){
+    const el = document.getElementById(id);
+    if (el) el.value = code;
+  });
+
+  try { localStorage.setItem('vv-language', code); localStorage.setItem('vv-language-display', window.vvOptions.language); } catch(e){}
+};
+
+window.vvOptions = { language:'English', languageCode:'en', audience:'General', tone:'Professional' };
+
+function vvCleanOption(value){
+  // Strips emoji / whitespace so "🌐  English" -> "English"
+  return String(value || '').replace(/[^\p{L}\p{N}\s]/gu,'').replace(/^\s+|\s+$/g,'').trim();
+}
+
+function vvUpdateOption(key, value){
+  if(!window.vvOptions || !(key in window.vvOptions) && key !== 'language') return;
+  if (key === 'language') {
+    window.vvApplyLanguage(value);
+    if (typeof toast === 'function') toast(window.vvT('toast.lang'));
+    return;
+  }
+  const cleaned = vvCleanOption(value);
+  window.vvOptions[key] = cleaned;
+  const idMap = {
+    audience: ['audienceSelectLanding','audienceSelectWorkspace'],
+    tone:     ['toneSelectLanding']
+  };
+  (idMap[key] || []).forEach(id=>{
+    const el = document.getElementById(id);
+    if(!el) return;
+    [...el.options].forEach(opt=>{
+      if(vvCleanOption(opt.text) === cleaned) opt.selected = true;
+    });
+  });
+  if(typeof toast === 'function') toast(cleaned+' selected');
+  try{ localStorage.setItem('vv-'+key, cleaned); }catch(e){}
+}
+
+
+// Reads the context selectors the user set from live <select> controls.
+window.getGenerationContext = function(){
+  const readSelect = (id, fallback) => {
+    const el = document.getElementById(id);
+    if(!el || el.tagName !== 'SELECT') return fallback;
+    if(el.selectedIndex >= 0 && el.options[el.selectedIndex]){
+      // Prefer option value for language codes; else cleaned text
+      const opt = el.options[el.selectedIndex];
+      if (id.toLowerCase().includes('lang') && opt.value) {
+        return window.vvLangDisplay(window.vvLangCode(opt.value));
+      }
+      const clean = vvCleanOption(opt.text);
+      if(clean) return clean;
+    }
+    return fallback;
+  };
+  // Customize modal tone takes priority if present.
+  let tone = window.vvOptions && window.vvOptions.tone;
+  const customTone = document.getElementById('customTone');
+  if(customTone && customTone.value) tone = vvCleanOption(customTone.value);
+  const langCode = (window.vvOptions && window.vvOptions.languageCode) || window.vvLangCode(window.vvOptions && window.vvOptions.language);
+  return {
+    industry: (document.getElementById('selectedCategory')?.textContent || 'General'),
+    audience: readSelect('audienceSelectLanding', readSelect('audienceSelectWorkspace', window.vvOptions.audience || 'General')),
+    tone:     tone || readSelect('toneSelectLanding', 'Professional'),
+    language: window.vvLangDisplay(langCode)
+  };
+};
+
+// Lets the UI tell "backend is down" apart from "model is not loaded".
+window.checkBackend = async function(){
+  try{
+    const res = await fetch(window.vvApiUrl('/api/status'), {cache:'no-store'});
+    if(!res.ok) return {reachable:false};
+    const data = await res.json();
+    return {reachable:true, ...data};
+  }catch(e){
+    return {reachable:false};
+  }
+};
+
+function setGenerateButtonState(enabled, loading=false){
+  const btn=document.getElementById('generateCaptionsBtn');
+  const status=document.getElementById('imageReadyStatus');
+  if(!btn) return;
+  btn.disabled=!enabled || loading;
+  btn.classList.toggle('loading',loading);
+  const t = (k)=> (typeof window.vvT==='function' ? window.vvT(k) : k);
+  btn.textContent=loading ? t('ws.generatingBtn') : t('ws.generate');
+  if(status) status.textContent=loading ? t('ws.generating') : (enabled ? t('ws.imageReady') : t('ws.noImageStatus'));
+}
+
+function previewImages(event){
+  const files=[...(event?.target?.files || [])];
+  if(!files.length)return;
+
+  const valid=files.filter(file=>
+    file && file.type && file.type.startsWith('image/') && file.size<=10*1024*1024
+  );
+
+  if(!valid.length){
+    toast('Please choose valid images under 10MB');
+    return;
+  }
+
+  const file=valid[0];
+  showImageFile(file);
+  const label=document.getElementById('selectedFiles');
+  label.textContent=valid.length+' image'+(valid.length>1?'s':'')+' selected';
+  label.classList.add('has-files');
+  document.getElementById('uploadZone').classList.remove('dragging');
+  toast(valid.length+' image'+(valid.length>1?'s':'')+' selected');
+}
+function handleDrop(event){
+  event.preventDefault();
+  document.getElementById('uploadZone').classList.remove('dragging');
+  const files=[...event.dataTransfer.files];
+  const input=document.getElementById('fileInput');
+  try{const dt=new DataTransfer();files.forEach(f=>dt.items.add(f));input.files=dt.files;}catch(e){}
+  previewImages({target:{files}});
+}
+function clearImages(){
+  window.currentImageFile=null;
+  window.currentImageSourceUrl='';
+  setGenerateButtonState(false);
+  const input=document.getElementById('fileInput');
+  if(input) input.value='';
+  if(window.currentObjectUrl){URL.revokeObjectURL(window.currentObjectUrl);window.currentObjectUrl=null;}
+  const previewImg = document.querySelector('#imagePreview img');
+
+if(previewImg){
+  previewImg.src = '';
+  previewImg.alt = 'No image selected';
+  previewImg.style.display = 'none';
+}
+  const label=document.getElementById('selectedFiles');
+  label.textContent='No images selected';
+  label.classList.remove('has-files');
+  toast('Images cleared');
+}
+function resetImage(){
+  document.getElementById('fileInput').click();
+}
+async function openCamera(){
+  const modal=document.getElementById('cameraModal');
+  const video=document.getElementById('cameraVideo');
+  const status=document.getElementById('cameraStatus');
+  const captureBtn=document.getElementById('captureCameraBtn');
+  const fallback=document.getElementById('cameraFileInput');
+
+  // Always request permission from the user action first. Browsers only
+  // allow getUserMedia() to prompt reliably when it follows a user gesture.
+  status.textContent='Requesting camera permission…';
+  captureBtn.disabled=true;
+  captureBtn.textContent='Requesting access…';
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+
+  if(!window.isSecureContext || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+    status.textContent='Camera permission can only be requested on HTTPS or localhost. You can still choose a camera photo below.';
+    captureBtn.disabled=false;
+    captureBtn.textContent='Choose camera photo';
+    return;
+  }
+
+  try{
+    // Stop any previous stream before requesting a fresh permission/session.
+    if(window.__cameraStream){
+      window.__cameraStream.getTracks().forEach(track=>track.stop());
+      window.__cameraStream=null;
+    }
+
+    window.__cameraStream=await navigator.mediaDevices.getUserMedia({
+      video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}},
+      audio:false
+    });
+
+    video.srcObject=window.__cameraStream;
+    video.muted=true;
+    video.setAttribute('playsinline','');
+    await video.play();
+
+    captureBtn.disabled=false;
+    captureBtn.textContent='Take photo';
+    status.textContent='Camera access granted. You can take a photo now.';
+  }catch(err){
+    let message='Camera access could not be started.';
+    if(err && err.name==='NotAllowedError'){
+      message='Camera permission was denied. Allow camera access in your browser, then press Camera again.';
+    }else if(err && err.name==='NotFoundError'){
+      message='No camera was found. You can choose a camera photo instead.';
+    }else if(err && err.name==='NotReadableError'){
+      message='The camera is busy in another application. You can choose a photo instead.';
+    }else if(err && err.name==='SecurityError'){
+      message='Camera access is blocked on this page. Open the project on HTTPS or localhost.';
+    }
+    status.textContent=message;
+    captureBtn.disabled=false;
+    captureBtn.textContent='Choose camera photo';
+    toast(message);
+  }
+}
+
+function captureCamera(){
+  const video=document.getElementById('cameraVideo');
+  if(!video.videoWidth || !video.videoHeight){
+    const input=document.getElementById('cameraFileInput');
+    if(input){ closeCamera(); input.click(); }
+    else toast('Camera is not ready yet');
+    return;
+  }
+  const canvas=document.getElementById('cameraCanvas');
+  canvas.width=video.videoWidth;
+  canvas.height=video.videoHeight;
+  const ctx=canvas.getContext('2d');
+  ctx.drawImage(video,0,0,canvas.width,canvas.height);
+  canvas.toBlob(blob=>{
+    if(!blob){toast('Could not capture the photo');return;}
+    const file=new File([blob],`camera-${Date.now()}.jpg`,{type:'image/jpeg'});
+    showImageFile(file);
+    closeCamera();
+  },'image/jpeg',0.92);
+}
+
+function handleCameraFile(event){
+  const file=event.target.files && event.target.files[0];
+  if(file){
+    window.currentImageSourceUrl='';
+    showImageFile(file);
+  }
+  event.target.value='';
+}
+
+function showImageFile(file){
+  if(!file.type || !file.type.startsWith('image/')){toast('Please choose an image');return;}
+  if(file.size>10*1024*1024){toast('Image must be under 10MB');return;}
+  const img=document.querySelector('#imagePreview img');
+  const label=document.getElementById('selectedFiles');
+  window.currentImageFile=file;
+  setGenerateButtonState(true);
+  const reader=new FileReader();
+  reader.onload=e=>{
+    img.src=e.target.result;
+    img.alt=file.name||'Captured image';
+    img.style.display='block';
+    label.textContent='1 image selected';
+    label.classList.add('has-files');
+    toast('Photo added');
+  };
+  reader.onerror=()=>toast('Could not load the image');
+  reader.readAsDataURL(file);
+}
+
+function closeCamera(){
+  if(window.__cameraStream){
+    window.__cameraStream.getTracks().forEach(track=>track.stop());
+    window.__cameraStream=null;
+  }
+  const video=document.getElementById('cameraVideo');
+  if(video) video.srcObject=null;
+  const modal=document.getElementById('cameraModal');
+  if(modal){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');}
+}
+
+async function promptForImageURL(){
+  const raw=prompt('Paste a direct image URL (JPG, PNG, WEBP, GIF, BMP, or SVG)');
+  const url=(raw||'').trim();
+  if(!url)return;
+  let parsed;
+  try{ parsed=new URL(url); }catch(e){ toast('Invalid image URL'); return; }
+  if(!/^https?:$/.test(parsed.protocol)){ toast('Please use an http:// or https:// image URL'); return; }
+
+  const img=document.querySelector('#imagePreview img');
+  const label=document.getElementById('selectedFiles');
+  if(!img || !label)return;
+  toast('Loading image URL…');
+
+  // First try to turn the remote image into a real File. This is what the AI
+  // upload endpoint needs. It works when the image host allows CORS.
+  try{
+    const response=await fetch(url,{mode:'cors',cache:'no-store'});
+    if(!response.ok) throw new Error('HTTP '+response.status);
+    const blob=await response.blob();
+    if(!blob.type.startsWith('image/')) throw new Error('Not an image');
+    if(blob.size>10*1024*1024) throw new Error('Too large');
+    const ext=(blob.type.split('/')[1]||'jpg').replace('jpeg','jpg');
+    const file=new File([blob],`url-image-${Date.now()}.${ext}`,{type:blob.type});
+    showImageFile(file);
+    window.currentImageSourceUrl=url;
+    return;
+  }catch(error){
+    // Some public image hosts block browser CORS. Preview can still work, and
+    // the generator can try the URL-aware API path below.
+    img.onerror=()=>{ toast('The URL could not be loaded as an image. Use a direct image URL.'); };
+    img.onload=()=>{
+      img.style.display='block';
+      img.classList.add('image-ready');
+      window.currentImageFile=null;
+      window.currentImageSourceUrl=url;
+      if(typeof setGenerateButtonState==='function') setGenerateButtonState(true);
+      label.textContent='Image loaded from URL';
+      label.classList.add('has-files');
+      toast('Image URL loaded');
+    };
+    img.src=url;
+  }
+}
+function toggleAnalysis(){
+  document.getElementById('analysis').classList.toggle('hidden');
+}
+function toggleAccordion(card){
+  card.classList.toggle('open');
+}
+function copyText(btn){
+  const text=btn.closest('.caption-card').querySelector('p').innerText;
+  navigator.clipboard?.writeText(text);
+  toast('Caption copied');
+}
+function copyCaption(){
+  const card=document.querySelector('.caption-card.selected');
+  navigator.clipboard?.writeText(card.querySelector('p').innerText);
+  toast('Selected caption copied');
+}
+function useCaption(btn){
+  document.querySelectorAll('.caption-card').forEach(c=>c.classList.remove('selected'));
+  btn.closest('.caption-card').classList.add('selected');
+  toast('Caption selected');
+}
+function filterCaptions(type,btn){
+  document.querySelectorAll('.caption-tabs button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.caption-card').forEach(card=>{
+    card.style.display=(type==='all'||card.dataset.type===type)?'block':'none';
+  });
+}
+async function generateCaptions(){
+  const file=window.currentImageFile;
+  const sourceUrl=window.currentImageSourceUrl || '';
+  if(!file && !sourceUrl){
+    toast('Upload an image or add an image URL first');
+    return;
+  }
+
+  const btn=document.getElementById('generateCaptionsBtn');
+  // industry/audience/tone/language were previously undefined globals here,
+  // which threw before the request was ever sent.
+  const ctx=window.getGenerationContext();
+  const category=ctx.industry;
+  setGenerateButtonState(true,true);
+try{
+  let response;
+
+  if(file){
+    const formData = new FormData();
+
+    formData.append('image', file, file.name || 'image.jpg');
+
+    formData.append('industry', ctx.industry);
+    formData.append('audience', ctx.audience);
+    formData.append('tone', ctx.tone);
+    formData.append('language', ctx.language);
+
+    response = await fetch(window.CAPTIONS_API_URL,{
+      method:'POST',
+      body:formData
+    });
+
+  }else{
+    response = await fetch(window.CAPTIONS_API_URL,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        image_url:sourceUrl,
+        industry:ctx.industry,
+        audience:ctx.audience,
+        tone:ctx.tone,
+        language:ctx.language
+      })
+    });
+  }
+    if(!response.ok){
+      let detail='';
+      try{ const err=await response.json(); detail=err.detail || err.message || ''; }catch(e){}
+      throw new Error('API '+response.status+(detail?' — '+detail:''));
+    }
+
+    const data=await response.json();
+    const captions=Array.isArray(data) ? data : (data.captions || data.results || []);
+    if(!Array.isArray(captions) || !captions.length) throw new Error('No captions returned');
+
+    renderGeneratedCaptions(captions);
+    renderCaptionMeta(data);
+
+    if(data.model_loaded === false){
+      toast(data.warning || 'Backend connected, but the vision model is not loaded');
+    }else{
+      toast('AI captions generated');
+    }
+  }catch(error){
+    console.error('Caption generation failed:',error);
+    window.checkBackend().then(s=>{
+      if(!s.reachable) console.warn('VisionVerse: backend unreachable at '+(window.vvApiBase||location.origin));
+      else if(!s.model_loaded) console.warn('VisionVerse: backend up, model not loaded ->', s.error);
+    });
+    // Keep the UI usable when the backend is not connected yet.
+    const demoCaptions={
+      'Digital Marketing':'A modern visual designed to communicate atmosphere, style, and a clear brand story.',
+      'E-Commerce':'A polished visual that highlights the product environment and creates an inviting shopping experience.',
+      'Industry':'A structured visual showing space, objects, and functional elements in context.',
+      'Medical':'A clear visual environment that can be interpreted through organization, comfort, and accessibility.',
+      'Education':'A visual example that can support learning through objects, spatial relationships, and context.'
+    };
+    renderGeneratedCaptions([
+      {type:'Professional',caption:demoCaptions[category] || 'A clear visual composition interpreted according to the selected context.'},
+      {type:'Marketing',caption:'A purposeful visual with strong atmosphere and storytelling potential for your audience.'},
+      {type:'Social Media',caption:'A visual moment worth sharing — clear, engaging, and ready for your next post.'}
+    ]);
+    toast('Demo captions shown — connect the AI endpoint for real generation');
+  }finally{
+    setGenerateButtonState(true,false);
+  }
+}
+
+// Renders the hashtags / CTA / strategy the backend returns alongside captions.
+function renderCaptionMeta(data){
+  if(!data || typeof data !== 'object') return;
+
+  const hashtagBox=document.getElementById('vvHashtags');
+  if(hashtagBox && Array.isArray(data.hashtags)){
+    hashtagBox.innerHTML=data.hashtags.map(t=>`<span>${escapeHtml(t)}</span>`).join('');
+  }
+
+  const ctaBox=document.getElementById('vvCta');
+  if(ctaBox && data.cta) ctaBox.textContent=data.cta;
+
+  const strategyBox=document.getElementById('vvStrategy');
+  if(strategyBox && data.marketing_strategy) strategyBox.textContent=data.marketing_strategy;
+
+  const analysisBox=document.getElementById('vvVisualDescription');
+  if(analysisBox && data.image_analysis && data.image_analysis.description){
+    analysisBox.textContent=data.image_analysis.description;
+  }
+
+  window.vvLastResult=data;
+}
+
+function renderGeneratedCaptions(items){
+  const container=document.getElementById('captions');
+  if(!container) return;
+  const normalized=items.slice(0,6).map((item,index)=>{
+    if(typeof item==='string') return {type:index===0?'Professional':index===1?'Marketing':'Social Media',caption:item};
+    return {type:item.type || item.category || 'Professional',caption:item.caption || item.text || item.description || ''};
+  }).filter(x=>x.caption);
+  container.innerHTML=normalized.map((item,index)=>{
+    const type=String(item.type).toLowerCase();
+    const cls=type.includes('marketing')?'green':type.includes('social')?'blue':type.includes('creative')?'orange':'purple';
+    const dataType=type.includes('marketing')?'marketing':type.includes('social')?'social':type.includes('creative')?'creative':'professional';
+    return `<article class="caption-card ${index===0?'selected':''}" data-type="${dataType}">
+      <div class="caption-type ${cls}">✦ ${escapeHtml(item.type)}</div>
+      <p>${escapeHtml(item.caption)}</p>
+      <div class="caption-actions"><button>♡</button><button onclick="copyText(this)">⧉</button><button>⋯</button><button class="use" onclick="useCaption(this)">Use this</button></div>
+    </article>`;
+  }).join('');
+}
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[c]));
+}
+
+function regenerate(){
+  const cards=[...document.querySelectorAll('.caption-card p')];
+  const variations=[
+    'A thoughtful workspace where modern design, focused work, and creative energy come together.',
+    'A clean, modern environment built for focus, ideas, and productive moments.',
+    'Where ideas become action — a calm workspace designed for people who create.'
+  ];
+  cards.forEach((p,i)=>p.textContent=variations[i%variations.length]);
+  toast('New captions generated');
+}
+function setPerspective(btn,type){
+  document.querySelectorAll('.vv-persp-tabs [data-perspective]').forEach(b=>{
+    b.classList.toggle('active', b===btn);
+    b.setAttribute('aria-selected', b===btn ? 'true' : 'false');
+  });
+  const key=String(type||'marketing').toLowerCase();
+  const data={
+    marketing:{label:'MARKETING',title:'A modern living space designed for comfort and style — perfect for creating a warm, aspirational brand story.',insights:['Warm atmosphere','Premium interior','Lifestyle setting'],uses:['Instagram','Campaign','Brand Story']},
+    medical:{label:'MEDICAL',title:'A well-organized indoor environment with furniture and spatial elements arranged for comfortable daily living.',insights:['Organized space','Comfort-focused layout','Accessible movement'],uses:['Presentation','Context','Documentation']},
+    industrial:{label:'INDUSTRIAL',title:'A contemporary interior environment showcasing structured spatial design, materials, lighting and functional layout.',insights:['Structured layout','Materials visible','Functional zones'],uses:['Report','Documentation','Overview']},
+    educational:{label:'EDUCATIONAL',title:'This interior demonstrates how lighting, furniture and spatial arrangement influence comfort and visual perception.',insights:['Spatial relationships','Lighting impact','Visual perception'],uses:['Lesson','Example','Study'] }
+  }[key] || null;
+  if(!data) return;
+  const category=document.getElementById('vvPerspectiveCategory');
+  const title=document.getElementById('vvPerspectiveTitle');
+  const list=document.getElementById('vvInsightList');
+  const suggested=document.getElementById('vvSuggestedUse');
+  if(category) category.textContent=data.label;
+  if(title) title.textContent=data.title;
+  if(list) list.innerHTML=data.insights.map(x=>`<span>✓ ${escapeHtml(x)}</span>`).join('');
+  if(suggested) suggested.innerHTML=data.uses.map(x=>`<span>${escapeHtml(x)}</span>`).join('');
+}
+function toggleDark(){
+  document.body.classList.toggle('dark');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCamera();});
+window.addEventListener('beforeunload',()=>{
+    if(window.__cameraStream) window.__cameraStream.getTracks().forEach(t=>t.stop());
+  });
+
+  // Also bind the file input programmatically so uploads keep working if inline handlers are altered.
+  const vvFileInput=document.getElementById('fileInput');
+  if(vvFileInput){
+    vvFileInput.addEventListener('change',function(e){ window.previewImages(e); });
+  }
+
+setGenerateButtonState(false);
+
+/* =========================================================
+   DEMO VIDEO — Watch Demo button
+   Put video at: static/demo.mkv
+   Or set: window.VV_DEMO_VIDEO_URL = 'path-or-url.mp4'
+========================================================= */
+window.VV_DEMO_VIDEO_URL = window.VV_DEMO_VIDEO_URL || 'static/demo.mkv';
+
+function openDemo(){
+  const modal = document.getElementById('demoModal');
+  const video = document.getElementById('demoVideo');
+  const fallback = document.getElementById('demoFallback');
+  if (!modal || !video) {
+    alert('Demo player is unavailable.');
+    return;
+  }
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+  if (fallback) fallback.classList.remove('show');
+  video.style.opacity = '1';
+
+  const desired = window.VV_DEMO_VIDEO_URL;
+  if (desired && video.getAttribute('data-src') !== desired) {
+    video.setAttribute('data-src', desired);
+    while (video.firstChild) video.removeChild(video.firstChild);
+    const s1 = document.createElement('source');
+    s1.src = desired;
+    s1.type = desired.toLowerCase().endsWith('.webm') ? 'video/webm' : 'video/mp4';
+    video.appendChild(s1);
+    if (desired.toLowerCase().endsWith('.mp4')) {
+      const s2 = document.createElement('source');
+      s2.src = desired.replace(/\.mp4$/i, '.webm');
+      s2.type = 'video/webm';
+      video.appendChild(s2);
+    }
+    video.load();
+  }
+
+  video.onerror = function () {
+    if (fallback) fallback.classList.add('show');
+    video.style.opacity = '0';
+  };
+  video.onloadeddata = function () {
+    if (fallback) fallback.classList.remove('show');
+    video.style.opacity = '1';
+  };
+
+  video.currentTime = 0;
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === 'function') {
+    playPromise.catch(function () {});
+  }
+}
+
+function closeDemo(){
+  const modal = document.getElementById('demoModal');
+  const video = document.getElementById('demoVideo');
+  if (video) {
+    try { video.pause(); } catch (e) {}
+    video.currentTime = 0;
+  }
+  if (modal) {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+function replayDemo(){
+  const video = document.getElementById('demoVideo');
+  const fallback = document.getElementById('demoFallback');
+  if (!video) return;
+  if (fallback) fallback.classList.remove('show');
+  video.style.opacity = '1';
+  video.currentTime = 0;
+  video.play().catch(function () {});
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('demoModal');
+    if (modal && modal.classList.contains('show')) closeDemo();
+  }
+});
+
+document.addEventListener('click', function (e) {
+  const modal = document.getElementById('demoModal');
+  if (modal && modal.classList.contains('show') && e.target === modal) closeDemo();
+});
+
+function toast(message){
+  const t=document.getElementById('toast');
+  t.textContent=message;t.classList.add('show');
+  clearTimeout(window.__toast);
+  window.__toast=setTimeout(()=>t.classList.remove('show'),1800);
+}
+
+
+/* ===== HERO INTERACTION ===== */
+(function(){
+  const visual=document.querySelector('.vv-visual-image');
+  if(!visual || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  visual.addEventListener('mousemove',function(e){
+    if(window.innerWidth<900)return;
+    const r=visual.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    visual.style.transform=`perspective(1200px) rotateY(${x*5}deg) rotateX(${-y*3}deg) translateY(-4px) scale(1.01)`;
+  });
+  visual.addEventListener('mouseleave',function(){
+    visual.style.transform='perspective(1200px) rotateY(-3deg) rotateX(0deg) translateY(0) scale(1)';
+  });
+})();
+
+
+
+/* =========================================================
+   FULL-PROJECT BEHAVIOR PASS
+========================================================= */
+(function(){
+  // Persist theme across page changes / refresh.
+  try{
+    if(localStorage.getItem('vv-theme')==='dark') document.body.classList.add('dark');
+  }catch(e){}
+
+  // Persist selected category.
+  try{
+    const saved=localStorage.getItem('vv-category');
+    if(saved){
+      const el=document.getElementById('selectedCategory');
+      if(el) el.textContent=saved;
+    }
+  }catch(e){}
+
+  // Make internal page navigation feel like a real app and update active item.
+  window.showPage=function(page){
+    document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+    const target=document.getElementById(page);
+    if(target) target.classList.remove('hidden');
+    document.querySelectorAll('.side-nav a').forEach(a=>{
+      const onclick=a.getAttribute('onclick')||'';
+      a.classList.toggle('active',onclick.includes("'"+page+"'"));
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+    document.body.classList.add('vv-page-switch');
+    setTimeout(()=>document.body.classList.remove('vv-page-switch'),550);
+  };
+
+  // Better dark mode with persistence.
+  window.toggleDark=function(){
+    document.body.classList.toggle('dark');
+    try{localStorage.setItem('vv-theme',document.body.classList.contains('dark')?'dark':'light')}catch(e){}
+    const btn=document.querySelector('.theme-button');
+    if(btn) btn.textContent=document.body.classList.contains('dark')?'☀':'☾';
+  };
+
+  // Better category persistence.
+  const originalSelect=window.selectCategory;
+  window.selectCategory=function(name){
+    if(typeof originalSelect==='function') originalSelect(name);
+    try{localStorage.setItem('vv-category',name)}catch(e){}
+  };
+
+  // Robust local-image preview: read the selected file as a data URL so it works
+  // from file://, localhost, and normal hosted pages without relying on object URLs.
+  let currentObjectUrl=null;
+  window.showImageFile=function(file){
+    if(!file){ toast('Please choose an image'); return; }
+    const isImage = (file.type && file.type.startsWith('image/')) ||
+      /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(file.name || '');
+    if(!isImage){ toast('Please choose a JPG, PNG, WEBP, GIF, BMP, or SVG image'); return; }
+    if(file.size > 10*1024*1024){ toast('Image must be under 10MB'); return; }
+
+    const img=document.querySelector('#imagePreview img');
+    const label=document.getElementById('selectedFiles');
+    const preview=document.getElementById('imagePreview');
+    if(!img || !label){ toast('Image preview is unavailable'); return; }
+
+    // Keep the uploaded file as the active image so Generate captions becomes usable.
+    window.currentImageFile=file;
+    window.currentImageSourceUrl='';
+    if(typeof setGenerateButtonState === 'function') setGenerateButtonState(true);
+
+    const reader=new FileReader();
+    reader.onload=function(e){
+      const src=e.target && e.target.result;
+      if(typeof src !== 'string' || !src){
+        toast('Could not read this image');
+        return;
+      }
+
+      img.onload=function(){
+        img.style.display='block';
+        img.classList.add('image-ready');
+      };
+      img.onerror=function(){
+        toast('This image format cannot be previewed by the browser');
+      };
+      img.src=src;
+      img.alt=file.name || 'Uploaded image';
+      label.textContent='1 image selected · '+(file.name || 'image');
+      label.classList.add('has-files');
+      if(preview){
+        preview.classList.remove('vv-image-confirm');
+        void preview.offsetWidth;
+        preview.classList.add('vv-image-confirm');
+      }
+      toast('Image uploaded successfully');
+    };
+    reader.onerror=function(){ toast('Could not read the selected image'); };
+    reader.readAsDataURL(file);
+  };
+
+  // Handle normal file selection and keep the first valid image as the active preview.
+  window.previewImages=function(event){
+    const files=[...(event && event.target && event.target.files ? event.target.files : [])];
+    if(!files.length) return;
+    const valid=files.filter(file=>{
+      const isImage=(file.type && file.type.startsWith('image/')) || /\.(jpe?g|png|webp|gif|bmp|svg)$/i.test(file.name||'');
+      return isImage && file.size <= 10*1024*1024;
+    });
+    if(!valid.length){
+      toast('Please choose an image under 10MB');
+      return;
+    }
+    window.showImageFile(valid[0]);
+    const label=document.getElementById('selectedFiles');
+    if(label){
+      label.textContent=valid.length+' image'+(valid.length>1?'s':'')+' selected · '+(valid[0].name||'image');
+      label.classList.add('has-files');
+    }
+    const zone=document.getElementById('uploadZone');
+    if(zone) zone.classList.remove('dragging');
+  };
+
+  // Robust drag & drop: handle dragenter/over/leave/drop without relying on inline handlers.
+  const vvUploadZone=document.getElementById('uploadZone');
+  if(vvUploadZone){
+    let dragDepth=0;
+    const stop=e=>{e.preventDefault();e.stopPropagation();};
+    vvUploadZone.addEventListener('dragenter',e=>{
+      stop(e);
+      dragDepth++;
+      vvUploadZone.classList.add('dragging');
+    });
+    vvUploadZone.addEventListener('dragover',e=>{
+      stop(e);
+      if(e.dataTransfer) e.dataTransfer.dropEffect='copy';
+      vvUploadZone.classList.add('dragging');
+    });
+    vvUploadZone.addEventListener('dragleave',e=>{
+      stop(e);
+      dragDepth=Math.max(0,dragDepth-1);
+      if(!dragDepth) vvUploadZone.classList.remove('dragging');
+    });
+    vvUploadZone.addEventListener('drop',e=>{
+      stop(e);
+      dragDepth=0;
+      vvUploadZone.classList.remove('dragging');
+      const files=[...(e.dataTransfer?.files || [])];
+      if(!files.length){toast('Drop an image file here');return;}
+      previewImages({target:{files}});
+    });
+    vvUploadZone.addEventListener('keydown',e=>{
+      if(e.key==='Enter' || e.key===' '){e.preventDefault();document.getElementById('fileInput')?.click();}
+    });
+  }
+  // Prevent the browser from navigating away when a file is dropped outside the upload zone.
+  window.addEventListener('dragover',e=>e.preventDefault());
+  window.addEventListener('drop',e=>{
+    if(!e.target.closest('#uploadZone')) e.preventDefault();
+  });
+
+  // Ensure camera fallback works even when the page is opened from file://.
+  const originalOpenCamera=window.openCamera;
+  window.openCamera=async function(){
+    return originalOpenCamera();
+  };
+
+  // Add keyboard-friendly escape for dropdowns and modal.
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+    }
+  });
+
+  // Button ripple without external dependencies.
+  document.addEventListener('click',function(e){
+    const btn=e.target.closest('button');
+    if(!btn || btn.disabled) return;
+    const r=document.createElement('span');
+    r.className='vv-ripple';
+    const rect=btn.getBoundingClientRect();
+    const size=Math.max(rect.width,rect.height)*.8;
+    r.style.width=r.style.height=size+'px';
+    r.style.left=(e.clientX-rect.left-size/2)+'px';
+    r.style.top=(e.clientY-rect.top-size/2)+'px';
+    btn.appendChild(r);
+    setTimeout(()=>r.remove(),550);
+  });
+
+  // Close dropdowns when clicking outside, without interfering with existing handlers.
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.dropdown')) document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+  });
+
+  // Stop camera when leaving the workspace page.
+  const originalShowPage=window.showPage;
+  window.addEventListener('hashchange',()=>{});
+
+  // Improve image URL behavior with async validation + visible preview.
+  window.promptForImageURL=async function(){
+    const url=prompt('Paste an image URL');
+    if(!url) return;
+    try{
+      const parsed=new URL(url);
+      if(!/^https?:$/.test(parsed.protocol)) throw new Error('protocol');
+      const img=document.querySelector('#imagePreview img');
+      if(!img) return;
+      img.src=url;
+      img.alt='Image loaded from URL';
+      img.onload=()=>{
+        const label=document.getElementById('selectedFiles');
+        if(label){label.textContent='Image loaded from URL';label.classList.add('has-files')}
+        if(typeof setGenerateButtonState === 'function') setGenerateButtonState(true);
+        toast('Image URL loaded');
+      };
+      img.onerror=()=>toast('Could not load that image URL');
+    }catch(e){toast('Invalid image URL');}
+  };
+
+  // Caption cards: clicking a card selects it, while Use this remains explicit.
+  document.addEventListener('click',function(e){
+    const card=e.target.closest('.caption-card');
+    if(card && !e.target.closest('button')){
+      document.querySelectorAll('.caption-card').forEach(c=>c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+  });
+
+  // Scroll reveal for landing sections.
+  const revealTargets=document.querySelectorAll('.section,.cta,.steps article,.use-cases div,.perspective-demo');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('vv-revealed');io.unobserve(entry.target)}})
+    },{threshold:.12});
+    revealTargets.forEach(el=>{el.classList.add('vv-reveal');io.observe(el)});
+  }
+
+  // Clean up object URL on unload.
+  window.addEventListener('beforeunload',()=>{if(currentObjectUrl)URL.revokeObjectURL(currentObjectUrl)});
+})();
+
+</script>
+<script id="vv-perspectives-enhancement-js">
+(function(){
+  const data={
+    marketing:{category:'MARKETING',title:'A modern living space designed for comfort and style — perfect for creating a warm, aspirational brand story.',insights:['✓ Warm atmosphere','✓ Premium interior','✓ Lifestyle setting'],uses:['Instagram','Campaign','Brand Story'],detections:['artwork','lamp','seating']},
+    medical:{category:'MEDICAL',title:'A well-lit indoor environment with organized seating and clear spatial structure, supporting visual comfort and accessibility.',insights:['✓ Natural lighting','✓ Seating environment','✓ Spatial organization'],uses:['Environment','Accessibility','Visual Analysis'],detections:['lamp','seating','space']},
+    industrial:{category:'INDUSTRIAL',title:'A structured interior demonstrating furniture placement, functional lighting, and clearly defined movement zones.',insights:['✓ Spatial structure','✓ Furniture placement','✓ Lighting distribution'],uses:['Layout','Planning','Analysis'],detections:['lamp','space','seating']},
+    educational:{category:'EDUCATIONAL',title:'This interior demonstrates how lighting, furniture, and spatial arrangement influence comfort and visual perception.',insights:['✓ Spatial perception','✓ Lighting','✓ Human interaction'],uses:['Learning','Research','Visual Study'],detections:['artwork','lamp','space']}
+  };
+  const tabs=document.querySelectorAll('.vv-persp-tabs button');
+  const content=document.querySelector('.vv-persp-content');
+  const category=document.getElementById('vvPerspectiveCategory');
+  const title=document.getElementById('vvPerspectiveTitle');
+  const insightList=document.getElementById('vvInsightList');
+  const suggested=document.getElementById('vvSuggestedUse');
+  const detections=document.querySelectorAll('.vv-persp-detection');
+  if(!tabs.length||!content)return;
+  function showDetections(active){detections.forEach(el=>el.classList.toggle('visible',active.includes(el.dataset.detection)))}
+  function change(type){const d=data[type];if(!d)return;content.classList.add('switching');setTimeout(()=>{category.textContent=d.category;title.textContent=d.title;insightList.innerHTML=d.insights.map(x=>'<span>'+x+'</span>').join('');suggested.innerHTML=d.uses.map(x=>'<span>'+x+'</span>').join('');showDetections(d.detections);content.classList.remove('switching')},220)}
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false')});tab.classList.add('active');tab.setAttribute('aria-selected','true');change(tab.dataset.perspective)}));
+  showDetections(data.marketing.detections);
+  const visual=document.querySelector('.vv-persp-image-wrap');const image=document.getElementById('vvPerspectiveImage');
+  if(visual&&image&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){visual.addEventListener('mousemove',e=>{if(innerWidth<900)return;const r=visual.getBoundingClientRect();const x=e.clientX/r.width-(r.left/r.width)-.5;const y=e.clientY/r.height-(r.top/r.height)-.5;image.style.transform='scale(1.055) translate('+(-x*8)+'px,'+(-y*8)+'px)'});visual.addEventListener('mouseleave',()=>image.style.transform='scale(1.02)')}
+})();
+
+// Category nested dropdown toggle
+document.querySelectorAll('.category-parent').forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const submenu = button.nextElementSibling;
+
+    submenu.classList.toggle('open');
+
+    const arrow = button.querySelector('span');
+
+    if(arrow){
+      arrow.textContent =
+      submenu.classList.contains('open') ? '▴' : '▾';
+    }
+
+  });
+
+});
+function openCustomIndustry(){
+    window.location.href = "pages/custom-industry/index.html";
+}
+function openPsychology(){
+    window.location.href = "pages/psychology/index.html";
+}
+</script>
+<script>
+/* ===== FINAL BUTTON / INTERACTION FIX PASS ===== */
+(function(){
+  function $(id){ return document.getElementById(id); }
+
+  // File / Image input buttons should actually open the image picker.
+  document.addEventListener('click', function(e){
+    const btn=e.target.closest('.input-options button');
+    if(!btn) return;
+    const label=(btn.innerText||'').trim().toLowerCase();
+    if(label.includes('file') || btn.dataset.inputAction==='file'){
+      e.preventDefault();
+      document.getElementById('fileInput')?.click();
+    }
+  }, true);
+
+  // Reliable clipboard fallback for file://, older browsers and insecure contexts.
+  window.copyText = async function(btn){
+    const card=btn?.closest('.caption-card');
+    const text=card?.querySelector('p')?.innerText?.trim();
+    if(!text){ toast('Nothing to copy'); return; }
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(text);
+      }else{
+        const ta=document.createElement('textarea');
+        ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+      }
+      toast('Caption copied');
+    }catch(err){ toast('Copy failed — select the text manually'); }
+  };
+
+  // Favorite buttons now have visible state.
+  document.addEventListener('click', function(e){
+    const btn=e.target.closest('.caption-actions > button:first-child');
+    if(!btn) return;
+    e.preventDefault();
+    btn.classList.toggle('is-favorite');
+    btn.textContent=btn.classList.contains('is-favorite')?'♥':'♡';
+    toast(btn.classList.contains('is-favorite')?'Added to favorites':'Removed from favorites');
+  });
+
+  // Three-dot action gets a useful action instead of doing nothing.
+  document.addEventListener('click', function(e){
+    const actions=e.target.closest('.caption-actions');
+    if(!actions) return;
+    const buttons=[...actions.querySelectorAll('button')];
+    const more=buttons.find(b=>(b.innerText||'').trim()==='⋯');
+    if(e.target!==more) return;
+    const card=e.target.closest('.caption-card');
+    const text=card?.querySelector('p')?.innerText?.trim() || '';
+    if(!text) return;
+    if(navigator.clipboard?.writeText){ navigator.clipboard.writeText(text).catch(()=>{}); }
+    toast('Caption copied — more actions available through Copy and Use this');
+  });
+
+  // URL input must create a real File so Generate captions can use it.
+  window.promptForImageURL = async function(){
+    const url=prompt('Paste an image URL');
+    if(!url) return;
+    let parsed;
+    try{ parsed=new URL(url); if(!/^https?:$/.test(parsed.protocol)) throw new Error('protocol'); }
+    catch(e){ toast('Invalid image URL'); return; }
+
+    try{
+      const response=await fetch(parsed.href,{mode:'cors'});
+      if(!response.ok) throw new Error('HTTP '+response.status);
+      const blob=await response.blob();
+      if(!blob.type.startsWith('image/')) throw new Error('Not an image');
+      const ext=(blob.type.split('/')[1]||'jpeg').replace('svg+xml','svg');
+      const file=new File([blob],`url-image.${ext}`,{type:blob.type});
+      window.showImageFile(file);
+      toast('Image URL loaded');
+    }catch(err){
+      // Cross-origin servers may block fetch. Preview can still work, but generation
+      // will require a backend URL fetch/proxy.
+      const img=$('imagePreview')?.querySelector('img');
+      if(img){
+        img.onload=()=>{
+          $('selectedFiles').textContent='Image loaded from URL';
+          $('selectedFiles').classList.add('has-files');
+          setGenerateButtonState(false);
+          toast('Image preview loaded; use a local file for Generate captions');
+        };
+        img.onerror=()=>toast('Could not load that image URL');
+        img.src=parsed.href;
+      }
+    }
+  };
+
+  // Better image state: never show "No image selected" after a successful upload.
+  const originalShowImageFile=window.showImageFile;
+  window.showImageFile=function(file){
+    if(typeof originalShowImageFile==='function') originalShowImageFile(file);
+    setTimeout(()=>{
+      if(window.currentImageFile) setGenerateButtonState(true);
+    },0);
+  };
+
+  // Camera-file fallback should also activate the Generate button.
+  window.handleCameraFile=function(event){
+    const file=event?.target?.files?.[0];
+    if(file) window.showImageFile(file);
+    if(event?.target) event.target.value='';
+  };
+
+  // Accordion clicks should not accidentally toggle when interacting with inputs.
+  document.addEventListener('click',function(e){
+    const accordion=e.target.closest('.panel.collapsed');
+    if(!accordion || e.target.closest('input,button,select,textarea,a')) return;
+    accordion.classList.toggle('open');
+  });
+
+  // Creative filter should work for generated Creative captions too, and tab counts
+  // are updated from the actual cards.
+  const oldRender=window.renderGeneratedCaptions;
+  window.renderGeneratedCaptions=function(items){
+    if(typeof oldRender==='function') oldRender(items);
+    refreshCaptionCounts();
+  };
+  function refreshCaptionCounts(){
+    const cards=[...document.querySelectorAll('.caption-card')];
+    const count=(type)=>type==='all'?cards.length:cards.filter(c=>c.dataset.type===type).length;
+    document.querySelectorAll('.caption-tabs button').forEach(btn=>{
+      const txt=(btn.innerText||'').toLowerCase();
+      if(txt.startsWith('all')) btn.textContent=`All (${count('all')})`;
+      else if(txt.startsWith('professional')) btn.textContent=`Professional (${count('professional')})`;
+      else if(txt.startsWith('marketing')) btn.textContent=`Marketing (${count('marketing')})`;
+      else if(txt.startsWith('social')) btn.textContent=`Social (${count('social')})`;
+      else if(txt.startsWith('creative')) btn.textContent=`Creative (${count('creative')})`;
+    });
+  }
+  refreshCaptionCounts();
+
+  // Filter supports Creative as a first-class caption type.
+  window.filterCaptions=function(type,btn){
+    document.querySelectorAll('.caption-tabs button').forEach(b=>b.classList.remove('active'));
+    btn?.classList.add('active');
+    document.querySelectorAll('.caption-card').forEach(card=>{
+      card.style.display=(type==='all'||card.dataset.type===type)?'block':'none';
+    });
+  };
+
+  // Customize captions: use a small native dialog rather than a dead placeholder.
+window.openCustomizeCaptions=function(){
+
+  let modal = $('customizeModal');
+
+  if(modal){
+    modal.classList.add('show');
+    return;
+  }
+
+
+  modal = document.createElement('div');
+  modal.id = 'customizeModal';
+  modal.className = 'vv-modal show';
+
+
+  modal.innerHTML = `
+    <div class="vv-modal-card">
+
+      <button class="vv-modal-close" aria-label="Close">
+        ×
+      </button>
+
+      <h3>Customize captions</h3>
+
+
+      <label>
+        Tone
+        <select id="customTone">
+          <option>Professional</option>
+          <option>Friendly</option>
+          <option>Creative</option>
+          <option>Minimal</option>
+        </select>
+      </label>
+
+
+      <label>
+        Length
+        <select id="customLength">
+          <option>Medium</option>
+          <option>Short</option>
+          <option>Long</option>
+        </select>
+      </label>
+
+
+      <button class="btn btn-primary" id="applyCustomize">
+        Apply
+      </button>
+
+    </div>
+  `;
+
+
+
+  document.body.appendChild(modal);
+
+
+
+  // Close button
+  const closeBtn = modal.querySelector('.vv-modal-close');
+
+  closeBtn.addEventListener('click',()=>{
+    modal.remove();
+  });
+
+
+
+  // Close when clicking outside
+  modal.addEventListener('click',(e)=>{
+
+    if(e.target === modal){
+      modal.remove();
+    }
+
+  });
+
+
+
+  // Apply button
+  const applyBtn = modal.querySelector('#applyCustomize');
+
+  applyBtn.addEventListener('click',()=>{
+
+    modal.remove();
+
+    if(typeof toast === 'function'){
+      toast('Caption preferences applied');
+    }
+
+  });
+
+
+};
+
+
+
+const customize = document.querySelector('.customize');
+
+if(customize){
+
+  customize.removeAttribute('onclick');
+
+  customize.addEventListener(
+    'click',
+    openCustomizeCaptions
+  );
+
+}
+  // Make Generate state correct on initial load.
+  setGenerateButtonState(!!window.currentImageFile);
+  if(!window.currentImageFile){ const status=document.getElementById('imageReadyStatus'); if(status) status.textContent='○ No image selected'; }
+})();
+</script>
+<style>
+.caption-actions button.is-favorite{color:#ff4f9a;border-color:rgba(255,79,154,.35);transform:scale(1.05)}
+.vv-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(10,8,24,.55);backdrop-filter:blur(8px)}
+.vv-modal-card{width:min(420px,calc(100vw - 32px));padding:24px;border:1px solid #ded8ff;border-radius:20px;background:#fff;color:#171126;box-shadow:0 24px 70px rgba(40,20,90,.25);position:relative}
+.dark .vv-modal-card{background:#151124;color:#fff;border-color:#393253}
+.vv-modal-card h3{margin:0 0 18px;font-size:20px}.vv-modal-card label{display:block;margin:12px 0;font-size:13px}.vv-modal-card select{display:block;width:100%;margin-top:6px;padding:11px;border:1px solid #ddd6f5;border-radius:10px;background:inherit;color:inherit}.vv-modal-close{position:absolute;right:14px;top:10px;border:0;background:transparent;font-size:25px;color:inherit;cursor:pointer}
+</style>
+
+
+<script id="vv-camera-authoritative">
+(function(){
+  'use strict';
+  let stream = null;
+  let busy = false;
+
+  const $ = id => document.getElementById(id);
+  const stopStream = () => {
+    if (stream) {
+      stream.getTracks().forEach(t => { try { t.stop(); } catch(e) {} });
+      stream = null;
+    }
+    window.__cameraStream = null;
+    const video = $('cameraVideo');
+    if (video) {
+      try { video.pause(); } catch(e) {}
+      video.srcObject = null;
+    }
+  };
+  const status = msg => { const el=$('cameraStatus'); if(el) el.textContent=msg; };
+  const setButton = (text, disabled) => {
+    const b=$('captureCameraBtn'); if(!b) return;
+    b.textContent=text; b.disabled=!!disabled;
+  };
+
+  window.closeCamera = function(){
+    stopStream();
+    const modal=$('cameraModal');
+    if(modal){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
+  };
+
+  window.openCamera = async function(){
+    const modal=$('cameraModal'), video=$('cameraVideo');
+    if(!modal || !video) return;
+    modal.classList.add('show'); modal.setAttribute('aria-hidden','false');
+    setButton('Requesting permission…', true);
+    status('Please allow camera access when Chrome asks.');
+    stopStream();
+
+    // getUserMedia is intentionally attempted only from this user-initiated click.
+    if (!window.isSecureContext || !navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== 'function') {
+      setButton('Start camera', false);
+      status('This page cannot access the camera here. Open the project with start_server.bat and use http://localhost:8000 (or HTTPS).');
+      return;
+    }
+
+    if (busy) return;
+    busy=true;
+    try {
+      let constraints = {video:{width:{ideal:1280},height:{ideal:720}},audio:false};
+      try {
+        stream = await navigator.mediaDevices.getUserMedia(constraints);
+      } catch(firstErr) {
+        // Some mobile browsers need an explicit facing mode.
+        stream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false});
+      }
+      window.__cameraStream=stream;
+      video.srcObject=stream;
+      video.muted=true;
+      video.autoplay=true;
+      video.playsInline=true;
+      video.setAttribute('autoplay','');
+      video.setAttribute('playsinline','');
+      await new Promise((resolve,reject)=>{
+        if(video.readyState>=2) return resolve();
+        const timer=setTimeout(()=>reject(new Error('VIDEO_TIMEOUT')),8000);
+        video.onloadedmetadata=()=>{clearTimeout(timer);resolve();};
+      });
+      await video.play();
+      setButton('Take photo', false);
+      status('Camera is live. Position the camera, then click Take photo.');
+    } catch(err) {
+      stopStream();
+      setButton('Try again', false);
+      const n=err && err.name;
+      if(n==='NotAllowedError' || n==='PermissionDeniedError') {
+        status('Camera permission is blocked. In Chrome, click the camera/lock icon beside the address bar → Camera → Allow, then click Try again.');
+      } else if(n==='NotFoundError' || n==='DevicesNotFoundError') {
+        status('No camera was found. Connect a webcam/camera and click Try again.');
+      } else if(n==='NotReadableError' || n==='TrackStartError') {
+        status('The camera is being used by another application. Close it and click Try again.');
+      } else {
+        status('Camera could not start ('+(n||'unknown error')+'). Make sure this page is running on localhost or HTTPS, then try again.');
+      }
+      console.error('VisionVerse camera error:', err);
+    } finally { busy=false; }
+  };
+
+  window.captureCamera = function(){
+    const video=$('cameraVideo'), canvas=$('cameraCanvas');
+    if(!stream || !video || !video.videoWidth || !video.videoHeight) {
+      status('The live camera is not ready yet. Click Try again and allow camera access.');
+      return;
+    }
+    canvas.width=video.videoWidth; canvas.height=video.videoHeight;
+    const ctx=canvas.getContext('2d',{alpha:false});
+    ctx.drawImage(video,0,0,canvas.width,canvas.height);
+    canvas.toBlob(blob=>{
+      if(!blob){ status('Could not capture the photo. Please try again.'); return; }
+      const file=new File([blob], 'camera-'+Date.now()+'.jpg', {type:'image/jpeg'});
+      if(typeof window.showImageFile==='function') window.showImageFile(file);
+      else {
+        window.currentImageFile=file;
+        const label=$('selectedFiles'); if(label){label.textContent='1 photo captured';label.classList.add('has-files');}
+        if(typeof window.setGenerateButtonState==='function') window.setGenerateButtonState(true,false);
+      }
+      window.currentImageSourceUrl='';
+      if(typeof window.toast==='function') window.toast('Photo captured successfully');
+      window.closeCamera();
+    },'image/jpeg',0.92);
+  };
+
+  // The Camera input is only a mobile fallback. It is never used instead of the real camera.
+  window.handleCameraFile=function(event){
+    const file=event && event.target && event.target.files ? event.target.files[0] : null;
+    if(file && typeof window.showImageFile==='function') window.showImageFile(file);
+    if(event && event.target) event.target.value='';
+  };
+
+  window.addEventListener('pagehide', stopStream);
+  window.addEventListener('beforeunload', stopStream);
+})();
+</script></body>
+</html>

@@ -1,0 +1,1014 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brain Workspace — VisionVerse AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07050f;--panel:#0f0a1e;--panel2:#150e2a;--line:#241a44;--txt:#f3f0ff;--mut:#8b83a8;
+  --violet:#8b5cf6;--violet2:#b09bff;--cyan:#3fd8ff;--pink:#ff5fb8;--green:#28d98b;--yellow:#ffc52b;--red:#ff5b6a;
+  --font-d:'Sora',Inter,sans-serif;--font-b:'Inter',sans-serif;--font-m:'JetBrains Mono',ui-monospace,monospace;
+}
+body.light{
+  --bg:#f4f2fb;--panel:#ffffff;--panel2:#f8f6fd;--line:#e3ddf5;--txt:#1a1530;--mut:#6b6480;
+  --violet2:#6f46e0;
+}
+body{transition:background .25s,color .25s}
+body.light .card,body.light .chip,body.light .iconbtn,body.light .drop,body.light .frow{transition:background .25s,border-color .25s}
+*{box-sizing:border-box}
+body{margin:0;background:
+  radial-gradient(ellipse 55% 40% at 78% -8%,rgba(139,92,246,.16),transparent 60%),
+  radial-gradient(ellipse 45% 35% at 5% 8%,rgba(63,216,255,.10),transparent 55%),
+  var(--bg);color:var(--txt);font:14px var(--font-b);}
+button,select{font:inherit;color:inherit}
+.app{display:block;min-height:100vh;max-width:1500px;margin:0 auto}
+
+/* sidebar */
+.side{border-right:1px solid var(--line);padding:20px 16px;display:flex;flex-direction:column}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.brand-mark{width:36px;height:36px;border-radius:11px;background:none;display:grid;place-items:center;flex:none}
+.brand-name{font-family:var(--font-d);font-weight:800;font-size:14px;letter-spacing:.3px}
+.brand-sub{font-family:var(--font-m);font-size:9px;color:var(--mut);letter-spacing:.5px}
+.navlabel{font-family:var(--font-m);font-size:10px;color:var(--mut);letter-spacing:1px;margin:16px 8px 8px}
+.nav{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:10px;color:var(--mut);text-decoration:none;font-size:13px;font-weight:500;margin-bottom:2px;cursor:pointer;border:1px solid transparent}
+.nav:hover{background:var(--panel);color:var(--txt)}
+.nav.active{background:linear-gradient(90deg,rgba(139,92,246,.18),rgba(139,92,246,.03));color:var(--violet2);border-color:rgba(139,92,246,.3)}
+.nav .ic{width:17px;text-align:center;font-size:14px}
+.nav small{display:block;font-size:9.5px;color:var(--mut);font-weight:400;margin-top:1px;font-family:var(--font-m)}
+.upgrade{margin-top:auto;background:linear-gradient(160deg,rgba(139,92,246,.16),rgba(63,216,255,.06));border:1px solid rgba(139,92,246,.3);border-radius:14px;padding:16px}
+.upgrade b{font-family:var(--font-d);font-size:13px}
+.upgrade p{color:var(--mut);font-size:11.5px;line-height:1.5;margin:6px 0 12px}
+.upgrade button{width:100%;border:0;border-radius:9px;padding:9px;background:linear-gradient(100deg,var(--violet),var(--cyan));color:#07050f;font-weight:700;font-size:12px;cursor:pointer}
+
+/* main */
+.main{padding:20px 26px 40px;overflow:auto}
+.topbar{display:flex;align-items:center;gap:18px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.brandblock{display:flex;align-items:center;gap:11px}
+.brand-mark{width:38px;height:38px;border-radius:10px;flex:none;object-fit:contain}
+.brand-name{font-family:var(--font-d);font-weight:800;font-size:16px;letter-spacing:.3px}
+.brand-sub{font-family:var(--font-m);font-size:9px;color:var(--mut);letter-spacing:.8px;line-height:1.4}
+.tb-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.chip{font-family:var(--font-m);font-size:10.5px;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:7px 11px;display:flex;flex-direction:column;gap:1px}
+.chip b{color:var(--txt);font-size:11.5px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;box-shadow:0 0 8px var(--green);margin-right:5px}
+.iconbtn{width:36px;height:36px;border-radius:10px;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer}
+.avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--violet));display:grid;place-items:center;font-size:14px}
+
+.grid3{display:grid;grid-template-columns:1fr 1.55fr 1fr;gap:14px;margin-bottom:14px}
+.grid3b{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.card-h{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
+.num{font-family:var(--font-m);font-size:10px;color:var(--violet2);background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.3);border-radius:6px;padding:2px 6px;flex:none}
+.card-h div h3{margin:0;font-family:var(--font-d);font-size:14px}
+.card-h div p{margin:2px 0 0;color:var(--mut);font-size:11px}
+.card-h .side-action{margin-left:auto;font-size:11px;color:var(--cyan);cursor:pointer;font-family:var(--font-m)}
+
+/* EEG input */
+.iotabs{display:flex;gap:8px;margin-bottom:12px}
+.iotab{flex:1;text-align:center;padding:8px;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--mut);font-size:12px;cursor:pointer}
+.iotab.active{background:linear-gradient(100deg,var(--violet),#6f46e0);color:#fff;border-color:transparent;font-weight:600}
+.drop{border:1.5px dashed #3a2d68;border-radius:13px;padding:26px 14px;text-align:center;background:rgba(139,92,246,.04);cursor:pointer}
+.drop .ic{font-size:30px;color:var(--violet2)}
+.drop b{display:block;font-size:12.5px;margin:8px 0 2px}
+.drop span{color:var(--mut);font-size:10.5px}
+.drop small{display:block;color:var(--mut);font-size:9.5px;margin-top:8px;font-family:var(--font-m)}
+.browsebtn{width:100%;margin-top:12px;border:0;border-radius:10px;padding:10px;background:linear-gradient(100deg,var(--violet),#6f46e0);color:#fff;font-weight:700;font-size:12.5px;cursor:pointer}
+.filelist{margin-top:14px}
+.filelist .lbl{font-family:var(--font-m);font-size:9.5px;color:var(--mut);letter-spacing:.5px;margin-bottom:8px}
+.frow{display:flex;align-items:center;gap:9px;padding:7px 2px;border-bottom:1px solid var(--line);font-size:11.5px}
+.frow .fi{font-size:14px}
+.frow b{font-weight:500;flex:1}
+.frow span{color:var(--mut);font-size:10px}
+.viewall{display:block;text-align:left;margin-top:9px;color:var(--cyan);font-size:11.5px;cursor:pointer}
+
+/* live monitor */
+.twinstage{height:270px;border-radius:13px;overflow:hidden;position:relative;background:radial-gradient(circle at 50% 45%,rgba(139,92,246,.14),transparent 60%),#0a0617;margin-bottom:12px}
+.twinstage canvas{width:100%;height:100%;display:block;cursor:grab}
+.twinstage canvas:active{cursor:grabbing}
+.fs{position:absolute;top:10px;right:10px;font-family:var(--font-m);font-size:10px;color:var(--mut);cursor:pointer}
+.bands{display:flex;flex-direction:column;gap:9px;margin-bottom:14px}
+.band{display:grid;grid-template-columns:110px 1fr 34px;align-items:center;gap:9px;font-size:11px}
+.band .bl{color:var(--mut)}
+.band .bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden}
+.band .bar i{display:block;height:100%;border-radius:4px}
+.wavehead{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--mut);margin-bottom:4px}
+.wavehead b{color:var(--txt);font-weight:600}
+
+/* AI analysis metrics */
+.metric{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid var(--line)}
+.metric:last-child{border-bottom:0;padding-bottom:0}
+.metric .mi{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:15px;flex:none}
+.metric .body{flex:1}
+.metric .top{display:flex;justify-content:space-between;font-size:11px;color:var(--mut)}
+.metric .top .tag{font-weight:700}
+.metric .val{font-family:var(--font-d);font-size:19px;font-weight:700;margin:1px 0 5px}
+.metric .bar{height:5px;background:var(--line);border-radius:4px;overflow:hidden}
+.metric .bar i{display:block;height:100%;border-radius:4px}
+
+/* qeeg */
+.headwrap{display:flex;gap:14px;align-items:center}
+.headwrap canvas{border-radius:10px}
+.scale{width:14px;height:180px;border-radius:7px;background:linear-gradient(180deg,#ff5fb8,#ffc52b,#28d98b,#3fd8ff,#241a44)}
+.scale-lbl{display:flex;flex-direction:column;justify-content:space-between;height:180px;font-size:9.5px;color:var(--mut);font-family:var(--font-m)}
+.bandsel{width:100%;margin-top:12px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:9px 10px;font-size:12px}
+
+/* emotion */
+.emo-ring{width:118px;height:118px;border-radius:50%;margin:4px auto 10px;display:grid;place-items:center;position:relative;
+  background:conic-gradient(var(--violet) 0 87%,var(--line) 87%)}
+.emo-ring:after{content:'';position:absolute;inset:9px;border-radius:50%;background:var(--panel)}
+.emo-face{position:relative;font-size:34px;z-index:1}
+.emo-state{text-align:center}
+.emo-state b{font-family:var(--font-d);font-size:18px;display:block}
+.emo-state span{color:var(--mut);font-size:11px}
+.legend{display:flex;gap:14px;justify-content:center;margin-top:8px;font-size:10.5px;color:var(--mut)}
+.legend i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}
+
+/* report */
+.rep h4{font-size:11px;color:var(--violet2);font-family:var(--font-m);letter-spacing:.5px;margin:0 0 6px}
+.rep p{font-size:12px;color:var(--mut);line-height:1.55;margin:0 0 14px}
+.rep ul{list-style:none;padding:0;margin:0 0 14px;display:flex;flex-direction:column;gap:7px}
+.rep li{font-size:12px;display:flex;gap:8px;align-items:flex-start;line-height:1.4}
+.rep li i{flex:none;margin-top:2px}
+.genbtn{width:100%;border:0;border-radius:10px;padding:11px;background:linear-gradient(100deg,var(--violet),var(--pink));color:#fff;font-weight:700;font-size:12.5px;cursor:pointer}
+
+/* sessions */
+.sessions{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.sess-h{display:flex;align-items:center;margin-bottom:12px}
+.sess-h h3{margin:0;font-family:var(--font-d);font-size:14px}
+.sess-h span{margin-left:auto;color:var(--cyan);font-size:11.5px;font-family:var(--font-m);cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;color:var(--mut);font-weight:500;font-size:10.5px;font-family:var(--font-m);letter-spacing:.4px;padding:0 8px 10px}
+td{padding:10px 8px;border-top:1px solid var(--line)}
+.pbar{width:70px;height:5px;border-radius:4px;background:var(--line);display:inline-block;overflow:hidden;vertical-align:middle;margin-right:6px}
+.pbar i{display:block;height:100%;border-radius:4px}
+
+.browsebtn:disabled{opacity:.45;cursor:not-allowed}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:#150e2a;border:1px solid var(--line);border-radius:11px;padding:11px 18px;font-size:12.5px;box-shadow:0 12px 30px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.25s;z-index:50}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.err{border-color:rgba(255,91,106,.4);color:var(--red)}
+@media(max-width:900px){.topbar{flex-wrap:wrap;gap:12px}.tb-right{margin-left:0}}
+#imagePreview{
+    width:100%;
+    height:100%;
+    max-height:220px;
+    object-fit:contain;
+    border-radius:18px;
+}
+</style>
+</head>
+<body><div class="app">
+<main class="main">
+  <div class="topbar">
+    <div class="brandblock"><img class="brand-mark" alt="VisionVerse AI logo" src="static/logo.png"><div><div class="brand-name">VISIONVERSE AI</div></div></div>
+    <div class="tb-right">
+      <div class="chip"><span><span class="dot" id="connDot"></span><span id="connText">Connected</span></span></div>
+      <div class="chip">Session Time<b id="sessTime">00:00:00</b></div>
+      <div class="chip">Signal Quality<b id="sigQuality" style="color:var(--green)">Excellent (92%)</b></div>
+    
+      <button class="iconbtn" id="themeBtn" title="Toggle light/dark mode">🌙</button>
+
+    </div>
+  </div>
+
+  <div class="grid3">
+    <section class="card">
+      <div class="card-h"><span class="num">01</span><div><h3>Your Image</h3></div></div>
+      <input type="file" id="fileInput" accept="image/*,.edf,.csv,.bdf,.set" style="display:none">
+      <div class="drop" id="dropZone">
+
+    <div id="uploadPlaceholder">
+        <div class="ic">☁</div>
+        <b>Add your visual input</b>
+        <span>Drop an image or click to browse</span>
+    </div>
+
+    <img id="imagePreview" style="display:none;">
+
+</div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="browsebtn" id="chooseBtn" style="margin-top:0">Choose Files</button>
+        <button class="browsebtn" id="clearBtn" style="margin-top:0;background:transparent;border:1px solid var(--line);color:var(--mut)">Clear</button>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="frow" id="pickImage" style="border:1px solid var(--line);border-radius:9px;justify-content:center;flex:1;padding:9px 4px;background:transparent;cursor:pointer"><span class="fi">🖼</span></button>
+        <button class="frow" id="pickFile" style="border:1px solid var(--line);border-radius:9px;justify-content:center;flex:1;padding:9px 4px;background:transparent;cursor:pointer"><span class="fi">📄</span></button>
+        <!-- <button class="frow" id="pickUrl" style="border:1px solid var(--line);border-radius:9px;justify-content:center;flex:1;padding:9px 4px;background:transparent;cursor:pointer"><span class="fi">🔗</span></button> -->
+        <button class="frow" id="pickCamera" style="border:1px solid var(--line);border-radius:9px;justify-content:center;flex:1;padding:9px 4px;background:transparent;cursor:pointer"><span class="fi">📷</span></button>
+      </div>
+      <div style="margin-top:10px;color:var(--mut);font-size:11px;text-align:center" id="fileStatus">No images selected</div>
+      <button class="browsebtn" id="analyzeBtn" style="margin-top:14px" disabled>✦ Analyze Session</button>
+      <div id="uploadError" style="display:none;margin-top:10px;padding:9px 11px;border-radius:9px;background:rgba(255,91,106,.1);border:1px solid rgba(255,91,106,.35);color:var(--red);font-size:11px"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-h"><span class="num">02</span><div><h3>Live Brain Monitor</h3><p>Real-time EEG visualization</p></div><span class="side-action" id="fitBtn">⛶ Fullscreen</span></div>
+      <div class="twinstage" id="twinStage"><canvas id="brain3d"></canvas></div>
+      <div class="bands" id="bandsContainer">
+        <div class="band" data-band="alpha"><span class="bl">Alpha (8–13 Hz)</span><span class="bar"><i style="width:72%;background:var(--violet)"></i></span><span class="bandval">72%</span></div>
+        <div class="band" data-band="beta"><span class="bl">Beta (13–30 Hz)</span><span class="bar"><i style="width:58%;background:var(--cyan)"></i></span><span class="bandval">58%</span></div>
+        <div class="band" data-band="theta"><span class="bl">Theta (4–8 Hz)</span><span class="bar"><i style="width:34%;background:var(--pink)"></i></span><span class="bandval">34%</span></div>
+        <div class="band" data-band="gamma"><span class="bl">Gamma (30–100 Hz)</span><span class="bar"><i style="width:20%;background:var(--green)"></i></span><span class="bandval">20%</span></div>
+        <div class="band" data-band="delta"><span class="bl">Delta (0.5–4 Hz)</span><span class="bar"><i style="width:15%;background:var(--yellow)"></i></span><span class="bandval">15%</span></div>
+      </div>
+      <div class="wavehead">EEG Waveform <b>All Channels</b></div>
+      <canvas id="wave" width="600" height="80" style="width:100%;height:80px"></canvas>
+    </section>
+
+    <section class="card rep">
+      <div class="card-h"><span class="num">03</span><div><h3>AI Brain Report</h3><p>Personalized insights &amp; suggestions</p></div></div>
+      <h4>SUMMARY</h4>
+      <p id="repSummary">Your brain shows a focused and calm state with high attention and moderate mental load.</p>
+      <h4>KEY INSIGHTS</h4>
+      <ul id="repInsights">
+        <li><i style="color:var(--green)">✓</i>High alpha activity indicates relaxation</li>
+        <li><i style="color:var(--green)">✓</i>Good attention and cognitive stability</li>
+        <li><i style="color:var(--green)">✓</i>Low stress and fatigue levels</li>
+      </ul>
+      <h4>RECOMMENDATIONS</h4>
+      <ul id="repRecs">
+        <li><i style="color:var(--cyan)">◎</i>Great time for deep work or studying</li>
+        <li><i style="color:var(--cyan)">◎</i>Take a short break in 25–30 minutes</li>
+        <li><i style="color:var(--cyan)">◎</i>Stay hydrated and maintain posture</li>
+      </ul>
+      <button class="genbtn" id="genReportBtn">Generate Full Report</button>
+    </section>
+  </div>
+
+  <section class="card" id="devPanel" style="margin-bottom:14px">
+    <div class="card-h">
+      <!-- <span class="num">🔧</span> -->
+      <!-- <div><h3>Test With Your Model Output</h3><p>Paste your model's real JSON response below to preview it in the two panels above — no backend wiring required for this.</p></div> -->
+      <span class="side-action" id="devToggle"></span>
+    </div>
+   <div id="devBody" style="display:none">
+      <textarea id="devInput" spellcheck="false" style="width:100%;min-height:150px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--txt);font-family:var(--font-m);font-size:11.5px;padding:12px;resize:vertical"></textarea>
+      <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+        <button class="browsebtn" id="devPreview" style="margin-top:0;width:auto;padding:10px 18px">▸ Preview In Panels</button>
+        <span id="devMsg" style="font-size:11.5px;color:var(--mut)"></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+const fileInput = document.getElementById("fileInput");
+const imagePreview = document.getElementById("imagePreview");
+const uploadPlaceholder = document.getElementById("uploadPlaceholder");
+const previewInput = document.getElementById("fileInput");
+const previewImg = document.getElementById("imagePreview");
+const placeholder = document.getElementById("uploadPlaceholder");
+
+if(previewInput){
+
+    previewInput.addEventListener("change", function(e){
+
+        const file = e.target.files[0];
+
+        if(!file) return;
+
+        const reader = new FileReader();
+
+        reader.onload = function(event){
+
+            previewImg.src = event.target.result;
+
+            previewImg.style.display = "block";
+
+            if(placeholder){
+                placeholder.style.display = "none";
+            }
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+</script>
+<script>
+const $=s=>document.querySelector(s);
+
+/* ---------- theme toggle ---------- */
+(function(){
+  const saved=localStorage.getItem('vv-brain-theme');
+  if(saved==='light'){document.body.classList.add('light');$('#themeBtn').textContent='☀️';}
+  $('#themeBtn').addEventListener('click',()=>{
+    const isLight=document.body.classList.toggle('light');
+    $('#themeBtn').textContent=isLight?'☀️':'🌙';
+    localStorage.setItem('vv-brain-theme',isLight?'light':'dark');
+  });
+})();
+
+/* ============================================================
+   BACKEND INTEGRATION LAYER
+   Everything your backend needs to plug into is isolated here.
+   Swap MOCK_MODE to false and point API_BASE / WS_URL at your
+   real service — no other code in this file needs to change.
+   ============================================================ */
+const VV_API_ORIGIN=(location.protocol==='file:'||/^(5500|5501|3000|5173|8080)$/.test(location.port))?'http://localhost:8000':'';
+const CONFIG={
+  API_BASE:VV_API_ORIGIN+'/api',   // resolves to the FastAPI app serving this page
+  // MOCK_MODE stays true: no EEG model has been trained for this project yet.
+  // Implement the /eeg/* routes in backend/api/routes.py, then set it to false.
+  WS_URL:(location.protocol==='https:'?'wss://':'ws://')+location.host+'/ws/eeg-stream',
+  MOCK_MODE:true               // true = works standalone with fake data; set false once your backend is live
+};
+
+/*
+  EXPECTED BACKEND CONTRACT
+  --------------------------------------------------------------
+  POST  {API_BASE}/eeg/upload        multipart/form-data, field "file"
+        -> 200 { sessionId: string, fileName: string }
+
+  POST  {API_BASE}/eeg/analyze       json { sessionId }
+        -> 200 {
+             bands: { alpha, beta, theta, gamma, delta },   // 0-100
+             metrics: { focus, relaxation, stress, fatigue }, // 0-100, drives the 3D brain glow
+             report: {
+               summary: string,
+               insights: string[],
+               recommendations: string[]
+             }
+           }
+
+  POST  {API_BASE}/eeg/report/generate   json { sessionId }
+        -> 200  application/pdf (binary) — downloaded directly
+
+  WS    {WS_URL}                      live streaming updates, one JSON object per message:
+        { type:'status',   connected:bool, signalQuality:0-100, channelsActive:int, channelsTotal:int }
+        { type:'bands',    alpha, beta, theta, gamma, delta }              // 0-100 each
+        { type:'waveform', samples:[number, number, ...] }                  // recent amplitude samples, -1..1
+        { type:'metrics',  focus, relaxation, stress, fatigue }             // 0-100, drives 3D brain glow
+  --------------------------------------------------------------
+*/
+
+const state={sessionId:null,file:null,analyzing:false};
+
+function toast(t,isErr){
+  const el=$('#toast'); el.textContent=t; el.className='toast show'+(isErr?' err':'');
+  clearTimeout(window._toastT); window._toastT=setTimeout(()=>el.classList.remove('show'),3200);
+}
+
+async function apiFetch(path,opts){
+  const res=await fetch(CONFIG.API_BASE+path,opts);
+  if(!res.ok) throw new Error('Request failed: '+res.status);
+  return res;
+}
+
+/* ---------- file selection ---------- */
+/* ---------- file selection ---------- */
+
+function setFile(file){
+
+    state.file = file;
+
+    $('#fileStatus').textContent = file
+        ? `${file.name} · ${(file.size/1024/1024).toFixed(1)} MB`
+        : 'No images selected';
+
+    $('#analyzeBtn').disabled = !file;
+
+    $('#uploadError').style.display = 'none';
+
+
+    // ---------- image preview ----------
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            const img = $('#imagePreview');
+            const placeholder = $('#uploadPlaceholder');
+
+            if(img){
+
+                img.src = e.target.result;
+                img.style.display = 'block';
+
+            }
+
+            if(placeholder){
+
+                placeholder.style.display = 'none';
+
+            }
+
+        };
+
+        reader.readAsDataURL(file);
+
+    }
+}
+$('#fileInput').addEventListener('change',e=>{if(e.target.files[0])setFile(e.target.files[0])});
+$('#chooseBtn').addEventListener('click',()=>$('#fileInput').click());
+$('#pickImage').addEventListener('click',()=>$('#fileInput').click());
+$('#pickFile').addEventListener('click',()=>$('#fileInput').click());
+$('#pickCamera').addEventListener('click', async (e)=>{
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    let stream = null;
+
+    try {
+
+        /* ---------- Open camera ---------- */
+
+        stream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: false
+        });
+
+
+        const dropZone = $('#dropZone');
+        const placeholder = $('#uploadPlaceholder');
+        const imagePreview = $('#imagePreview');
+
+
+        /* ---------- Hide upload placeholder ---------- */
+
+        if(placeholder){
+            placeholder.style.display = 'none';
+        }
+
+        if(imagePreview){
+            imagePreview.style.display = 'none';
+        }
+
+
+        /* ---------- Create video ---------- */
+
+        const video = document.createElement('video');
+
+        video.autoplay = true;
+        video.playsInline = true;
+        video.muted = true;
+
+        video.srcObject = stream;
+
+        video.style.width = '100%';
+        video.style.height = '220px';
+        video.style.objectFit = 'cover';
+        video.style.borderRadius = '18px';
+        video.style.display = 'block';
+
+
+        /* ---------- Create Capture button ---------- */
+
+        const captureBtn = document.createElement('button');
+
+        captureBtn.type = 'button';
+        captureBtn.className = 'browsebtn';
+        captureBtn.textContent = '📸 Capture';
+
+        captureBtn.style.width = '100%';
+        captureBtn.style.marginTop = '12px';
+
+
+        /* ---------- Add camera to existing box ---------- */
+
+        dropZone.appendChild(video);
+        dropZone.appendChild(captureBtn);
+
+
+        /* ---------- Wait for camera ---------- */
+
+        await new Promise((resolve)=>{
+
+            if(
+                video.readyState >= 2 &&
+                video.videoWidth > 0
+            ){
+
+                resolve();
+
+            }else{
+
+                video.addEventListener(
+                    'loadedmetadata',
+                    resolve,
+                    {once:true}
+                );
+
+            }
+
+        });
+
+
+        await video.play();
+
+
+        /* =================================================
+           CAPTURE
+           ================================================= */
+
+        captureBtn.addEventListener('click', (captureEvent)=>{
+
+            captureEvent.preventDefault();
+            captureEvent.stopPropagation();
+
+
+            /* ---------- Check camera ---------- */
+
+            if(
+                !video.videoWidth ||
+                !video.videoHeight
+            ){
+
+                toast('Camera is not ready yet');
+
+                return;
+
+            }
+
+
+            /* ---------- Create canvas ---------- */
+
+            const canvas = document.createElement('canvas');
+
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+
+            const ctx = canvas.getContext('2d');
+
+
+            if(!ctx){
+
+                toast('Could not capture image');
+
+                return;
+
+            }
+
+
+            /* ---------- Capture current frame ---------- */
+
+            ctx.drawImage(
+                video,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+
+            /* ---------- Convert to file ---------- */
+
+            canvas.toBlob((blob)=>{
+
+                if(!blob){
+
+                    toast('Could not capture image');
+
+                    return;
+
+                }
+
+
+                const file = new File(
+                    [blob],
+                    'camera_capture.png',
+                    {
+                        type: 'image/png',
+                        lastModified: Date.now()
+                    }
+                );
+
+
+                /* ---------- Stop camera ---------- */
+
+                stream.getTracks().forEach(track=>{
+                    track.stop();
+                });
+
+
+                /* ---------- Remove live camera ---------- */
+
+                video.remove();
+                captureBtn.remove();
+
+
+                /* ---------- Send image to normal upload ---------- */
+
+                setFile(file);
+
+
+            }, 'image/png');
+
+        });
+
+
+    } catch(error){
+
+        console.error('Camera error:', error);
+
+
+        if(stream){
+
+            stream.getTracks().forEach(track=>{
+                track.stop();
+            });
+
+        }
+
+
+        toast('Camera access denied');
+
+    }
+
+});
+// $('#pickUrl').addEventListener('click',()=>{
+//   const url=prompt('Paste a file URL:'); if(url) toast('URL input received — wire this to your backend\'s URL-fetch endpoint');
+// });
+$('#clearBtn').addEventListener('click', (e) => {
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    // پاک کردن فایل انتخاب‌شده
+    const fileInput = $('#fileInput');
+
+    if(fileInput){
+        fileInput.value = '';
+    }
+
+    // پاک کردن state
+    state.file = null;
+
+    // وضعیت فایل
+    const fileStatus = $('#fileStatus');
+
+    if(fileStatus){
+        fileStatus.textContent = 'No images selected';
+    }
+
+    // غیرفعال کردن Analyze
+    const analyzeBtn = $('#analyzeBtn');
+
+    if(analyzeBtn){
+        analyzeBtn.disabled = true;
+    }
+
+    // پاک کردن Preview
+    const imagePreview = $('#imagePreview');
+
+    if(imagePreview){
+        imagePreview.src = '';
+        imagePreview.style.display = 'none';
+    }
+
+    // برگرداندن متن Upload
+    const placeholder = $('#uploadPlaceholder');
+
+    if(placeholder){
+        placeholder.style.display = '';
+    }
+
+    // پاک کردن خطای آپلود
+    const uploadError = $('#uploadError');
+
+    if(uploadError){
+        uploadError.style.display = 'none';
+    }
+
+});
+$('#dropZone').addEventListener('click',(e)=>{
+
+    if(e.target.id === "dropZone"){
+        $('#fileInput').click();
+    }
+
+});
+$('#dropZone').addEventListener('dragover',e=>{e.preventDefault();$('#dropZone').style.borderColor='var(--violet)'});
+$('#dropZone').addEventListener('dragleave',()=>{$('#dropZone').style.borderColor=''});
+$('#dropZone').addEventListener('drop',e=>{
+  e.preventDefault(); $('#dropZone').style.borderColor='';
+  if(e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]);
+});
+
+/* ---------- analyze flow ---------- */
+function mockAnalyzeResponse(){
+  const r=()=>Math.round(20+Math.random()*70);
+  return {
+    bands:{alpha:r(),beta:r(),theta:r(),gamma:r(),delta:r()},
+    metrics:{focus:r(),relaxation:r(),stress:r(),fatigue:r()},
+    report:{
+      summary:'Your brain shows a focused and calm state with high attention and moderate mental load.',
+      insights:['High alpha activity indicates relaxation','Good attention and cognitive stability','Low stress and fatigue levels'],
+      recommendations:['Great time for deep work or studying','Take a short break in 25–30 minutes','Stay hydrated and maintain posture']
+    }
+  };
+}
+
+function renderBands(bands){
+  const colors={alpha:'--violet',beta:'--cyan',theta:'--pink',gamma:'--green',delta:'--yellow'};
+  Object.entries(bands).forEach(([key,val])=>{
+    const row=document.querySelector(`.band[data-band="${key}"]`); if(!row)return;
+    row.querySelector('.bar i').style.width=val+'%';
+    row.querySelector('.bandval').textContent=val+'%';
+  });
+}
+
+function renderReport(report){
+  $('#repSummary').textContent=report.summary;
+  $('#repInsights').innerHTML=report.insights.map(t=>`<li><i style="color:var(--green)">✓</i>${t}</li>`).join('');
+  $('#repRecs').innerHTML=report.recommendations.map(t=>`<li><i style="color:var(--cyan)">◎</i>${t}</li>`).join('');
+}
+
+async function runAnalysis(){
+  if(!state.file||state.analyzing)return;
+  state.analyzing=true;
+  const btn=$('#analyzeBtn'); const prevLabel=btn.textContent;
+  btn.disabled=true; btn.textContent='Analyzing…'; $('#uploadError').style.display='none';
+  try{
+    let result;
+    if(CONFIG.MOCK_MODE){
+      await new Promise(r=>setTimeout(r,900));
+      result=mockAnalyzeResponse();
+      state.sessionId='mock-session';
+    } else {
+      const form=new FormData(); form.append('file',state.file);
+      const uploadRes=await apiFetch('/eeg/upload',{method:'POST',body:form});
+      const {sessionId}=await uploadRes.json();
+      state.sessionId=sessionId;
+      const analyzeRes=await apiFetch('/eeg/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId})});
+      result=await analyzeRes.json();
+    }
+    renderBands(result.bands);
+    renderReport(result.report);
+    if(window.updateBrainActivity) window.updateBrainActivity(result.metrics);
+    toast('Analysis complete');
+  }catch(err){
+    $('#uploadError').style.display='block';
+    $('#uploadError').textContent='Analysis failed: '+err.message+(CONFIG.MOCK_MODE?'':' — check API_BASE / backend status');
+    toast('Analysis failed',true);
+  }finally{
+    state.analyzing=false; btn.disabled=!state.file; btn.textContent=prevLabel;
+  }
+}
+$('#analyzeBtn').addEventListener('click',runAnalysis);
+
+/* ---------- report download ---------- */
+$('#genReportBtn').addEventListener('click',async()=>{
+  const btn=$('#genReportBtn'); const prevLabel=btn.textContent;
+  btn.disabled=true; btn.textContent='Generating…';
+  try{
+    if(CONFIG.MOCK_MODE){
+      await new Promise(r=>setTimeout(r,700));
+      toast('Demo mode — connect your backend to download a real PDF');
+    } else {
+      const res=await apiFetch('/eeg/report/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:state.sessionId})});
+      const blob=await res.blob();
+      const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='brain-report.pdf'; a.click();
+      toast('Report downloaded');
+    }
+  }catch(err){
+    toast('Report generation failed',true);
+  }finally{
+    btn.disabled=false; btn.textContent=prevLabel;
+  }
+});
+
+/* ---------- dev/test panel: paste real model output, preview instantly ---------- */
+(function(){
+  const example={
+    bands:{alpha:72,beta:58,theta:34,gamma:20,delta:15},
+    metrics:{focus:84,relaxation:62,stress:23,fatigue:21},
+    report:{
+      summary:"Your brain shows a focused and calm state with high attention and moderate mental load.",
+      insights:["High alpha activity indicates relaxation","Good attention and cognitive stability","Low stress and fatigue levels"],
+      recommendations:["Great time for deep work or studying","Take a short break in 25–30 minutes","Stay hydrated and maintain posture"]
+    }
+  };
+  $('#devInput').value=JSON.stringify(example,null,2);
+
+  $('#devPreview').addEventListener('click',()=>{
+    const msg=$('#devMsg');
+    let data;
+    try{ data=JSON.parse($('#devInput').value); }
+    catch(e){ msg.style.color='var(--red)'; msg.textContent='Invalid JSON: '+e.message; return; }
+    try{
+      if(data.bands) renderBands(data.bands);
+      if(data.report) renderReport(data.report);
+      if(data.metrics && window.updateBrainActivity) window.updateBrainActivity(data.metrics);
+      msg.style.color='var(--green)'; msg.textContent='Rendered into Live Brain Monitor + AI Brain Report ✓';
+      toast('Model output previewed');
+    }catch(e){
+      msg.style.color='var(--red)'; msg.textContent='JSON parsed but shape is unexpected: '+e.message;
+    }
+  });
+
+  $('#devToggle').addEventListener('click',()=>{
+    const body=$('#devBody'); const hidden=body.style.display==='none';
+    body.style.display=hidden?'':'none';
+    $('#devToggle').textContent=hidden?'Hide':'Show';
+  });
+})();
+
+/* ---------- live status / streaming ---------- */
+function setConnUI(connected){
+  $('#connDot').style.background=connected?'var(--green)':'var(--red)';
+  $('#connDot').style.boxShadow=connected?'0 0 8px var(--green)':'0 0 8px var(--red)';
+  $('#connText').textContent=connected?'Connected':'Disconnected';
+}
+
+let liveWaveSamples=null; // when set (from WS), real samples drive the waveform instead of the demo sine
+
+function connectLiveStream(){
+  if(CONFIG.MOCK_MODE){ setConnUI(true); return; } // demo mode: assume connected, use local fake data
+  try{
+    const ws=new WebSocket(CONFIG.WS_URL);
+    ws.onopen=()=>setConnUI(true);
+    ws.onclose=()=>{setConnUI(false); setTimeout(connectLiveStream,3000);}; // auto-retry
+    ws.onerror=()=>setConnUI(false);
+    ws.onmessage=(ev)=>{
+      let msg; try{msg=JSON.parse(ev.data)}catch{return}
+      if(msg.type==='status'){
+        setConnUI(msg.connected);
+        $('#sigQuality').textContent=(msg.signalQuality>=80?'Excellent':msg.signalQuality>=50?'Good':'Poor')+` (${msg.signalQuality}%)`;
+        $('#sigQuality').style.color=msg.signalQuality>=80?'var(--green)':msg.signalQuality>=50?'var(--yellow)':'var(--red)';
+        $('#chChannels').textContent=`${msg.channelsActive} / ${msg.channelsTotal} Active`;
+      } else if(msg.type==='bands'){
+        renderBands({alpha:msg.alpha,beta:msg.beta,theta:msg.theta,gamma:msg.gamma,delta:msg.delta});
+      } else if(msg.type==='waveform'){
+        liveWaveSamples=msg.samples;
+      } else if(msg.type==='metrics'){
+        if(window.updateBrainActivity) window.updateBrainActivity(msg);
+      }
+    };
+  }catch(err){ setConnUI(false); }
+}
+connectLiveStream();
+
+/* session timer */
+let secs=0; setInterval(()=>{secs++;const h=String(Math.floor(secs/3600)).padStart(2,'0'),m=String(Math.floor(secs/60)%60).padStart(2,'0'),s=String(secs%60).padStart(2,'0');$('#sessTime').textContent=h+':'+m+':'+s;},1000);
+
+/* ---------- generic waveform chart ---------- */
+function drawWave(c,lines){
+  if(!c)return; const x=c.getContext('2d'),w=c.width,h=c.height; x.clearRect(0,0,w,h);
+  lines.forEach(({color,seed,amp})=>{
+    x.strokeStyle=color; x.lineWidth=1.6; x.beginPath();
+    for(let i=0;i<w;i++){const y=h/2+Math.sin(i*.07+seed)*h*amp+Math.sin(i*.23+seed*2)*h*(amp*0.5)+(Math.random()-.5)*h*.06; i===0?x.moveTo(i,y):x.lineTo(i,y);}
+    x.stroke();
+  });
+}
+function drawWaveSamples(c,samples,color){
+  if(!c||!samples||!samples.length)return; const x=c.getContext('2d'),w=c.width,h=c.height; x.clearRect(0,0,w,h);
+  x.strokeStyle=color; x.lineWidth=1.6; x.beginPath();
+  samples.forEach((s,i)=>{const px=i/(samples.length-1)*w, py=h/2 - s*h*0.42; i===0?x.moveTo(px,py):x.lineTo(px,py);});
+  x.stroke();
+}
+function redrawWaves(){
+  if(liveWaveSamples){ drawWaveSamples($('#wave'),liveWaveSamples,getCss('--violet')); return; }
+  drawWave($('#wave'),[{color:getCss('--violet'),seed:1,amp:.28}]);
+}
+function getCss(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+redrawWaves(); setInterval(redrawWaves,1400);
+
+/* ---------- 3D Brain: real anatomy (hemispheres, temporal lobes, cerebellum, brainstem) ---------- */
+(function(){
+  const stage=$('#twinStage'), canvas=$('#brain3d');
+  if(!window.THREE||!canvas) return;
+
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(40,1,0.1,100);
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+
+  scene.add(new THREE.HemisphereLight(0xcbb6ff,0x0a0617,0.65));
+  const key=new THREE.DirectionalLight(0xe6d9ff,1.05); key.position.set(3,4,5); scene.add(key);
+  const rim=new THREE.PointLight(0x8b5cf6,1.0,10); rim.position.set(-3,1,3); scene.add(rim);
+  const rim2=new THREE.PointLight(0x3fd8ff,0.65,10); rim2.position.set(3,-1,-2); scene.add(rim2);
+
+  // cheap layered-sine pseudo-noise, used to fake gyri/sulci wrinkles on the cortex
+  function noise3(x,y,z){
+    return Math.sin(x*3.1+y*1.7)*Math.cos(y*2.3+z*1.9)*0.5
+         + Math.sin(x*7.3-z*4.1+y*2.0)*0.22
+         + Math.sin(y*11.0+x*5.5-z*3.0)*0.11;
+  }
+  // build one wrinkled lobe from a sphere: independent XYZ scale + optional medial flattening
+  // (flattenSide>0 flattens the +X face, <0 flattens the -X face — used so hemispheres meet
+  // at a fissure instead of overlapping into a single ball)
+  function wrinkledLobe(radius,scaleX,scaleY,scaleZ,detail,wrinkleAmp,wrinkleFreq,material,flattenSide){
+    const geo=new THREE.IcosahedronGeometry(radius,detail);
+    const pos=geo.attributes.position; const v=new THREE.Vector3();
+    for(let i=0;i<pos.count;i++){
+      v.fromBufferAttribute(pos,i);
+      const n=v.clone().normalize();
+      let sx=scaleX;
+      if(flattenSide && n.x*flattenSide>0.15){
+        const t=Math.min(1,(n.x*flattenSide-0.15)/0.55);
+        sx*=(1-0.62*t);
+      }
+      const base=v.clone(); base.x*=sx; base.y*=scaleY; base.z*=scaleZ;
+      const wrinkle=1+wrinkleAmp*noise3(n.x*wrinkleFreq,n.y*wrinkleFreq,n.z*wrinkleFreq);
+      base.multiplyScalar(wrinkle);
+      pos.setXYZ(i,base.x,base.y,base.z);
+    }
+    geo.computeVertexNormals();
+    return new THREE.Mesh(geo,material);
+  }
+
+  const tissueL=new THREE.MeshStandardMaterial({color:0x9c86e6,transparent:true,opacity:0.55,roughness:0.4,metalness:0.12,emissive:0x2a1a55,emissiveIntensity:0.3,side:THREE.DoubleSide});
+  const tissueR=new THREE.MeshStandardMaterial({color:0xa792ea,transparent:true,opacity:0.55,roughness:0.4,metalness:0.12,emissive:0x2a1a55,emissiveIntensity:0.3,side:THREE.DoubleSide});
+  const cerebellumMat=new THREE.MeshStandardMaterial({color:0x7d6ad0,transparent:true,opacity:0.6,roughness:0.45,metalness:0.1,emissive:0x1c1348,emissiveIntensity:0.32,side:THREE.DoubleSide});
+  const stemMat=new THREE.MeshStandardMaterial({color:0xd6c6ff,roughness:0.3,metalness:0.15,emissive:0x5b3fa8,emissiveIntensity:0.35});
+
+  const brain=new THREE.Group();
+
+  // Cerebrum: two hemispheres, ellipsoid proportions (longer front-back, then tall, then deep)
+  const left=wrinkledLobe(0.75,1.3,1.0,0.9,4,0.09,7.5,tissueL,+1);
+  left.position.set(-0.32,0.14,0); brain.add(left);
+  const right=wrinkledLobe(0.75,1.3,1.0,0.9,4,0.09,7.5,tissueR,-1);
+  right.position.set(0.32,0.14,0); brain.add(right);
+
+  // Temporal lobes: smaller wrinkled lobes protruding down-and-forward on each side
+  const tempL=wrinkledLobe(0.34,1.35,0.85,1.0,3,0.1,8,tissueL,0);
+  tempL.position.set(-0.52,-0.34,0.2); tempL.rotation.z=0.3; brain.add(tempL);
+  const tempR=wrinkledLobe(0.34,1.35,0.85,1.0,3,0.1,8,tissueR,0);
+  tempR.position.set(0.52,-0.34,0.2); tempR.rotation.z=-0.3; brain.add(tempR);
+
+  // Cerebellum: tighter, finer wrinkles, tucked underneath-behind the cerebrum
+  const cerebellum=wrinkledLobe(0.34,1.05,0.72,0.9,3,0.15,13,cerebellumMat,0);
+  cerebellum.position.set(0,-0.46,-0.46); brain.add(cerebellum);
+
+  // Brainstem: tapered cylinder beneath everything
+  const stem=new THREE.Mesh(new THREE.CylinderGeometry(0.08,0.13,0.46,14),stemMat);
+  stem.position.set(0,-0.8,-0.22); stem.rotation.x=0.25; brain.add(stem);
+
+  // wireframe overlay (keeps the original HUD/scan look, now traced over real anatomy)
+  const wireGroup=new THREE.Group();
+  [left,right,tempL,tempR,cerebellum].forEach(m=>{
+    const w=new THREE.Mesh(m.geometry,new THREE.MeshBasicMaterial({color:0x3fd8ff,wireframe:true,transparent:true,opacity:0.22}));
+    w.position.copy(m.position); w.rotation.copy(m.rotation); wireGroup.add(w);
+  });
+  brain.add(wireGroup);
+
+  // activity glow blobs at anatomical regions, tied to the metric cards on the right
+  function activityGlow(x,y,z,color,scale){
+    const c=document.createElement('canvas'); c.width=c.height=128;
+    const g=c.getContext('2d'), grd=g.createRadialGradient(64,64,0,64,64,64);
+    const hex='#'+color.toString(16).padStart(6,'0');
+    grd.addColorStop(0,hex+'cc'); grd.addColorStop(0.5,hex+'44'); grd.addColorStop(1,hex+'00');
+    g.fillStyle=grd; g.fillRect(0,0,128,128);
+    const tex=new THREE.CanvasTexture(c);
+    const mat=new THREE.SpriteMaterial({map:tex,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});
+    const spr=new THREE.Sprite(mat); spr.position.set(x,y,z); spr.scale.set(scale,scale,1);
+    brain.add(spr); return spr;
+  }
+  const glows=[
+    activityGlow(0,0.5,0.68,0x8b5cf6,0.8),      // frontal — focus/attention
+    activityGlow(0,0.34,-0.58,0x28d98b,0.68),   // parietal — relaxation
+    activityGlow(-0.56,-0.08,0.28,0x3fd8ff,0.55),// temporal — stress
+    activityGlow(0.04,0.04,-0.86,0xff5b58,0.5), // occipital — fatigue
+  ];
+  // driven by real backend metrics via window.updateBrainActivity({focus,relaxation,stress,fatigue})
+  const activityLevel=[0.8,0.6,0.2,0.2];
+  window.updateBrainActivity=function(m){
+    if(!m)return;
+    if(m.focus!=null)activityLevel[0]=m.focus/100;
+    if(m.relaxation!=null)activityLevel[1]=m.relaxation/100;
+    if(m.stress!=null)activityLevel[2]=m.stress/100;
+    if(m.fatigue!=null)activityLevel[3]=m.fatigue/100;
+  };
+
+  scene.add(brain);
+
+  // camera orbit
+  const target=new THREE.Vector3(0,-0.02,0);
+  let theta=0.5, phi=1.3, radius=3.6, tTheta=theta, tPhi=phi, tRadius=radius;
+  function applyCamera(){
+    theta+=(tTheta-theta)*0.12; phi+=(tPhi-phi)*0.12; radius+=(tRadius-radius)*0.12;
+    const sp=Math.sin(phi),cp=Math.cos(phi);
+    camera.position.set(target.x+radius*sp*Math.sin(theta),target.y+radius*cp,target.z+radius*sp*Math.cos(theta));
+    camera.lookAt(target);
+  }
+  function resize(){ const w=stage.clientWidth||500,h=stage.clientHeight||270; renderer.setSize(w,h,false); camera.aspect=w/Math.max(h,1); camera.updateProjectionMatrix(); }
+  resize(); new ResizeObserver(resize).observe(stage); window.addEventListener('resize',resize);
+
+  let dragging=false,lastX=0,lastY=0,autoSpin=true;
+  canvas.addEventListener('pointerdown',e=>{dragging=true;autoSpin=false;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});
+  canvas.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-lastX,dy=e.clientY-lastY;lastX=e.clientX;lastY=e.clientY;tTheta-=dx*0.006;tPhi=Math.max(0.6,Math.min(2.2,tPhi-dy*0.006));});
+  window.addEventListener('pointerup',()=>dragging=false);
+  canvas.addEventListener('wheel',e=>{e.preventDefault();tRadius=Math.max(2.2,Math.min(6,tRadius+e.deltaY*0.002));},{passive:false});
+  $('#fitBtn').addEventListener('click',()=>{if(stage.requestFullscreen)stage.requestFullscreen();});
+
+  const clock=new THREE.Clock();
+  function tick(){
+    requestAnimationFrame(tick);
+    if(autoSpin) tTheta+=0.0016;
+    applyCamera();
+    const t=clock.getElapsedTime();
+    glows.forEach((g,i)=>g.material.opacity=(0.25+activityLevel[i]*0.5)+Math.sin(t*(1.1+i*0.3))*0.15);
+    wireGroup.rotation.y=Math.sin(t*0.15)*0.01;
+    renderer.render(scene,camera);
+  }
+  tick();
+})();
+</script>
+</body></html>
